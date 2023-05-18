@@ -1,0 +1,15 @@
+.Header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vh 3vw;
+    a{
+    margin-inline: 5px;
+    color: var(--text);
+    font-size: 1.2vw;
+
+    &:hover{
+        color: var(--primary);
+    }
+    }
+}

@@ -1,0 +1,50 @@
+@mixin Flex($jc) {
+    display: flex;
+    justify-content: $jc;
+    align-items: center !important;
+}
+
+@mixin bc($B,$C) {
+  background: var($B) !important;
+  color:var($C) !important;
+}
+@mixin Shadow {
+  box-shadow: 2px 2px 7px 0 rgb(0, 0, 0, 0.2);
+
+}
+@mixin Hover {
+&:hover{
+  color: var(--primary);
+  background-color:var(--secondary) ;
+}
+}
+
+@mixin devices ($breakpoint) {
+  @if $breakpoint == Laptop {
+    @media only screen and (max-width: 1440px) {
+      @content;
+    }
+  }
+  
+  @if $breakpoint == laptop {
+    @media only screen and (max-width: 1024px) {
+      @content;
+    }
+  }
+    @if $breakpoint == tablet {    
+    @media only screen and (max-width: 950px) {
+      @content;
+    }
+  }
+ 
+  @if $breakpoint == mobile {
+    @media only screen and (max-width: 720px) {
+      @content;
+    }}
+    @if $breakpoint == S_mobile {
+      @media only screen and (max-width: 590px) {
+        @content;
+      }
+    
+  }
+}

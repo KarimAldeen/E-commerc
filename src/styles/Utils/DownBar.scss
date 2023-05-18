@@ -1,0 +1,63 @@
+.Drop_Btn{
+    width: 240px;
+    height: 50px;
+    background-color: var(--primary);
+    text-align: start;
+    color: var(--bg);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    &:hover,&:active,&:focus-visible{
+        background: var(--secondary);
+    }
+    i{
+    margin-inline: 10px;
+    }
+h3{
+    font-size: 21px;
+}   
+}
+.fa-bars{
+    font-size: 22px;
+}
+.DownBar{
+        display: flex;
+        gap: 60px;
+        align-items: center;
+        padding-inline: 6vw;
+
+}
+
+.dropdown-toggle::after{
+    font-size: 31px;
+}
+.dropdown-menu{
+    li{
+        width: 240px;
+        font-size: 20px;
+    }
+}
+.NavBar{
+    font-size: 1.6vw;
+    display: flex; align-items: center;
+    gap: 3vw;
+
+}
+.Login{
+    display: flex;
+    align-items: center;
+    height: 70px;
+margin-inline: 5px;
+position: relative; top: -10px;
+svg{
+    font-size: 3vw;
+}
+}
+.In-Login{
+   
+    display: flex; flex-direction: column; 
+    p{
+        margin: 0;
+    }
+}

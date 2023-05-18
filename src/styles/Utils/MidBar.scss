@@ -1,0 +1,82 @@
+.MidBar{
+    width: 100vw;
+    padding: 2vh 6vw;
+    display: flex; justify-content: space-between;
+    .MidBar__Center{
+        @include Shadow;
+        width: 40vw;
+
+    }
+    form.example input[type=text] {
+        padding: 10px;
+        font-size: 17px;
+        border: none;
+        outline: none;
+        float: left;
+        width: 85%;
+        background: var(--bg);
+
+      }
+      
+      /* Style the submit button */
+      form.example button {
+        float: left;
+        width: 15%;
+        padding: 10px;
+        background: var(--primary);
+        color: white;
+        font-size: 17px;
+        border:none;
+        border-left: none; /* Prevent double borders */
+        cursor: pointer;
+      }
+      
+      form.example button:hover {
+        background: var(--secondary);
+      }
+      
+      /* Clear floats */
+      form.example::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+    
+    .MidBar__Left{
+       
+        display: flex; align-items: center ; justify-content: center;
+        h3{
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.3vw;
+
+        }
+        h1{
+            font-size: 2.3vw;
+
+        }
+        
+    }
+   
+}
+
+.fa-lg{
+    font-size: 2vw;
+    color: var(--text);
+    &:hover{
+        color: var(--secondary);
+    }
+}
+.rounded-pill{
+    font-size: .7vw;
+    position: relative;
+    top: -8px;
+    color: var(--text);
+}
+.Like,.Cart{
+    margin-inline: 5px;
+
+    span{
+            background-color: var(--primary);
+    }
+}
