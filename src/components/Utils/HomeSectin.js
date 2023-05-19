@@ -26,8 +26,8 @@ const HomeSectin = () => {
                     <div className='Top_Section'>
                     <form className="example" action="action_page.php">
                         <div className='AllCategories'>
-                        <h3 > All Categories    </h3>
-                        <FaAngleDown/>
+                        <h3 > All Product    </h3>
+                        {/* <FaAngleDown/> */}
                         </div>
 
                     <input type="text" placeholder=" What Do You Need?" name="search" />

@@ -12,4 +12,15 @@ export const RoutesConfigs = {
         title: "contac",
         component: lazy(() => import("../pages/ContactUs/ContactUsPage")),
       },
+     cart:{
+        url: "/cart",
+        title: "cart",
+        component: lazy(() => import("../pages/Cart/CartPage")),
+      },
+      product:{
+        url: "/product",
+        title: "product",
+        component: lazy(() => import("../pages/Product/Product")),
+      },
+
 }
