@@ -1,0 +1,24 @@
+
+
+.page {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+._404,
+.text {
+  color: lightgreen;
+  text-align: center;
+}
+
+._404 {
+  margin: 0.5em 0;
+}
+.text {
+  margin-bottom: 1em;
+  font-weight: 500;
+}

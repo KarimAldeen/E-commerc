@@ -26,13 +26,13 @@
     }
   }
   
-  @if $breakpoint == laptop {
-    @media only screen and (max-width: 1024px) {
+  @if $breakpoint == Minlaptop {
+    @media only screen and (max-width: 1125px) {
       @content;
     }
   }
     @if $breakpoint == tablet {    
-    @media only screen and (max-width: 950px) {
+    @media only screen and (max-width: 875px) {
       @content;
     }
   }

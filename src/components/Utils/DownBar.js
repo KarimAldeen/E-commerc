@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next';
 import { FaUserCircle } from "react-icons/fa";
 const DownBar = () => {
-    const [t] = useTranslation();
-
+    // const [t] = useTranslation();
+  
     return (
         <div className='DownBar'>
             <div className="btn-group">
@@ -23,11 +23,12 @@ const DownBar = () => {
                 </ul>
             </div>
             <nav className='NavBar'>
-                <Link to="/"> Home   </Link>
-                <Link to="/"> About Us  </Link>
-                <Link to="/">  Best Offer  </Link>
-                <Link to="/">  Most Salery  </Link>
-                <Link to="/">  Contact  </Link>
+               <form className="example" action="action_page.php">
+                    <input type="text" placeholder="Search.." name="search" />
+                    <button type="submit">
+                        <i className="fa fa-search" />
+                    </button>
+                </form>
 
             </nav>
         <div className='Login'>

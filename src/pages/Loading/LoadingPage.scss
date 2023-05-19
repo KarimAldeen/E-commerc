@@ -1,0 +1,15 @@
+.loading_page {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    flex-direction: column;
+  }
+  
+  .loading_page img {
+    max-width: 15rem;
+    margin-bottom: 3rem;
+  }
+  

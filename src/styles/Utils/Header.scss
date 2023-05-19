@@ -2,14 +2,41 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2vh 3vw;
-    a{
-    margin-inline: 5px;
-    color: var(--text);
-    font-size: 1.2vw;
+    padding: 2vh 8vw;
+    background: var(--bg2);
 
-    &:hover{
-        color: var(--primary);
+}
+.Header__Left{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    svg{
+        font-size: 1.2vw;
+        margin-inline: 6px;
     }
+    font-size: .9vw;
+}
+.Header__Right{
+    display: flex;
+
+    .Header__Right_1{
+        display: flex;
+        gap: 18px;
+                margin-inline: 10px;
+        svg{
+            font-size: 1.2vw;
+        }
+    }
+    .Header__Right_2{
+        margin-inline: 20px;
+        svg,img{
+           margin-inline: 10px; 
+        }
+    }
+    .Header__Right_3{
+        display: flex; align-items: center; gap: 4px;
+        svg{
+            font-size: 1.1vw;
+        }
     }
 }

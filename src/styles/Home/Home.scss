@@ -1,4 +1,236 @@
-.Home{
-    width: 100vw;
+.HomeSectin{
+    padding: 1vh 6vw;
+}
+
+.btn-lg{
+    border-radius:  0 !important;
+    &:hover,&:focus, &:focus-visible,&:active{
+        background: var(--secondary) !important;
+        color: var(--bg) !important;
+    }
+  
+}
+.Drop_Btn{
+    width: 20vw;
+    height: 50px;
+    background-color: var(--primary);
+    text-align: start;
+    color: var(--bg);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    &:hover,&:active,&:focus-visible{
+        background: var(--secondary);
+    }
+    i{
+    margin-inline: 10px;
+    }
+h3{
+    font-size: 21px;
+}   
+}
+.fa-bars{
+    font-size: 22px;
+}
+.DownBar{
+        display: flex;
+        gap: 60px;
+        align-items: center;
+        padding-inline: 6vw;
+
+}
+
+.dropdown-toggle::after{
+    font-size: 31px;
+}
+.dropdown-menu{
+    border-radius: 0 !important;
+
+    li{
+        width: 19.8vw;
+        font-size: 17px;
+        padding: 4px 10px;
+      
+}
+}
+.NavBar{
+    font-size: 1.6vw;
+    display: flex; align-items: center;
+    gap: 3vw;
+
+}
+.Login{
+    display: flex;
+    align-items: center;
+    height: 70px;
+margin-inline: 5px;
+position: relative; top: -10px;
+svg{
+    font-size: 3vw;
+}
+}
+.In-Login{
+   
+    display: flex; flex-direction: column; 
+    p{
+        margin: 0;
+    }
+}
+
+
+.example{
+    // @include Shadow;
+    outline: black;
+    border:1px solid #ebebeb;
+    width: 50vw;
+
+}
+form{
+    display: flex; align-items: center;
+    padding-left: 30px;
+}
+.AllCategories{
+width: 25%;
+position: relative;
+display: flex; align-items: center;
+gap: 20px;
+font-size: 17px;
+h3{
+    font-weight: bold;
+    font-size: 16px;
+}
+
+}
+form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: none;
+    outline: none;
+    float: left;
+    width: 55%;
+    background: var(--bg);
+
+  }
+  
+  /* Style the submit button */
+  form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: var(--primary);
+    color: white;
+    font-size: 17px;
+    border:none;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  form.example button:hover {
+    background: var(--secondary);
+  }
+  
+  /* Clear floats */
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  .AllCategories::after{
+    position: absolute;
+    right: 0;
+    top: 3px;
+    height: 20px;
+    width: 1px;
+    background: #000000;
+    opacity: .1;
+    content: "";
+}
+.Top_Section{
+    display: flex; align-items: center ; gap: 2vw;
+}
+.Top_Section_Right{
+    display: flex; align-items: center;
+    h4{
+        font-weight: bold;
+    }
+.Phone1{
+    height: 50px;
+    width: 50px;
+    background: #f5f5f5;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    float: left;
+    margin-right: 20px;
+    color: var(--primary);
+
+}
+    svg{
+        font-size: 1.2vw;
+       
+    }
+}
+.HomeSec{
+    margin-top: 30px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    object-fit: cover;
+}
+@include devices(Minlaptop){
+   .Top_Section_Right{
+    display: none;
+   }
+  
+   .col-lg-9 {
+    width: 65%;
+}
+.col-lg-3 {
+    width: 35%;
+}
+.dropdown-menu{
+    li{
+        width: 24.8vw;
+    }
     
 }
+.Drop_Btn{
+    width: 25vw;
+}
+
+}
+@include devices(tablet){
+
+    .col-lg-3 {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .Drop_Btn{
+        display: flex; position: relative;
+    }
+    .dropdown,.open>.dropdown-menu{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    
+    }
+    .col-lg-9 {
+        position: relative;
+        top: 200px;
+    }
+    .example{
+      
+        width: 80vw;
+    
+    }
+            
+   .col-lg-9 {
+    width: 100% !important;
+}
+ }
