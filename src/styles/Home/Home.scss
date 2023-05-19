@@ -2,6 +2,9 @@
     padding: 1vh 6vw;
     
 }
+.Bars{
+    display: none;
+}
 
 .btn-lg{
     border-radius:  0 !important;
@@ -210,6 +213,7 @@ form.example input[type=text] {
         width: 100%;
         display: flex;
         flex-direction: column;
+        height: 240px;
         
     }
     .Drop_Btn{
@@ -223,7 +227,7 @@ form.example input[type=text] {
     }
     .col-lg-9 {
         position: relative;
-        top: 200px;
+        // top: 200px;
     }
     .example{
       
@@ -235,3 +239,40 @@ form.example input[type=text] {
     width: 100% !important;
 }
  }
+ @include devices(mobile){
+
+    .col-lg-3,.Header__Right_1,.MidBar__Center,.MidBar__Right > p,.Header__Left,.AllCategories{
+        display: none !important;
+    }
+    // .Header {
+    //     justify-content: center;
+    // }   
+    .fa-lg{
+        font-size: 5vw;
+    }
+    .rounded-pill{
+        font-size: 2vw;
+    }
+    form.example input[type=text] {
+      
+        width: 70%;
+    
+      }
+      
+      /* Style the submit button */
+      form.example button {
+        width: 30%;
+     
+      }
+  
+      .Bars{
+        display: inline !important;
+        font-size: 4vw;
+        cursor:pointer;
+        z-index: 999999;
+    }
+    .BlackScreen{
+        display: inline !important;
+    }
+ }
+ 

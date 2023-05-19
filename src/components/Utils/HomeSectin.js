@@ -7,19 +7,17 @@ const HomeSectin = () => {
     <div className='HomeSectin'>
         <div class="row">
                 <div class="col-lg-3">
-                <div className="btn-group open">
-                <button className="btn Drop_Btn btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true" >
+                <div className="btn-group">
+                <button className="btn Drop_Btn btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true" >
                     <i className="fa fa-bars"></i>
                     <h3> All Departments</h3>
                 </button>
                 <ul className="dropdown-menu">
-                    {/* <li className="dropdown-header">All Food Type</li> */}
                     {departments?.map((i,index)=>(
-                    <li><a href="#" key={index} >{i}</a></li>
+                    <li key={index}><a href="#"  >{i}</a></li>
                     )
                     )}
                   
-                    {/* <li className="divider"></li> */}
                     
                 </ul>
             </div>
