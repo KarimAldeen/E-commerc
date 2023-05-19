@@ -1,4 +1,5 @@
 @import './Mixing.scss';
+@import './breakpoints.scss';
 @import './Varibils.scss';
 @import './App.scss';
 
@@ -7,5 +8,5 @@
 @import '../Home/Home.scss';
 @import '../Home/FeaturedProduct.scss';
 @import '../Utils/DownBar.scss';
-
+@import '../Home/categories.scss';
 @import '../Utils/Card.scss';

@@ -15,35 +15,35 @@ function FeaturedProduct() {
             name:"First Product" ,
             price:160 ,
             weight:30,
-            image : '../Images/HomeSec.jpg'
+            image : '/1.jpg'
         },
         {
-            id:1,
+            id:2,
+            name:"SEcond Product" ,
+            price:160 ,
+            weight:30,
+            image : '/1.jpg'
+        },
+        {
+            id:3,
+            name:"Third Product" ,
+            price:160 ,
+            weight:30,
+            image : '/1.jpg'
+        },
+        {
+            id:4,
             name:"First Product" ,
             price:160 ,
             weight:30,
-            image : '../Images/HomeSec.jpg'
+            image : '/1.jpg'
         },
         {
-            id:1,
+            id:5,
             name:"First Product" ,
             price:160 ,
             weight:30,
-            image : '../Images/HomeSec.jpg'
-        },
-        {
-            id:1,
-            name:"First Product" ,
-            price:160 ,
-            weight:30,
-            image : '../Images/HomeSec.jpg'
-        },
-        {
-            id:1,
-            name:"First Product" ,
-            price:160 ,
-            weight:30,
-            image : '../Images/HomeSec.jpg'
+            image : '/1.jpg'
         }
     ]
 
