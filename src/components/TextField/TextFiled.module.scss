@@ -1,0 +1,41 @@
+.input {
+    outline: gray;
+    height: 2.25rem;
+    border-radius: 6px;
+    background-color: #ffffff;
+    border: none;
+    width: 100%;
+  
+    padding-right: 1em;
+    padding-left: 1em;
+  
+    box-shadow: 0px 0px 7px #70707033;
+  }
+  
+  .wrapper {
+    position: relative;
+    width: 100%;
+  }
+  
+  .error_message {
+    font-family: sans-serif;
+    color: red;
+    font-size: smaller;
+  }
+  
+  html[dir="rtl"] {
+    .error_message {
+      line-height: 1.5em;
+    }
+  }
+  
+  html[dir="rtl"] {
+    .input {
+      &[name="phone"],
+      &[name="email"] {
+        direction: ltr;
+        text-align: right;
+      }
+    }
+  }
+  
