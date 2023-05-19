@@ -111,53 +111,46 @@
   margin-left: 30px;
 }
 .Top{
-    .btn-group>.btn{
-        width: 20px;
+    .dropdown-toggle{
+        width: 100px !important;
+    }
+}
+.Down{
+    i{
+        display: none;
+    }
+    h3{
+        font-size: 11px;
 
     }
-    .Drop_Btn{
-        width: 20vw;
-        height: 50px;
-        background-color: var(--primary);
-        text-align: start;
+    svg{
+        font-size: 12px;
+    }
+    button{
+        background: var(--primary);
         color: var(--bg);
-        font-weight: bold;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        text-align: center;
-        &:hover,&:active,&:focus-visible{
-            background: var(--secondary);
-        }
-        i{
-        margin-inline: 10px;
-        }
-    h3{
-        font-size: 21px;
-    }   
+        width:140px !important;
+        height: 40px;
     }
-    .fa-bars{
-        font-size: 22px;
-    }
-    .DownBar{
-            display: flex;
-            gap: 60px;
-            align-items: center;
-            padding-inline: 6vw;
-    
-    }
-    
     .dropdown-toggle::after{
-        font-size: 31px;
+        font-size: 21px;
     }
     .dropdown-menu{
-        border-radius: 0 !important;
-    
-        li{
-            width: 19.8vw;
-            font-size: 17px;
-            padding: 4px 10px;
-          
+        overflow-y: scroll;
+        height: 200px;
+    li{
+        width:118px;
+        font-size: 11px;
+        padding: 4px 10px;
+      
+}
+}
+.btn-lg{
+    border-radius:  0 !important;
+    &:hover,&:focus, &:focus-visible,&:active{
+        background: var(--secondary) !important;
+        color: var(--bg) !important;
     }
-    }
+  
+}
 }
