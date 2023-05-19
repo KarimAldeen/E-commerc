@@ -7,8 +7,8 @@ const HomeSectin = () => {
     <div className='HomeSectin'>
         <div class="row">
                 <div class="col-lg-3">
-                <div className="btn-group">
-                <button className="btn Drop_Btn btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true" >
+                <div className="btn-group open">
+                <button className="btn Drop_Btn dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true" >
                     <i className="fa fa-bars"></i>
                     <h3> All Departments</h3>
                 </button>

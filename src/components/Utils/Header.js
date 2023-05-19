@@ -8,41 +8,42 @@ import Word from '../../Images/Word.svg'
 const Header = () => {
   const [t] = useTranslation();
   const [Open, setOpen] = useState(false)
-  const departments = [ "FreshMeat","Vegetables","Fruit","Fresh","Ocean","Butter","Fastfood","Fresh","Papayaya","Oatmeal","Bananas"]
+  const departments = ["FreshMeat", "Vegetables", "Fruit", "Fresh", "Ocean", "Butter", "Fastfood", "Fresh", "Papayaya", "Oatmeal", "Bananas"]
 
   return (
     <div className='Header d-flex'>
       {Open ? <div className='BlackScreen'></div> : ''}
       <div className={Open ? `Bars SideBar` : 'Bars '}>
 
-        <div className='BarsLogo'  onClick={() => setOpen(v => !v)}> <FaBars /></div>
-        {Open? <img alt='' src={Word} className='Word'/>:""}
+        <div className='BarsLogo' onClick={() => setOpen(v => !v)}> <FaBars /></div>
+        {Open ? <img alt='' src={Word} className='Word' /> : ""}
 
         {Open ?
           <div className='in_SideBar'>
             <div className='Mid'>
               <a href="" className='Like'>
-                    <i className="fa fa-heart fa-lg "></i>
-                    <span className="badge rounded-pill badge-notification ">1</span>
-                </a>
-                <a href="" className='Cart'>
-                    <i className="fa fa-shopping-bag fa-lg "></i>
-                    <span className="badge rounded-pill badge-notification ">4</span>
-                </a>
+                <i className="fa fa-heart fa-lg "></i>
+                <span className="badge rounded-pill badge-notification ">1</span>
+              </a>
+              <a href="" className='Cart'>
+                <i className="fa fa-shopping-bag fa-lg "></i>
+                <span className="badge rounded-pill badge-notification ">4</span>
+              </a>
 
-                <strong> $150.00</strong>
+              <strong> $150.00</strong>
 
 
-              </div>
-            <div className='Top'> 
-              <NavLink to="/"> Home   </NavLink>
-            <NavLink to="/SHOP">  SHOP</NavLink>
-            <NavLink to="/PAGES">   PAGES  </NavLink>
-            <NavLink to="/BLOG">   BLOG  </NavLink>
-            <NavLink to="/Contact">  Contact  </NavLink>
             </div>
-           <div className="btn-group open">
-                <button className="btn Drop_Btn btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true" >
+            <div className='Top'>
+              <NavLink to="/"> Home   </NavLink>
+              <NavLink to="/SHOP">  SHOP</NavLink>
+              <NavLink to="/PAGES">   PAGES  </NavLink>
+              <NavLink to="/BLOG">   BLOG  </NavLink>
+              <NavLink to="/Contact">  Contact  </NavLink>
+            </div>
+            <div className='Down'>
+            <div className="btn-group open">
+                <button className="btn Drop_Btn dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true" >
                     <i className="fa fa-bars"></i>
                     <h3> All Departments</h3>
                 </button>
@@ -54,8 +55,10 @@ const Header = () => {
                   
                     
                 </ul>
+              </div>
+
             </div>
-              
+
           </div>
 
 
