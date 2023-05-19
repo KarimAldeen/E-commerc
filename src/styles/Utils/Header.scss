@@ -40,3 +40,124 @@
         }
     }
 }
+.SideBar{
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 200px;
+    background-color: white;
+    z-index: 999;
+    @include Shadow;
+    position: fixed;
+    display: block;
+    transition: all, 0.6s;
+    
+    .BarsLogo{
+        position: absolute;
+        right: 15px;
+    }
+}
+.BlackScreen{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    content: "";
+    z-index: 98;
+}
+.BlackScreen{
+    display: none;
+}
+.in_SideBar{
+    position: absolute;
+    padding: 20px 30px;
+    z-index: 999999;
+
+    .Top a{
+        color: #1c1c1c;
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #e1e1e1;
+        display: block;
+    }
+    .Mid{
+        display: flex; align-items: center;
+        margin-bottom: 20px;
+
+    }
+    .Mid a{
+        .fa-lg{
+            font-size: 20px;
+        }
+        .rounded-pill{
+            font-size: 7px;
+        }
+       
+    }
+    strong{
+        font-size: 11px !important;
+    }
+}
+.active{
+    color: var(--primary) !important;
+}
+.Word{
+  margin-top: 50px;
+  align-items: center;
+  width: 150px;
+  margin-left: 30px;
+}
+.Top{
+    .btn-group>.btn{
+        width: 20px;
+
+    }
+    .Drop_Btn{
+        width: 20vw;
+        height: 50px;
+        background-color: var(--primary);
+        text-align: start;
+        color: var(--bg);
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        text-align: center;
+        &:hover,&:active,&:focus-visible{
+            background: var(--secondary);
+        }
+        i{
+        margin-inline: 10px;
+        }
+    h3{
+        font-size: 21px;
+    }   
+    }
+    .fa-bars{
+        font-size: 22px;
+    }
+    .DownBar{
+            display: flex;
+            gap: 60px;
+            align-items: center;
+            padding-inline: 6vw;
+    
+    }
+    
+    .dropdown-toggle::after{
+        font-size: 31px;
+    }
+    .dropdown-menu{
+        border-radius: 0 !important;
+    
+        li{
+            width: 19.8vw;
+            font-size: 17px;
+            padding: 4px 10px;
+          
+    }
+    }
+}
