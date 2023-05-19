@@ -5,6 +5,7 @@ import DownBar from '../../components/Utils/DownBar'
 import HomeSectin from '../../components/Utils/HomeSectin'
 import FeaturedProduct from './FeaturedProduct'
 import Categories from './categories/Categories'
+import Footer from '../../layout/Footer/Footer'
 
 
 const HomePage = () => {
@@ -18,6 +19,8 @@ const HomePage = () => {
 
           <FeaturedProduct />
           <Categories />
+
+          <Footer/>
 
           
     </div>
