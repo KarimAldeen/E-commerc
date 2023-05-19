@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useEventListener } from "hooks/useEventListener";
+import { useEventListener } from "./useEventListener";
 
 export const useWindowSize = () => {
   const [windowSize, setWindowSize] = useState({

@@ -1,0 +1,55 @@
+
+
+.card{
+    margin: 100px 0 100px 80px;
+     width: 20vw;
+    min-width: 200px;
+
+    img{
+       width: 100%;
+        
+    }
+
+
+    .card-down{
+        padding: 10px;
+        border-top: 1px solid var(--primary);
+        font-size: 1.4em;
+        text-align: right;
+        .product-price{
+         
+            font-weight: 500;
+        }
+        .product-we{
+
+        }
+        .product-name{
+            font-weight: 600;
+            font-size: 1.6em;
+        }
+        .product-dis{
+            color: gray;
+        }
+        .button-con{
+            text-align: center;
+            
+            margin-top:5px ;
+            button{
+                border-radius: 18px;
+                font-size: 1.2em;
+                border: 1px solid var(--primary);
+                width: 10vw;
+                min-width: 100px;
+                padding: 10px;
+                color: var(--primary);
+                background-color: white;
+                transition: .4s;
+                &:hover{
+                    background-color: var(--primary);
+                    color: white;
+                }
+            }
+        }
+        
+    }
+}
