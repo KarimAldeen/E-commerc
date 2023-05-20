@@ -17,4 +17,20 @@ export const RoutesConfigs = {
         title: "product",
         component: lazy(() => import("../pages/Product/Product")),
       },
+      CardInfo:{
+        url: "/product/:id",
+        title: "CardInfo",
+        component: lazy(() => import("../pages/Product/CardInfo")),
+      },
+      login:{
+        url: "/login",
+        title: "login",
+        component: lazy(() => import("../pages/Auth/LoginPage")),
+      },
+      
+      contactus:{
+        url: "/contactus",
+        title: "contactus",
+        component: lazy(() => import("../pages/ContactUs/ContactUs_Page")),
+      },
 }

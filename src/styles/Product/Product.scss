@@ -1,82 +1,187 @@
-.Top_Product{
-    .row{
-height: 500px;
-border:1px solid #ebebeb;
+.Top_Product {.MidBar__Left {   display: none;}}
 
-}
-.MidBar__Left{
+.Down_Product {
+  padding-inline: 2vw;
 
-    display: none;
-}
-}
+  .row {
+    border: 1px solid #ebebeb;
 
+  }
 
-.Down_Product{
-    padding-inline: 2vw;
-    .row{
-        height: 500px;
-        border:1px solid #ebebeb;
-        
-        }
-    .col-lg-3{
-        border:1px solid #ebebeb;
-        padding: 5vh 3vw;
-       
-    }
+  .col-lg-3 {
+    border: 1px solid #ebebeb;
+    padding: 5vh 3vw;
+    position: sticky;
+    
+    top: 10px;
+  }
 }
 
-.col_Product_Top{
-    display: flex; justify-content: center;align-items: center;
-    margin-bottom: 30px;
+.col_Product_Top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
 
-    svg{
-        font-size: 3vw;
-        margin-inline: 10px;
-    }
-    h4{
-        height: 15px;
-        margin-bottom: 0;
-    }
-}
-.slidecontainer_Top{
-    display: flex; align-items: center;
-    margin: 10px 0px;
-    svg{
-        font-size: 1.5vw;
-        margin-inline: 3px;
-        transform: translateY(-3px);
-        -webkit-transform: translateY(-3px);
-        -moz-transform: translateY(-3px);
-        -ms-transform: translateY(-3px);
-        -o-transform: translateY(-3px);
-}
-}
-.slider {
-    -webkit-appearance: none;
-    width: 100%;
+  svg {
+    font-size: 3vw;
+    margin-inline: 10px;
+  }
+
+  h4 {
     height: 15px;
-    border-radius: 5px;  
-    background: #d3d3d3;
-    outline: none;
-    opacity: 0.7;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
+    font-weight: bold;
+    margin-bottom: 0;
   }
-  
-  .slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%; 
-    background: var(--primary);
-    cursor: pointer;
+}
+
+.slidecontainer_Top {
+  display: flex;
+  align-items: center;
+  margin: 10px 0px;
+
+  svg {
+    font-size: 1.5vw;
+    margin-inline: 3px;
+    transform: translateY(-3px);
+    -webkit-transform: translateY(-3px);
+    -moz-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    -o-transform: translateY(-3px);
   }
-  
-  .slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background: #04AA6D;
-    cursor: pointer;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: 1px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  -ms-border-radius: 1px;
+  -o-border-radius: 1px;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--primary);
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+.col_Product_Down {
+  margin-top: 20px;
+
+  h4 {
+    font-weight: bold;
+    margin-bottom: 10px;
+
   }
+}
+
+.Product {
+  input[type="checkbox"] {
+    height: 15px;
+    width: 15px;
+
+  }
+
+  .form-check-label {
+    font-size: 12px;
+    margin: 3px 10px;
+    font-weight: 500;
+  }
+
+  .form-check {
+    margin-bottom: 10px;
+
+  }
+}
+
+.col_Product_Mid {
+  margin-bottom: 20px;
+}
+
+.Product {
+  .form-select {
+    height: 40px;
+    font-size: 16px;
+
+    option {
+      font-size: 16px;
+      outline: none !important;
+      border: none !important;
+
+    }
+  }
+
+  .Category_sel {
+    margin-bottom: 15px;
+  }
+
+  .Card_Top {
+    padding: 4vh 3vw;
+    font-size: 2vw;
+
+  }
+
+}
+
+.btn-donate {
+  --clr-font-main: #8a1e41;
+  --btn-bg-1: #976a47;
+  --btn-bg-2: #8a1e41;
+  --btn-bg-color: #976a47;
+  --radii: 0.5em;
+  cursor: pointer;
+  min-width: 250px;
+  min-height: 44px;
+  font-size: 16px;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-weight: 500;
+  transition: 0.8s;
+  background-size: 280% auto;
+  background-image: linear-gradient(325deg, var(--btn-bg-2) 0%, var(--btn-bg-1) 55%, var(--btn-bg-2) 90%);
+  border: none;
+  border-radius: var(--radii);
+  color: var(--bg);
+  box-shadow: #8a1e41;
+}
+
+.btn-donate:hover {
+  background-position: right top;
+}
+
+.btn-donate:is(:focus, :focus-within, :active) {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--btn-bg-color), 0 0 0 6px var(--btn-bg-2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-donate {
+    transition: linear;
+  }
+}
+
+.Button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
