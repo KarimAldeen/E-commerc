@@ -7,6 +7,11 @@ export const RoutesConfigs = {
         title: "home",
         component: lazy(() => import("../pages/Home/HomePage")),
       },
+      contac: {
+        url: "/contac",
+        title: "contac",
+        component: lazy(() => import("../pages/ContactUs/ContactUsPage")),
+      },
      cart:{
         url: "/cart",
         title: "cart",
@@ -17,6 +22,7 @@ export const RoutesConfigs = {
         title: "product",
         component: lazy(() => import("../pages/Product/Product")),
       },
+    
       CardInfo:{
         url: "/product/:id",
         title: "CardInfo",
@@ -32,5 +38,4 @@ export const RoutesConfigs = {
         url: "/contactus",
         title: "contactus",
         component: lazy(() => import("../pages/ContactUs/ContactUs_Page")),
-      },
-}
+      }}
