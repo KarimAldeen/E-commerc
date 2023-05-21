@@ -16,8 +16,8 @@ const HomePage = () => {
           {/* <DownBar/> */}
           <HomeSectin/>
 
-
-          <FeaturedProduct />
+          
+          <FeaturedProduct  />
           <Categories />
 
           <Footer/>

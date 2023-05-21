@@ -246,12 +246,10 @@ form.example input[type=text] {
  }
  @include devices(mobile){
 
-    .col-lg-3,.Header__Right_1,.MidBar__Center,.MidBar__Right > p,.Header__Left,.AllCategories{
+    .col-lg-3,.Header__Right_1,.MidBar__Center,.MidBar__Right > p,.Header__Left,.AllCategories,.Top_Section_Right{
         display: none !important;
     }
-    // .Header {
-    //     justify-content: center;
-    // }   
+      
     .fa-lg{
         font-size: 5vw;
     }
@@ -260,13 +258,13 @@ form.example input[type=text] {
     }
     form.example input[type=text] {
       
-        width: 70%;
+        width: 70% !important;
     
       }
       
       /* Style the submit button */
       form.example button {
-        width: 30%;
+        width: 30% !important;
      
       }
   
@@ -279,5 +277,17 @@ form.example input[type=text] {
     .BlackScreen{
         display: inline !important;
     }
+    .example{
+      
+margin-right: 0 !important; 
+   
+    }
+   .Top_Section{
+    justify-content: center;
+   }
+   .HomeSectin .example{
+    width: 80vw;
+   }
+
  }
  
