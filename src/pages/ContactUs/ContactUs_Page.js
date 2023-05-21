@@ -1,8 +1,10 @@
 import React from 'react'
 import contact from '../../Images/Contact.svg'
+import Page from '../../layout/Page'
 const ContactUs_Page = () => {
   return (
-    <div className='ContactUs_Page'>
+    <Page>
+   <div className='ContactUs_Page'>
 <div className="container">
   <div className="row justify-content-center">
     <div className="col-md-10">
@@ -16,7 +18,7 @@ const ContactUs_Page = () => {
           <p>
             <img
               src={contact}
-              alt="Image"
+              alt="Immage"
               className="img-fluid"
             />
           </p>
@@ -95,6 +97,8 @@ const ContactUs_Page = () => {
 
 
     </div>
+    </Page>
+ 
   )
 }
 

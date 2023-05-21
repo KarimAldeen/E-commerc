@@ -10,20 +10,20 @@ const MidBar = () => {
             </div>
             <div className='MidBar__Center'>
                 <NavLink to="/"> Home   </NavLink>
-                <NavLink to="/SHOP">  SHOP</NavLink>
-                <NavLink to="/PAGES">   PAGES  </NavLink>
-                <NavLink to="/BLOG">   BLOG  </NavLink>
-                <NavLink to="/Contact">  Contact  </NavLink>
+                <NavLink to="/product">products</NavLink>
+              
+                <NavLink to="/contactus">  Contact  </NavLink>
+                <NavLink to="/login">signin-up</NavLink>
 
 
             </div>
 
             <div className='MidBar__Right'>
-                <a href="" className='Like'>
+                <a href="/" className='Like'>
                     <i className="fa fa-heart fa-lg "></i>
                     <span className="badge rounded-pill badge-notification ">1</span>
                 </a>
-                <a href="" className='Cart'>
+                <a href="/" className='Cart'>
                     <i className="fa fa-shopping-bag fa-lg "></i>
                     <span className="badge rounded-pill badge-notification ">4</span>
                 </a>
