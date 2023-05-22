@@ -1,4 +1,7 @@
 import React from 'react'
+import Page from '../../layout/Page';
+import Footer from '../../layout/Footer/Footer';
+import Header from '../../components/Utils/Header';
 
 const LoginPage = () => {
     const signUp=()=>{
@@ -10,7 +13,9 @@ const LoginPage = () => {
         container.classList.remove("right-panel-active");
         }
   return (
-<div className='LoginPage'>
+    <>
+    <Header/>
+        <div className='LoginPage'>
   <div className="container" id="container">
     <div className="form-container sign-up-container">
       <form action="#">
@@ -54,7 +59,10 @@ const LoginPage = () => {
     </div>
   </div>
  
-</div>
+  </div>
+  <Footer/>
+    </>
+
   )
 }
 

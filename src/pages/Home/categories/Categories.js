@@ -5,24 +5,24 @@ function Categories() {
   const data  = [
     {id:1,
     category_image:'/1.jpg',
-    category_name:'first'
+    category_name:'First'
   },
   {id:2,
     category_image:'/1.jpg',
-    category_name:'first'
+    category_name:'Second'
   },
   {id:3,
     category_image:'/1.jpg',
-    category_name:'first'
+    category_name:'Third'
   },
   {id:4,
     category_image:'/1.jpg',
-    category_name:'first'
+    category_name:'Fourth'
   }
   ]
   return (
     <section className='category-section'>
-        <SubTiltle title="Categories Product"/>
+        <SubTiltle title="Categories" show_more={false}/>
 
       <div className='category-con' >
         
