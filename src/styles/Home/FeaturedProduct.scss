@@ -1,8 +1,6 @@
 
 
 .FeaturedProduct{
-    height: 100vh;
-    margin-top: 80px;
     overflow: hidden;
     .header-FeaturedProduct{
         
@@ -17,7 +15,7 @@
     display: flex;
     justify-content: space-between;
      align-items: center;
-     padding: 5vh 5vw;
+     margin : 7vh 5vw 7vh 5vw;
      direction:rtl;
      h1{
       font-weight: bold;  

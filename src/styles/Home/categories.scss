@@ -1,6 +1,5 @@
 .category-section{
-    min-height: 100vh;
-
+margin-block: 80px;
     .category-header{
         text-align: center;
         font-size: 2em;
@@ -12,14 +11,31 @@
         display: flex;
         align-items: center;
         flex-direction: column;
-        margin-top: 40px;
-       width: 33%;
-       
+        margin: 40px ;
+        position: relative;
+       width: 160px;
+
+      
+       h2{
+            position: absolute;
+            top: 0%;
+            background-color: var(--primary);
+            width: 100%;
+            text-align: center;
+            color: var(--bg);
+           border-top-left-radius: 20%;
+           border-top-right-radius: 20%;
+}
         img{
-            width: 70%;
+            width: 160px;
             height: 160px;
-            border-radius: 20px;
-        }
+            object-fit: cover;
+            border-radius:20%;
+            -webkit-border-radius:20%;
+            -moz-border-radius:20%;
+            -ms-border-radius:20%;
+            -o-border-radius:20%;
+}
         .category-button{
             width: 60%;
             border-radius: 8px;

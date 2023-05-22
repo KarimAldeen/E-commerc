@@ -3,7 +3,7 @@ import React from 'react'
 function Footer() {
   return (
     
-    <>
+    <div className="Footer">
     
 <footer class="footer-distributed">
 
@@ -66,7 +66,7 @@ function Footer() {
       </div>
 
     </footer>
-    </>
+    </div>
   )
 }
 

@@ -5,7 +5,7 @@ import { Routes, BrowserRouter as Router, Route } from "react-router-dom";
 
 import AuthComponents from "./AuthComponents";
 import { RoutesConfigs } from "./config/RouteConfig";
-import { BarLoader } from "react-spinners";
+import Loader from "./components/Utils/Loader";
 
 
 
@@ -13,7 +13,7 @@ const NotFoundPage = lazy(() => import("./pages/NotFound/NotFound"));
 
 const AppRouter = () => {
   return (
-  <Suspense fallback={<BarLoader />}>
+  <Suspense fallback={<Loader />}>
      <Router>
       <AppRoutes />
     </Router>

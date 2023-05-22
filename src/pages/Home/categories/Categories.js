@@ -1,5 +1,6 @@
 import React from 'react'
 import {BsFillArrowRightSquareFill} from 'react-icons/bs'
+import SubTiltle from '../../../components/SubTiltle'
 function Categories() {
   const data  = [
     {id:1,
@@ -21,9 +22,8 @@ function Categories() {
   ]
   return (
     <section className='category-section'>
-      <div className='category-header'>
-          <p>Category</p>
-      </div>
+        <SubTiltle title="Categories Product"/>
+
       <div className='category-con' >
         
         {
@@ -31,9 +31,11 @@ function Categories() {
             return (
               <div className='category-card'>
                 <img src={category.category_image} alt='few' />
-                <button className='category-button'>
+                <h2> {category.category_name} </h2>
+               
+                {/* <button className='category-button'>
                    {category.category_name} 
-                </button>
+                </button> */}
                
               </div>
             )
