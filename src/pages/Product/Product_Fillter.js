@@ -1,13 +1,21 @@
 import React from 'react'
-import { FaShoppingBasket, FaDollarSign } from "react-icons/fa";
+import { FaWindowClose, FaDollarSign } from "react-icons/fa";
 
 const Product_Fillter = () => {
     const departments = ["", "FreshMeat", "Vegetables", "Fruit", "Fresh", "Ocean", "Butter", "Fastfood", "Fresh", "Papayaya", "Oatmeal", "Bananas"]
-
+    function Close(){
+        const Left_Side = document.getElementById('Left_Side');
+        Left_Side.classList.remove("FillterON");
+        }
     return (
-        <div className="col-lg-3 col_Product  fillter-con">
+        <div className="col-lg-3 col_Product  fillter-con Left_Side" id='Left_Side'>
+            <div className="close_Fillter"onClick={()=>Close()} >
+                <i >  <FaWindowClose  /></i>
+          
+            </div>
+                           
+
             <div className='col_Product_Top'>
-                {/* <FaShoppingBasket /> */}
                 <h4>Search in All Prouct</h4>
             </div>
 

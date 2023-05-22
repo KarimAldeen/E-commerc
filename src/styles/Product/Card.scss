@@ -9,6 +9,7 @@
 .col_Product {
     .Cards{
         margin: 10px !important;
+       
     }
 }
 .Cards{
@@ -136,3 +137,30 @@
 .Flex{
     display: flex;  align-items: center; gap: 20%;
 }
+@include devices(tablet){
+   .Cards{
+    width: 170px; 
+     margin: 10px auto 100px auto !important;
+     
+   }
+.product-card {
+    width: 180px !important;
+    position: relative;
+    box-shadow: 0 2px 7px #dfdfdf;
+    margin: 10px auto;
+    background: #fafafa;
+    
+}
+
+.product-tumb {
+   
+    height: 150px !important;
+  
+}
+.product-price {
+    font-size: 12px !important;
+}
+.product-links a{
+    font-size: 11px !important;
+}
+  }
