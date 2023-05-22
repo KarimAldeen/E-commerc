@@ -5,7 +5,7 @@ const Product_Fillter = () => {
     const departments = ["", "FreshMeat", "Vegetables", "Fruit", "Fresh", "Ocean", "Butter", "Fastfood", "Fresh", "Papayaya", "Oatmeal", "Bananas"]
 
     return (
-        <div className="col-lg-3 col_Product">
+        <div className="col-lg-3 col_Product  fillter-con">
             <div className='col_Product_Top'>
                 {/* <FaShoppingBasket /> */}
                 <h4>Search in All Prouct</h4>
@@ -56,7 +56,7 @@ const Product_Fillter = () => {
                 </div>
 
             </div>
-
+ 
         </div>
     )
 }

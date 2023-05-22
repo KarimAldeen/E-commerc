@@ -11,15 +11,12 @@ const ContactUs_Page = () => {
       <div className="row justify-content-center">
         <div className="col-md-6">
           <h3 className="heading mb-4">Let's talk about everything!</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas
-            debitis, fugit natus?
-          </p>
+      
           <p>
             <img
               src={contact}
               alt="Immage"
-              className="img-fluid"
+              className="img-fluid image-contact-us"
             />
           </p>
         </div>
@@ -81,7 +78,7 @@ const ContactUs_Page = () => {
                 <input
                   type="submit"
                   defaultValue="Send Message"
-                  className="btn btn-primary rounded-0 py-2 px-4"
+                  className="btn btn-primary rounded-0 py-2 px-4 button-submit"
                 />
                 <span className="submitting" />
               </div>

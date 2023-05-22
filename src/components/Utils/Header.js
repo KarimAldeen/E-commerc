@@ -36,10 +36,10 @@ const Header = () => {
             </div>
             <div className='Top'>
               <NavLink to="/"> Home   </NavLink>
-              <NavLink to="/SHOP">  SHOP</NavLink>
-              <NavLink to="/PAGES">   PAGES  </NavLink>
-              <NavLink to="/BLOG">   BLOG  </NavLink>
-              <NavLink to="/Contact">  Contact  </NavLink>
+              <NavLink to="/product"> Product</NavLink>
+              <NavLink to="/contactus">Contact Us</NavLink>
+              <NavLink to="/login">signin-up</NavLink>
+              <NavLink to="/cart">Cart</NavLink>
             </div>
             <div className='Down'>
             <div className="btn-group open">

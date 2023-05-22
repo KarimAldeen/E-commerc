@@ -16,11 +16,11 @@ const SwiperComponent = ({ children, slidesPerView =3 }) => {
     <Swiper
     modules={[Navigation, Pagination, Scrollbar, A11y , Autoplay]}
     spaceBetween={0}
-    slidesPerView={width  < PHONE ?  2 : width > LARGLAPTOP ?4: 3}
+    slidesPerView={width  < PHONE ?  1 : width > LARGLAPTOP ?3: 2}
     pagination={{ clickable: true }}
     onSwiper={(swiper) => console.log(swiper)}
     onSlideChange={() => console.log('slide change')}
-    centeredSlides={false}
+    centeredSlides={true}
     autoplay={{
       delay: 3000,
       disableOnInteraction: false,

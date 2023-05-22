@@ -5,8 +5,15 @@
     padding-inline: 3vw;
     gap: 30px;
 }
+.col_Product {
+    .Cards{
+        margin: 10px !important;
+    }
+}
 .Cards{
     width: 220px; 
+     margin: 100px auto 100px auto;
+    
 .product-card {
     width: 220px;
     position: relative;

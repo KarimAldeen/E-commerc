@@ -1,9 +1,11 @@
 
+
 .FeaturedProduct{
     height: 100vh;
     margin-top: 80px;
     overflow: hidden;
     .header-FeaturedProduct{
+        
         text-align: center;
         p{
             font-weight: 800;
@@ -22,6 +24,6 @@
      }
      
 }
-.swiper-slide {
-width: 350px !important;
-}
+// .swiper-slide {
+// // width: 350px !important;
+// }

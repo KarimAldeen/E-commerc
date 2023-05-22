@@ -1,7 +1,12 @@
 .Top_Product {.MidBar__Left {   display: none;}}
 
+.fillter-con{
+ 
+ height: 100vh;
+}
 .Down_Product {
   padding-inline: 2vw;
+  margin-bottom: 20px;
 
   .row {
     border: 1px solid #ebebeb;
@@ -87,6 +92,7 @@
 
 .col_Product_Down {
   margin-top: 20px;
+  
 
   h4 {
     font-weight: bold;
@@ -185,3 +191,25 @@
   align-items: center;
 }
 
+.header-products{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  .button-con{
+    width: 200px;
+    
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    button{
+      border-radius: 10px;
+      padding: 10px;
+      border: 1px solid var(--secondary);
+      font-size: 1.4em;
+      background-color: var(--primary);
+      color: white;
+      @include Shadow
+    }
+
+  }
+}
