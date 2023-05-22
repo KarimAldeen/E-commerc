@@ -20,7 +20,7 @@ const Product_Card = () => {
       
     <div className='Product_Card'>
       {[1,2,3,4,5,1].map((i,index)=>(
-        <div key={index}>
+        <div key={index} className='card-product-page'>
             <Card/>
         </div>
 

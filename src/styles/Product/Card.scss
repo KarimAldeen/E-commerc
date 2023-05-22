@@ -2,6 +2,7 @@
 .Product_Card{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     padding-inline: 3vw;
     gap: 30px;
 }

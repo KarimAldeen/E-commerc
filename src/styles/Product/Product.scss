@@ -149,6 +149,7 @@
     padding: 4vh 3vw;
     font-size: 2vw;
 
+
   }
 
 }
@@ -215,5 +216,12 @@
       @include Shadow
     }
 
+  }
+}
+@include devices(mobile){
+
+  .Card_Top{
+    font-size: 10px !important;
+    font-weight: 600;
   }
 }
