@@ -27,6 +27,8 @@ const LoginPage = () => {
         <input type="text" placeholder="Name" />
         <input type="email" placeholder="Email" />
         <input type="password" placeholder="Password" />
+        <h3 onClick={()=>signIn()} className='Pointer'>Have Account?</h3>
+
         <button className='M_Top'>Sign Up</button>
       </form>
     </div>
@@ -37,7 +39,7 @@ const LoginPage = () => {
         <span>or use your account</span>
         <input type="email" placeholder="Email" />
         <input type="password"  placeholder="Password" />
-        <a href="#">Forgot your password?</a>
+        <h3 onClick={()=>signUp()} className='Pointer'>Creat New Account?</h3>
         <button className='M_Top'>Sign In</button>
       </form>
     </div>

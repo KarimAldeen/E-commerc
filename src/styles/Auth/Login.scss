@@ -3,11 +3,11 @@
 
 
 .LoginPage{
-  display: flex; justify-content: center; align-items: center; height: 100vh;
+  display: flex; justify-content: center; align-items: center; 
 
   
   color: var(--secondary);
-  background-color: var(--bg2);
+  background-color: var(--bg);
   form{
     margin-bottom: 20px;
 
@@ -90,6 +90,7 @@
     padding: 12px 15px;
     margin: 8px 0;
     width: 100%;
+    font-size: 19px;
   }
   
   .container {
@@ -214,6 +215,31 @@
     transform: translateX(20%);
   }
   
-
- 
+.Pointer{
+  cursor: pointer;
+}
+ @include devices(tablet){
+  .overlay-container{
+    display: none !important;
+  }
+  .sign-in-container{
+    width: 100%;
+   }
+   .sign-up-container{
+    transform: translateX(0%) !important;
+    width: 100% !important;
+    -webkit-transform: translateX(0%) !important;
+    -moz-transform: translateX(0%) !important;
+    -ms-transform: translateX(0%) !important;
+    -o-transform: translateX(0%) !important;
+}
+    .container{
+      width: 50vw;
+    }
+ }
+ @include devices(mobile){
+  .container{
+    width: 70vw;
+  }
+ }
 }
