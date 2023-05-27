@@ -4,9 +4,11 @@
 
 .Product{
 
+
   .fillter-con{
-   
+  
    height: 100vh;
+
   }
   .Down_Product {
     padding-inline: 2vw;
@@ -20,7 +22,7 @@
     .col-lg-3 {
       border: 1px solid #ebebeb;
       padding: 5vh 3vw;
-      position: sticky;
+      // position: sticky;
       
       top: 10px;
     }
@@ -31,6 +33,7 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 30px;
+    
   
     svg {
       font-size: 3vw;
@@ -195,6 +198,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    // flex-direction: column;
     .button-con{
       width: 200px;
       
@@ -241,7 +245,7 @@
       display: block !important;
     }
     .col-lg-3 {
-      position: absolute !important;
+      position: fixed !important;
       top: -5px !important;
       transform: translateX(-200%);
       min-width: 50% !important;
@@ -291,7 +295,7 @@
     display: block !important;
   }
   .col-lg-3 {
-    position: absolute !important;
+    // position: absolute !important;
     top: -5px !important;
     transform: translateX(-200%);
     min-width: 50% !important;
@@ -323,6 +327,17 @@ width:45vw;
 
 }
 @include devices(mobile){
+  .button-con{
+    width: 180px !important;
+  
+    button{
+     
+      padding: 7px !important;
+    
+      font-size: 1.2em !important
+     
+    }
+  }
   .col-lg-3{
     display: inline !important;
   }
@@ -333,7 +348,7 @@ width:45vw;
     display: block !important;
   }
   .col-lg-3 {
-    position: absolute !important;
+    // position: absolute !important;
     top: -5px !important;
     transform: translateX(-150%);
     min-width: 50% !important;

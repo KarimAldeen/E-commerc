@@ -8,7 +8,7 @@ const Product_Fillter = () => {
         Left_Side.classList.remove("FillterON");
         }
     return (
-        <div className="col-lg-3 col_Product  fillter-con Left_Side" id='Left_Side'>
+        <div className="col-lg-3 col_Product  fillter-con Left_Side position-st" id='Left_Side'>
             <div className="close_Fillter"onClick={()=>Close()} >
                 <i >  <FaWindowClose  /></i>
           

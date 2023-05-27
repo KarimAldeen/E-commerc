@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { FaEnvelope, FaGoogle, FaInstagram, FaFacebookSquare, FaTwitter, FaChevronDown, FaUserAlt, FaBars } from "react-icons/fa";
 import English from '../../Images/English.svg'
 import Word from '../../Images/Word.svg'
+import LanguageDropdown from './LangDropDown';
 
 const Header = () => {
   const [t] = useTranslation();
@@ -22,7 +23,7 @@ const Header = () => {
           <div className='in_SideBar'>
             <div className='Mid'>
               <a href="" className='Like'>
-                <i className="fa fa-heart fa-lg "></i>
+                <i className="fa fa-heart fa-lg"></i>
                 <span className="badge rounded-pill badge-notification ">1</span>
               </a>
               <a href="" className='Cart'>
@@ -77,14 +78,15 @@ const Header = () => {
           <Link to="/"> <FaInstagram /></Link>
           <Link to="/"> <FaFacebookSquare /></Link>
           <Link to="/"> <FaTwitter /></Link>
-        </div>|
-        <div className='Header__Right_2'>
-          <img className='Flag' alt='' src={English} width={20} height={20} />
-          English
-          <FaChevronDown />
         </div>
-        <div className='Header__Right_3'>
-          <FaUserAlt />
+        <div className='Header__Right_2'>
+          <LanguageDropdown />
+          {/* <img className='Flag' alt='' src={English} width={20} height={20} />
+          English
+          <FaChevronDown /> */}
+        </div>
+        <div className='Header__Right_3' >
+          <FaUserAlt size={15}/>
           Login
         </div>
 
