@@ -3,7 +3,6 @@
 }
 
 .Product{
-  .Top_Product {.MidBar__Left {   display: none;}}
 
   .fillter-con{
    
@@ -242,15 +241,11 @@
       display: block !important;
     }
     .col-lg-3 {
-      position: absolute !important; top: -5px !important;
+      position: absolute !important;
+      top: -5px !important;
       transform: translateX(-200%);
-      -webkit-transform: translateX(-200%);
-      -moz-transform: translateX(-200%);
-      -ms-transform: translateX(-200%);
-      -o-transform: translateX(-200%);
       min-width: 50% !important;
-
-  }
+}
   .row .col-lg-9  {
     width: 100% !important;
   }
@@ -276,5 +271,92 @@
   width:45vw;
 
 }
+@include devices(mobile){
+  .Card_Top{
+    font-size: 10px !important;
+    font-weight: 600;
+  }
 
+ 
+}
+.close_Fillter{
+  
+  display: none;
+}
+@include devices(tablet){
+  .close_Fillter{
+    direction: rtl;
+    font-size: 4vw;
+    cursor: pointer;
+    display: block !important;
+  }
+  .col-lg-3 {
+    position: absolute !important;
+    top: -5px !important;
+    transform: translateX(-200%);
+    min-width: 50% !important;
+}
+.row .col-lg-9  {
+  width: 100% !important;
+}
+.Fillter{
+  display: flex !important;
+}
+}
+.Card_Top{
+  display: flex;
+}
+.FillterON{
+  transform: translateX(0%);
+  -webkit-transform: translateX(0%);
+  -moz-transform: translateX(0%);
+  -ms-transform: translateX(0%);
+  -o-transform: translateX(0%);
+  z-index: 999;
+  background: white;
+
+}
+.btn-donate {
+
+width:45vw;
+
+
+}
+@include devices(mobile){
+  .col-lg-3{
+    display: inline !important;
+  }
+  .close_Fillter{
+    direction: rtl;
+    font-size: 4vw;
+    cursor: pointer;
+    display: block !important;
+  }
+  .col-lg-3 {
+    position: absolute !important;
+    top: -5px !important;
+    transform: translateX(-150%);
+    min-width: 50% !important;
+    -webkit-transform: translateX(-150%);
+    -moz-transform: translateX(-150%);
+    -ms-transform: translateX(-150%);
+    -o-transform: translateX(-150%);
+}
+.row .col-lg-9  {
+  width: 100% !important;
+}
+.Fillter{
+  display: flex !important;
+}
+.FillterON{
+  transform: translateX(0%);
+  -webkit-transform: translateX(0%);
+  -moz-transform: translateX(0%);
+  -ms-transform: translateX(0%);
+  -o-transform: translateX(0%);
+  z-index: 999;
+  background: white;
+
+}
+}
 }

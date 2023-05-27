@@ -2,6 +2,7 @@ import React from 'react'
 import Arabic from '../../Images/Logo_Arabic.svg'
 import Width from '../../Images/Width.svg'
 import { NavLink } from 'react-router-dom'
+import { Tooltip } from 'react-tooltip'
 const MidBar = () => {
     return (
         <div className='MidBar'>
@@ -14,19 +15,25 @@ const MidBar = () => {
               
                 <NavLink to="/contactus">  Contact  </NavLink>
                 <NavLink to="/login">signin-up</NavLink>
+                <NavLink to="/order">Order</NavLink>
 
 
             </div>
 
             <div className='MidBar__Right'>
-                <a href="/" className='Like'>
-                    <i className="fa fa-heart fa-lg "></i>
+                <NavLink to="/allorder" className='Like Tool'>
+                    <i className="fas fa-luggage-cart fa-lg " data-tooltip-id="AllOrder" data-tooltip-content="All Order"></i>
+                    <Tooltip id="AllOrder" className='ToolTip' />
+
+
                     <span className="badge rounded-pill badge-notification ">1</span>
-                </a>
-                <a href="/" className='Cart'>
-                    <i className="fa fa-shopping-bag fa-lg "></i>
+                </NavLink>
+                <NavLink to="/cart" className='Cart Tool'>
+                    <i className="fa fa-shopping-bag fa-lg "  data-tooltip-id="Cart" data-tooltip-content="Cart"></i>
+                    <Tooltip id="Cart" className='ToolTip' />
+
                     <span className="badge rounded-pill badge-notification ">4</span>
-                </a>
+                </NavLink>
 
                 <p> item:<strong> $150.00</strong></p>
 

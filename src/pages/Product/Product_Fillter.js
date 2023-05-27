@@ -25,7 +25,7 @@ const Product_Fillter = () => {
                         <input class="form-control" type="text" placeholder="Search" aria-label="Search"></input>
 
                     </div>
-                    <div className='slidecontainer_Top'><h4>Price</h4> <FaDollarSign /></div>
+                    {/* <div className='slidecontainer_Top'><h4>Price</h4></div>
                     <input
                         type="range"
                         min={1}
@@ -33,7 +33,7 @@ const Product_Fillter = () => {
                         defaultValue={50}
                         className="slider"
                         id="myRange"
-                    />
+                    /> */}
                 </div>
 
             </div>

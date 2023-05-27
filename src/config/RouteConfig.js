@@ -22,7 +22,17 @@ export const RoutesConfigs = {
         title: "product",
         component: lazy(() => import("../pages/Product/Product")),
       },
+      order:{
+        url: "/order",
+        title: "order",
+        component: lazy(() => import("../pages/Order/OrderPage")),
+      },
     
+      allorder:{
+        url: "/allorder",
+        title: "allorder",
+        component: lazy(() => import("../pages/Order/AllOrder")),
+      },
       CardInfo:{
         url: "/product/:id",
         title: "CardInfo",

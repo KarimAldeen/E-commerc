@@ -1,0 +1,68 @@
+.AllOrder{
+
+
+.cell-1 {
+  border-collapse: separate;
+  border-spacing: 0 4em;
+  background: #fff;
+  border-bottom: 5px solid transparent;
+  /*background-color: gold;*/
+  background-clip: padding-box;
+  font-size: 1.2vw;
+}
+
+thead {
+  background: var(--bg2);
+  font-size: 1.5vw; 
+
+}
+
+.toggle-btn {
+  width: 40px;
+  height: 21px;
+  background: grey;
+  border-radius: 50px;
+  padding: 3px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s 0.1s ease-in-out;
+  -moz-transition: all 0.3s 0.1s ease-in-out;
+  -o-transition: all 0.3s 0.1s ease-in-out;
+  transition: all 0.3s 0.1s ease-in-out;
+  -ms-transition: all 0.3s 0.1s ease-in-out;
+}
+
+.toggle-btn > .inner-circle {
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border-radius: 50%;
+  -webkit-transition: all 0.3s 0.1s ease-in-out;
+  -moz-transition: all 0.3s 0.1s ease-in-out;
+  -o-transition: all 0.3s 0.1s ease-in-out;
+  transition: all 0.3s 0.1s ease-in-out;
+  -ms-transition: all 0.3s 0.1s ease-in-out;
+}
+
+.Delivered {
+  background: green !important;
+}
+.Shipping {
+    background: orange !important;
+  }
+  .rejicted{
+    background: red !important;
+  }
+  .Accepted{
+    background: blue !important;
+  }
+  .tfoot_in{
+    display: flex; justify-content: space-between ; align-items:  center; gap: 20px;
+  }
+  .tfoot{
+    display: flex; flex-direction: column; align-items: start;
+    background: var(--bg2);
+    font-size: 1.5vw;
+    padding: 20px;
+  }
+
+}

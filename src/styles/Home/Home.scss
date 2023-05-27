@@ -58,7 +58,7 @@
             padding: 4px 10px;
           
     }
-    }
+    }}
     .NavBar{
         font-size: 1.6vw;
         display: flex; align-items: center;
@@ -241,6 +241,9 @@
         width: 100% !important;
     }
      }
+     .HomeSectin{
+        
+     }
      @include devices(mobile){
     
         .col-lg-3,.Header__Right_1,.MidBar__Center,.MidBar__Right > p,.Header__Left,.AllCategories,.Top_Section_Right{
@@ -288,4 +291,3 @@
     
      }
      
-}
