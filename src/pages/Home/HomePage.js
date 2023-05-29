@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from '../../components/Utils/Header'
 import MidBar from '../../components/Utils/MidBar'
 import DownBar from '../../components/Utils/DownBar'
@@ -11,18 +11,24 @@ import Loader from '../../components/Utils/Loader'
 import { useGetCartCount, useGetHomeStatics } from '../../api/home'
 import { useAuth } from '../../hooks/useAuth'
 import { authStorage } from '../Auth/AuthStorage'
+import { useDispatch } from 'react-redux'
+import { getAllNformation } from '../../redux/CategoryReducer'
+import { useGetCategory } from '../../api/category'
 
 
 const HomePage = () => {
  
+
+  
  
   
     const {data , isLoading } = useGetHomeStatics()
 
+   
       if(isLoading ){
-        return < Loader />
+        return <Loader/>
       }
-
+      
   return (
     <div className='HomePage'>
           <Header/>
