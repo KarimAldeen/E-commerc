@@ -43,7 +43,11 @@ export const RoutesConfigs = {
         title: "login",
         component: lazy(() => import("../pages/Auth/LoginPage")),
       },
-      
+      verification:{
+        url: "/verification",
+        title: "verification",
+        component: lazy(() => import("../pages/Auth/Verification")),
+      },
       contactus:{
         url: "/contactus",
         title: "contactus",
