@@ -19,7 +19,7 @@ const HomePage = () => {
   
     const {data , isLoading } = useGetHomeStatics()
 
-      if(isLoading ){
+      if(false ){
         return < Loader />
       }
 
@@ -27,11 +27,11 @@ const HomePage = () => {
     <div className='HomePage'>
           <Header/>
           <MidBar />
-          <HomeSectin sliders={data?.sliders[0]} categories={data?.categories}/>
+          <HomeSectin sliders={data?.sliders[0]} categories={data?.categories ||[]}/>
 
           
           <FeaturedProduct  product={data?.featured_products||[]} />
-          <Categories categories={data?.categories} />
+          <Categories categories={data?.categories ||[]} />
 
           <Footer/>
 

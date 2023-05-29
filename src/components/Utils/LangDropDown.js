@@ -11,12 +11,15 @@ import languageConfig from "../../config/langConfig";
 import { useTranslation } from "react-i18next";
 
 const LanguageDropdown = ({ menuDirection = "right", ...props }) => {
-  const { t, i18n } = useTranslation();
-   
+  const [t, i18n] = useTranslation();
   const [langDropdown, setLangDropdown] = useState(false);
-
-  const handleLangDropdown = () => setLangDropdown(!langDropdown);
- 
+  const handleLangDropdown = () =>{ setLangDropdown(!langDropdown);} 
+  function lungAR() {
+    //  i18n.changeLanguage('ar');
+     document.body.setAttribute('dir', 'rtl');
+     document.body.classList.add('ar');
+     localStorage.setItem("Lung", "ar");}
+  
   return (
     <Dropdown
       // tag="li"
@@ -44,8 +47,7 @@ const LanguageDropdown = ({ menuDirection = "right", ...props }) => {
             <DropdownItem
               key={locale}
               tag="a"
-              onClick={(e) => i18n.changeLanguage(locale)}
-            >
+              onClick={() => lungAR()}            >
               <ReactCountryFlag
                 className="country-flag"
                 countryCode={langObj.countryCode}
