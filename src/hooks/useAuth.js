@@ -7,15 +7,6 @@ export const useAuth = () => {
   );
   
 
-  const login = (values) => {
-    
-
-  };
-
-  const updateUserInfo = (newValues) => {
-
-   
-  }
 
   const logout = () => {
     authStorage.remove()
@@ -26,9 +17,9 @@ export const useAuth = () => {
     token,
     isAuthenticated,
    
-    login,
+    
     logout,
-    updateUserInfo
+    
   };
 };
 

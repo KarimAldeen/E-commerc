@@ -1,7 +1,11 @@
 import React from 'react'
 import { FaWindowClose, FaDollarSign } from "react-icons/fa";
+import { useSelector } from 'react-redux';
+import Select from 'react-select';
 
 const Product_Fillter = () => {
+    const {category , subCategory , subSubCategory} = useSelector(state => state.category)
+
     const departments = ["", "FreshMeat", "Vegetables", "Fruit", "Fresh", "Ocean", "Butter", "Fastfood", "Fresh", "Papayaya", "Oatmeal", "Bananas"]
     function Close(){
         const Left_Side = document.getElementById('Left_Side');
@@ -41,21 +45,37 @@ const Product_Fillter = () => {
             <div className='col_Product_Down'>
                 <div className='Category_sel'>
                     <h4>Category</h4>
-                    <select class="form-select">
-                        {departments?.map((i, index) => (<option key={index}>{i}</option>))}
-                    </select>
+                    <Select
+                        
+                        onChange={()=>{}}
+                        options={category.map(c => ({
+                            value:c.id,
+                            label:c?.category_translations[0]?.name
+                        }))}
+                      />
                 </div>
                 <div className='Category_sel'>
                     <h4>SubCategory</h4>
-                    <select class="form-select">
-                        {departments?.map((i, index) => (<option key={index}>{i}</option>))}
-                    </select>
+                    <Select
+                        onChange={()=>{}}
+                        options={subCategory.map(c => ({
+                            value:c.id,
+                            label:c?.category_translations[0]?.name
+                        }))}
+                        isDisabled={subCategory.length ===0 ? true :false}
+
+                      />
                 </div>
                 <div className='Category_sel'>
                     <h4>SubSubCategory</h4>
-                    <select class="form-select">
-                        {departments?.map((i, index) => (<option key={index}>{i}</option>))}
-                    </select>
+                    <Select
+                        onChange={()=>{}}
+                        options={subSubCategory.map(c => ({
+                            value:c.id,
+                            label:c?.category_translations[0]?.name
+                        }))}
+                        isDisabled={subSubCategory.length ===0 ? true :false}
+                      />
                 </div>
                 <div className='Button'>
                     <button className="btn-donate">
