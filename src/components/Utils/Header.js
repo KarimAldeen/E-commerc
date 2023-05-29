@@ -1,13 +1,21 @@
 import React, { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next';
-import { FaEnvelope, FaGoogle, FaInstagram, FaFacebookSquare, FaTwitter, FaChevronDown, FaUserAlt, FaBars } from "react-icons/fa";
+import { FaEnvelope, FaGoogle, FaInstagram, FaFacebookSquare, FaTwitter, FaUserAlt, FaBars } from "react-icons/fa";
 import English from '../../Images/English.svg'
 import Word from '../../Images/Word.svg'
 import LanguageDropdown from './LangDropDown';
+import { useAuth } from '../../hooks/useAuth';
+import { useDispatch } from 'react-redux';
+import { logout } from '../../redux/AuthReducer';
 
 const Header = () => {
   const [t] = useTranslation();
+  const { user } = useAuth();
+  
+  const [refreash , setRefreash] = useState(false)
+  const dispatch = useDispatch()
+  
   const [Open, setOpen] = useState(false)
   const departments = ["FreshMeat", "Vegetables", "Fruit", "Fresh", "Ocean", "Butter", "Fastfood", "Fresh", "Papayaya", "Oatmeal", "Bananas"]
 
@@ -36,10 +44,10 @@ const Header = () => {
 
             </div>
             <div className='Top'>
-              <NavLink to="/"> Home   </NavLink>
+              <NavLink to="/"> Home </NavLink>
               <NavLink to="/product"> Product</NavLink>
               <NavLink to="/contactus">Contact Us</NavLink>
-              <NavLink to="/login">signin-up</NavLink>
+       
               <NavLink to="/cart">Cart</NavLink>
             </div>
             <div className='Down'>
@@ -86,8 +94,24 @@ const Header = () => {
           <FaChevronDown /> */}
         </div>
         <div className='Header__Right_3' >
-          <FaUserAlt size={15}/>
-          Login
+          {
+           user?.phone? (
+                <div onClick={()=>{
+                  dispatch(logout())
+                  setRefreash(v => !v)
+                }}>
+                    <FaUserAlt size={15}/>
+                Logout
+                </div>
+            ) : (
+              <NavLink to={'/login'}>
+               <FaUserAlt size={15}/>
+                Login
+              </NavLink>
+             
+            )
+          }
+          
         </div>
 
 

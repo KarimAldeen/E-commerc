@@ -1,14 +1,18 @@
 import axios from "axios";
-// import { useAuth } from "redux/hooks/auth";
 import { useTranslation } from "react-i18next";
 import languageConfig from "../../config/langConfig";
 import { baseURL } from "../config";
+import { useAuth } from "../../hooks/useAuth";
 export const useAxios = () => {
-  // const { isAuthenticated, token } = useAuth();
-  const token = "gfrwg";
+  const { isAuthenticated, token } = useAuth();
+  
   const {t , i18n} = useTranslation()
+
+
   const languageCode = languageConfig[i18n.language].headerCode;
-  if (false) {
+
+  
+  if (isAuthenticated) {
     return axios.create({
       headers: {
         language: languageCode,

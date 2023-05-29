@@ -22,7 +22,7 @@ const HomeSectin = ({sliders , categories}) => {
                 </ul>
             </div>
                 </div>
-                <div class="col-lg-9">
+                <div className="col-lg-9">
                     <div className='Top_Section'>
                     <form className="example" action="action_page.php">
                         <div className='AllCategories'>

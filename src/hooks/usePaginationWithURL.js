@@ -13,7 +13,6 @@ export const usePaginationWithURL = (location) => {
     (val) => {
       const queryParams = stringifyParams(params, ["page"]);
       const newPage = val.selected + 1;
-      console.log(`${location.pathname}?${queryParams}page=${newPage}`)
       history.push(`${location.pathname}?${queryParams}page=${newPage}`);
       setPage(newPage);
     },

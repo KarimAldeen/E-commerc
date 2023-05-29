@@ -1,5 +1,5 @@
-import { store } from "redux/storeConfig/store";
-import { logout } from "redux/actions/auth/loginActions";
+import { logout } from "../../redux/AuthReducer";
+import store from "../../redux/store";
 
 export const validateSession = ({ status }) => {
   if (status === 401 || status === 403) {

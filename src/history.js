@@ -1,2 +1,2 @@
 import { createBrowserHistory } from "history"
-export let history = createBrowserHistory()
+export let history = createBrowserHistory({forceRefresh:true})

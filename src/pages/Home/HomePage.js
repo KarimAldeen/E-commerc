@@ -8,23 +8,25 @@ import Categories from './categories/Categories'
 import Footer from '../../layout/Footer/Footer'
 import Test from '../../components/Utils/Loader'
 import Loader from '../../components/Utils/Loader'
-import { useGetHomeStatics } from '../../api/home'
+import { useGetCartCount, useGetHomeStatics } from '../../api/home'
+import { useAuth } from '../../hooks/useAuth'
+import { authStorage } from '../Auth/AuthStorage'
 
 
 const HomePage = () => {
+ 
+ 
+  
+    const {data , isLoading } = useGetHomeStatics()
 
-
-    const {data , isLoading , isError } = useGetHomeStatics()
-  console.log(data);
-
-      if(isLoading){
+      if(isLoading ){
         return < Loader />
       }
 
   return (
     <div className='HomePage'>
           <Header/>
-          <MidBar/>
+          <MidBar />
           <HomeSectin sliders={data?.sliders[0]} categories={data?.categories}/>
 
           

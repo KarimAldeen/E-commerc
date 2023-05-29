@@ -18,8 +18,8 @@ const SwiperComponent = ({ children, slidesPerView =3 }) => {
     spaceBetween={0}
     slidesPerView={width  < PHONE ?  1 : width > LARGLAPTOP ?3: 2}
     pagination={{ clickable: true }}
-    onSwiper={(swiper) => console.log(swiper)}
-    onSlideChange={() => console.log('slide change')}
+    // onSwiper={(swiper) => }
+    // onSlideChange={() => console.log('slide change')}
     centeredSlides={true}
     autoplay={{
       delay: 3000,
