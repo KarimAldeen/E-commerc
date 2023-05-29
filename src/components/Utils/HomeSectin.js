@@ -1,8 +1,8 @@
 import React from 'react'
 import { FaAngleDown,FaPhoneAlt } from "react-icons/fa";
 import HomeSec from '../../Images/HomeSec.jpg'
-const HomeSectin = () => {
-    const departments = [ "FreshMeat","Vegetables","Fruit","Fresh","Ocean","Butter","Fastfood","Fresh","Papayaya","Oatmeal","Bananas"]
+import { baseURL } from '../../api/config';
+const HomeSectin = ({sliders , categories}) => {
   return (
     <div className='HomeSectin'>
         <div class="row">
@@ -10,11 +10,11 @@ const HomeSectin = () => {
                 <div className="btn-group open">
                 <button className="btn Drop_Btn dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true" >
                     <i className="fa fa-bars"></i>
-                    <h3> All Departments</h3>
+                    <h3> All Category</h3>
                 </button>
                 <ul className="dropdown-menu">
-                    {departments?.map((i,index)=>(
-                    <li key={index}><a href="#"  >{i}</a></li>
+                    {categories?.map((i,index)=>(
+                    <li key={index}>{i?.id}</li>
                     )
                     )}
                   
@@ -40,13 +40,13 @@ const HomeSectin = () => {
                 <FaPhoneAlt/>
                 </div>
                 <div className='Phone2'>
-                <h4>+65 11.188.888</h4>
-                <h6>support 24/7 time</h6>
+                <h5>+963-951968994</h5>
+                
                 </div>
                 </div>
                     </div>
                     <div className='Button_Section'>
-                            <img className='HomeSec' alt='' src={HomeSec} />
+                            <img className='HomeSec' alt='' src={baseURL + sliders?.slider_link} />
                         </div>
                 </div>
                 </div> 

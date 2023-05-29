@@ -8,45 +8,9 @@ import Card from '../../pages/Product/Card';
 import SwiperComponent from '../../components/SwiperComponents';
 import SubTiltle from '../../components/SubTiltle';
 
-function FeaturedProduct() {
+function FeaturedProduct({product:data}) {
 
-    const data  = [
-            {
-                id:1,
-                name:"First Product" ,
-                price:160 ,
-                weight:30,
-                image : '/1.jpg'
-            },
-            {
-                id:2,
-                name:"SEcond Product" ,
-                price:160 ,
-                weight:30,
-                image : '/1.jpg'
-            },
-            {
-                id:3,
-                name:"Third Product" ,
-                price:160 ,
-                weight:30,
-                image : '/1.jpg'
-            },
-            {
-                id:4,
-                name:"First Product" ,
-                price:160 ,
-                weight:30,
-                image : '/1.jpg'
-            },
-            {
-                id:5,
-                name:"First Product" ,
-                price:160 ,
-                weight:30,
-                image : '/1.jpg'
-            }
-    ]
+ 
         
   return (
 
@@ -54,7 +18,7 @@ function FeaturedProduct() {
         <SubTiltle title="Featured Product"/>
         <SwiperComponent>
         {
-            data.map(
+            (data||[]).map(
                 (product) =>{
                 
                     return (

@@ -1,25 +1,9 @@
 import React from 'react'
 import {BsFillArrowRightSquareFill} from 'react-icons/bs'
 import SubTiltle from '../../../components/SubTiltle'
-function Categories() {
-  const data  = [
-    {id:1,
-    category_image:'/1.jpg',
-    category_name:'First'
-  },
-  {id:2,
-    category_image:'/1.jpg',
-    category_name:'Second'
-  },
-  {id:3,
-    category_image:'/1.jpg',
-    category_name:'Third'
-  },
-  {id:4,
-    category_image:'/1.jpg',
-    category_name:'Fourth'
-  }
-  ]
+import { baseURL } from '../../../api/config'
+function Categories({categories:data}) {
+ 
   return (
     <section className='category-section'>
         <SubTiltle title="Categories" show_more={false}/>
@@ -29,9 +13,9 @@ function Categories() {
         {
           data.map((category)=>{
             return (
-              <div className='category-card'>
-                <img src={category.category_image} alt='few' />
-                <h2> {category.category_name} </h2>
+              <div className='category-card' key={category?.id}>
+                <img src={baseURL+category.category_image} alt='few' />
+                <h2> {category.id} </h2>
                
                 {/* <button className='category-button'>
                    {category.category_name} 

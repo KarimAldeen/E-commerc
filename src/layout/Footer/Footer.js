@@ -1,6 +1,15 @@
 import React from 'react'
+import { useGetHomeStatics } from '../../api/home';
+import { baseURL } from '../../api/config';
 
 function Footer() {
+  const {data , isLoading , isError } = useGetHomeStatics({id:1} ,
+    {
+      staleTime: Infinity,
+      cacheTime: Infinity
+    });
+
+
   return (
     
     <div className="Footer">
@@ -55,11 +64,19 @@ function Footer() {
         </p>
 
         <div class="footer-icons">
-
-          <a href="/"><i class="fa fa-facebook"></i></a>
-          <a href="/"><i class="fa fa-twitter"></i></a>
-          <a href="/"><i class="fa fa-linkedin"></i></a>
-          <a href="/"><i class="fa fa-github"></i></a>
+        {
+          data?.social_medias?.map((media)=>(
+            <div>
+                <a href={media?.social_media_link}>
+                  <img  alt='media' src={baseURL+media?.social_media_image} style={{
+                    width:"40px"
+                  }}/>
+                </a>
+            </div>
+          ))
+        }
+          
+          
 
         </div>
 

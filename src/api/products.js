@@ -7,12 +7,12 @@ import {
   } from "./helpers";
   
   const API = {
-    GET: `/api/get_statistics`,
+    GET: `/api/all_products`,
 
   };
   
-  const KEY = "HOME";
-  export const useGetHomeStatics= (params, options) => useGetQuery(KEY, API.GET , params , options);
+  const KEY = "PRDUCTS";
+  export const useGetProducts= (params, options) => useGetQuery(KEY, API.GET , params , options);
 
 
 

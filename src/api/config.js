@@ -1,2 +1,2 @@
 
-export const baseURL = "http"
+export const baseURL = "http://localhost:8000"

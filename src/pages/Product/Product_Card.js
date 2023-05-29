@@ -2,7 +2,7 @@ import React from 'react'
 import Card from './Card'
 import Fillter from '../../components/Button/Fillter'
 
-const Product_Card = () => {
+const Product_Card = ({data}) => {
   return (
     <div className="col-lg-9 col_Product col_Fillter Right_Side ">
       <div className='header-products'>
@@ -10,7 +10,7 @@ const Product_Card = () => {
         <div className='Card_Top'>
           
           <Fillter/>
-          Showing 1–9 of 48 results</div>
+          Showing  {data?.pagination?.total} results</div>
         <div className='button-con'>
 
           <button className='pre-button'>
