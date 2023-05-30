@@ -29,10 +29,10 @@ const ContactUs_Page = () => {
         <div className="col-md-6">
           <form
             className="mb-5"
-            method="post"
+            
             id="contactForm"
-            name="contactForm"
-          >
+
+            >
             <div className="row">
               <div className="col-md-12 form-group">
                 <input
@@ -84,7 +84,9 @@ const ContactUs_Page = () => {
                 <input
                   type="submit"
                   defaultValue="Send Message"
-                  className="btn btn-primary rounded-0 py-2 px-4 button-submit"
+                  value={t('Submit')}
+                    style={{margin:'10px'}}
+                  className="btn btn-primary rounded-0 py-2 px-2 button-submit"
                 />
                 <span className="submitting" />
               </div>

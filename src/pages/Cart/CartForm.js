@@ -35,11 +35,11 @@ const CartForm = ({cart}) => {
       <Form className='checkout-form'>
         <label>{t("search for place")}</label>
       <Autocomplete
-  apiKey={'AIzaSyAIO-8bXHu3gUxOXDpxCr6cz91i20Ex8IA'}
-  onPlaceSelected={(place) => {
-    console.log(place?.geometry?.location?.lat());
-  }}
-/>
+      apiKey={'AIzaSyAIO-8bXHu3gUxOXDpxCr6cz91i20Ex8IA'}
+      onPlaceSelected={(place) => {
+        console.log(place?.geometry?.location?.lat());
+      }}
+    />
         <label>{t("zone number")}</label>
         <Field name="zone_number" type="text" />
         <label>{t("additional Info")}</label>

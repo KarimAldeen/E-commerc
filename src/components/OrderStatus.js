@@ -4,7 +4,7 @@ import { Badge } from "reactstrap";
 import { useTranslation } from "react-i18next";
 
 const OrderStatus = ({ order_status }) => {
-    // const {t} = useTranslation();
+    const {t} = useTranslation();
     console.log(order_status);
     const all={
         pending:{color:"secondary"},
@@ -18,7 +18,7 @@ const OrderStatus = ({ order_status }) => {
     
   return (
         <Badge color={all[order_status].color}>
-                {(order_status)}
+                {t(order_status)}
         </Badge>
   );
 };

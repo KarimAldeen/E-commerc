@@ -19,10 +19,10 @@ const HomeSectin = ({sliders , categories}) => {
                 <div className="col-lg-3">
                 <div className="btn-group open">
                 <button className="btn Drop_Btn dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true" >
-                    <i className="fa fa-bars"></i>
+                    {/* <i className="fa fa-bars"></i> */}
                     <h3> {t("All Category")}</h3>
                 </button>
-                <ul className="dropdown-menu">
+                <ul className="dropdown-menu" style={{display:'block'}}>
                     {categories?.map((i,index)=>(
                     <li key={index}>{MapTranslate(i?.category_translations , 'name' ,LangCode)}</li>
                     )
@@ -34,7 +34,7 @@ const HomeSectin = ({sliders , categories}) => {
                 </div>
                 <div className="col-lg-9">
                     <div className='Top_Section'>
-                    <form className="example" action="action_page.php">
+                    <form className="example" action="product">
                         <div className='AllCategories'>
                         <h3 > {t("All Product")}    </h3>
                         {/* <FaAngleDown/> */}

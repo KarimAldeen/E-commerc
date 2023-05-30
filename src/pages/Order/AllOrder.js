@@ -9,6 +9,8 @@ import OrderStatus from '../../components/OrderStatus.js'
 import PaymentStatus from '../../components/PaymentStatus'
 import { GrView } from "react-icons/gr";
 import {history} from '../../history'
+import DataTable from 'react-data-table-component';
+
 import { useNavigate } from 'react-router'
 const AllOrder = () => {
   const [t] = useTranslation();
@@ -20,6 +22,41 @@ const AllOrder = () => {
     return <Loader/>
   }
   
+  
+
+const columns = [
+   
+    {
+        name: t('Code'),
+        selector: row => row.order_code,
+    },
+    {
+          name: t('Price'),
+          selector: row => row.order_total,
+      },
+      {
+        name: t('Order Status'),
+        selector: row =>   <OrderStatus  order_status={(row?.order_status || 'pending')} />,
+    },
+    {
+      name: t('Payment Methode'),
+      selector: row => <PaymentStatus payment_status='cash' />,
+    },
+    {
+      name: t('Created At'),
+      cell: row => row?.created_at,
+    },
+    {
+      name: ' ',
+      cell:(row)=> <>
+    <GrView
+        onClick={() => navigate(`/order/${row?.id}`)}
+        size={22}
+        style={{ cursor: "pointer" }}
+    />
+      </>
+    }
+];
   return (
     <div className='AllOrder'>
       <div className='Top_Order'>
@@ -32,7 +69,7 @@ const AllOrder = () => {
             <div className="col-md-10">
               <div className="rounded">
                 <div className="table-responsive table-borderless">
-                  <table className="table">
+                  {/* <table className="table">
                     <thead>
                       <tr  style={{textAlign:"center"}}>
                         <th className="text-center">
@@ -45,9 +82,9 @@ const AllOrder = () => {
                         <th>{t("Created")}</th>
                         <th> &&</th>
                       </tr>
-                    </thead>
+                    </thead> */}
 
-                    {
+                    {/* {
                       order?.map((i, index) => (
                         <tbody key={index} className="table-body">
                           <tr className="cell-1" style={{textAlign:"center"}}>
@@ -71,9 +108,17 @@ const AllOrder = () => {
                         </tbody>
 
                       ))
-                    }
+                    } */}
 
-                  </table>
+                  {/* </table> */}
+                  <div className='all-order-table'>
+                    
+                  <DataTable
+
+                    columns={columns}
+                    data={order}
+                />
+                  </div>
                   <div className='tfoot'>
                     <div className='tfoot_in'><div>{t("Order Count :")}</div> <div>{order?.length}</div></div>
                     <div className='tfoot_in'><div>{t("Total :")}</div> <div>{data?.order_all_total}</div></div>
