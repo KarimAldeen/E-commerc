@@ -4,28 +4,29 @@ import HomeSec from '../../Images/HomeSec.jpg'
 import { baseURL } from '../../api/config';
 import { useTranslation } from 'react-i18next';
 import { Phone } from '../../config/LOCALSTORAGEKEY';
-// import { MapTranslate } from '../../utils/mapTranlate';
+import { MapTranslate } from '../../utils/mapTranlate';
+import { LangNumber } from '../../utils/LangNumber';
 const HomeSectin = ({sliders , categories}) => {
     const [t] = useTranslation();
 
 
-    
+    const LangCode = LangNumber()
  
 
   return (
     <div className='HomeSectin'>
-        <div class="row">
-                <div class="col-lg-3">
+        <div className="row">
+                <div className="col-lg-3">
                 <div className="btn-group open">
                 <button className="btn Drop_Btn dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true" >
                     <i className="fa fa-bars"></i>
                     <h3> {t("All Category")}</h3>
                 </button>
                 <ul className="dropdown-menu">
-                    {/* {categories?.map((i,index)=>(
-                    <li key={index}>{MapTranslate(i?.category_translations , 'name')}</li>
+                    {categories?.map((i,index)=>(
+                    <li key={index}>{MapTranslate(i?.category_translations , 'name' ,LangCode)}</li>
                     )
-                    )} */}
+                    )}
                   
                     
                 </ul>

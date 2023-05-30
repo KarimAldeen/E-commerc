@@ -1,5 +1,5 @@
 import React from 'react'
-// import { MapTranslate } from '../../utils/mapTranlate'
+import { MapTranslate } from '../../utils/mapTranlate'
 import { baseURL } from '../../api/config'
 import { FaAngleLeft } from 'react-icons/fa'
 import { history } from '../../history'
@@ -8,13 +8,14 @@ import { AiFillHeart } from 'react-icons/ai'
 import { LoadingButton } from '../../components/LoadingButton'
 import { useAddCart } from '../../api/cart'
 import { useTranslation } from 'react-i18next'
+import { LangNumber } from '../../utils/LangNumber'
 
 function CardDetails({product}) {
     const {mutate , isLoading:AddLoading} = useAddProductToWishList()
     const {mutate:mutate2 , isLoading:RemoveLoading} = useRemoveProductToWishList()
     const {mutate:addToCart , isLoading} = useAddCart()
     const [t] = useTranslation();
-
+  const lanCOde = LangNumber()
 
   return (
     <div className="card_info">
@@ -37,9 +38,9 @@ function CardDetails({product}) {
       <h3 style={{margin:'10px'}}>{product?.product_price}ريال</h3>
 
       <h4 style={{margin:"10px"}}>purchasing count:{product?.product_purchasing_count}</h4>
-      {/* <p style={{fontSize:'1.3em' , margin:"10px"}}>
-        {MapTranslate(product?.product_translations , 'description')}
-      </p> */}
+      <p style={{fontSize:'1.3em' , margin:"10px"}}>
+        {MapTranslate(product?.product_translations , 'description' ,lanCOde)}
+      </p>
       <LoadingButton
       isLoading={isLoading}
       onClick={()=>addToCart({product_id:product?.id , quantity:1})}

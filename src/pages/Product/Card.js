@@ -3,13 +3,16 @@ import { Link } from 'react-router-dom'
 import {MdOutlineSell} from 'react-icons/md'
 import { baseURL } from '../../api/config'
 import { useAddCart } from '../../api/cart'
-// import { MapTranslate } from '../../utils/mapTranlate'
+import { MapTranslate } from '../../utils/mapTranlate'
 import { AiFillHeart } from 'react-icons/ai'
 import { useAddProductToWishList, useRemoveProductToWishList } from '../../api/products'
 import { useTranslation } from 'react-i18next'
+import { LangNumber } from '../../utils/LangNumber'
 
 const Card = ({product}) => {
   const [t] = useTranslation();
+
+  const LangCode =LangNumber()
 
   const {mutate} = useAddCart()
   const {mutate:addWishList} = useAddProductToWishList()
@@ -29,9 +32,9 @@ const Card = ({product}) => {
       <img src={baseURL+ product?.product_main_image} alt="" />
     </div>
     <div className="product-details">
-      {/* <p>
-      {MapTranslate(product?.product_translations , 'name')}
-      </p> */}
+      <p>
+      {MapTranslate(product?.product_translations , 'name' , LangCode)}
+      </p>
       <div className="product-bottom-details">
         <div className="product-price">
             {product?.product_price} {t("ريال")}

@@ -1,13 +1,16 @@
 import React from 'react'
-import {BsFillArrowRightSquareFill} from 'react-icons/bs'
 import SubTiltle from '../../../components/SubTiltle'
-import { baseURL } from '../../../api/config'
 import { useTranslation } from 'react-i18next'
-// import { MapTranslate } from '../../../utils/mapTranlate'
+import Category from './Category'
+import { motion } from "framer-motion"
 function Categories({categories:data}) {
  const [t] = useTranslation()
   return (
-    <section className='category-section'>
+    <motion.section className='category-section'
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1}}
+    transition={{ duration: 1.4 }}
+    >
         <SubTiltle title={t("Categories")} show_more={false}/>
 
       <div className='category-con' >
@@ -15,20 +18,12 @@ function Categories({categories:data}) {
         {
           data.map((category)=>{
             return (
-              <div className='category-card' key={category?.id}>
-                <img src={baseURL+category.category_image} alt='few' />
-                {/* <h2> {MapTranslate(category?.category_translations , 'name')} </h2> */}
-               
-                {/* <button className='category-button'>
-                   {category.category_name} 
-                </button> */}
-               
-              </div>
-            )
-          })
+              <Category key={category.id} category={category}/>
+          )
         }
+          )}
       </div>
-    </section>
+    </motion.section>
   )
 }
 

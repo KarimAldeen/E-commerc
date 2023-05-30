@@ -1,6 +1,6 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import { motion } from "framer-motion"
 
 // Import Swiper styles
 
@@ -15,7 +15,11 @@ const [t] = useTranslation()
         
   return (
 
-    <div className='FeaturedProduct'>
+    <motion.div className='FeaturedProduct'
+    initial={{ opacity: 0, scale: 0.5 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 1 }}
+    >
         <SubTiltle title={t("Featured Product")}/>
         <SwiperComponent>
         {
@@ -31,7 +35,7 @@ const [t] = useTranslation()
      
     
     </SwiperComponent>
-    </div>
+    </motion.div>
   )
 }
 

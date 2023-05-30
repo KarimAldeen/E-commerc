@@ -1,12 +1,20 @@
-// import { useTranslation } from "react-i18next"
-// import { LangNumber } from "./LangNumber";
+import { useTranslation } from "react-i18next"
+import { LangNumber } from "./LangNumber";
 
-// export const MapTranslate = (array=[],  key) =>{
+export const MapTranslate = (array=[],  key , lanCOde='en') =>{
 
-//     const lang = LangNumber()
+    
+   
+    if(array.length<=1){
+        return ''
+    }
 
-//     if(array<=1){
-//         return ''
-//     }
-//     return array[lang][key]
-// }
+    for (let index = 0; index < array.length; index++) {
+            if(array[index].locale ==lanCOde)
+            {
+                return array[index][key]
+            }
+        
+    }
+    return array[0][key]
+}

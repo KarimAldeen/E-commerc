@@ -8,9 +8,6 @@ import { useTranslation } from 'react-i18next';
 const Product_Fillter = ({setFilterObject}) => {
     const {category , subCategory , subSubCategory} = useSelector(state => state.category)
     const input = useRef(null)
-    const CategoryRef = useRef();
-    const SubCategoryRef = useRef();
-    const SubSubCategoryRef = useRef();
     const [t] = useTranslation();
 
  
@@ -59,7 +56,7 @@ const Product_Fillter = ({setFilterObject}) => {
             <div>
                 <div className="slidecontainer">
                     <div className='col_Product_Mid'>
-                        <input class="form-control" ref={input} type="text" placeholder={t("Search")} aria-label="Search"></input>
+                        <input className="form-control" ref={input} type="text" placeholder={t("Search")} aria-label="Search"></input>
 
                     </div>
                 </div>
@@ -73,7 +70,6 @@ const Product_Fillter = ({setFilterObject}) => {
                           Options={category}
                           parentId={null}
                           setOb={setCategory}
-                          ref={CategoryRef}
                           Ob={Category}
                       />
                 </div>
@@ -82,7 +78,6 @@ const Product_Fillter = ({setFilterObject}) => {
                     <SelectCategory
                           Options={subCategory}
                           parentId={Category?.value}
-                          ref={SubCategoryRef}
                           setOb={setsubCategory}
                           Ob={subcategory}
                       />
@@ -90,7 +85,6 @@ const Product_Fillter = ({setFilterObject}) => {
                 <div className='Category_sel'>
                     <h4>{t("SubSubCategory")}</h4>
                     <SelectCategory
-                           ref={SubSubCategoryRef}
                           Options={subSubCategory}
                           parentId={subcategory?.value}
                           setOb={setsubsubCategory}

@@ -50,6 +50,7 @@
     
     .dropdown-toggle::after{
         font-size: 31px;
+        
     }
     .dropdown-menu{
         border-radius: 0 !important;
@@ -58,6 +59,7 @@
             width: 19.8vw;
             font-size: 17px;
             padding: 4px 10px;
+            text-align: center;
           
     }
     }}
@@ -112,6 +114,7 @@
     position: relative;
     display: flex; align-items: center;
     gap: 20px;
+    
     font-size: 17px;
     h3{
         font-weight: bold;
@@ -223,6 +226,7 @@
     .dropdown-menu{
         li{
             width: 24.8vw;
+            
         }
         
     }
@@ -246,6 +250,7 @@
         .dropdown,.open>.dropdown-menu{
             display: flex;
             flex-wrap: wrap;
+
             justify-content: flex-end;
         
         }

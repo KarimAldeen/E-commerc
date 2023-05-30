@@ -1,9 +1,11 @@
 import React from 'react'
 import { baseURL } from '../../api/config';
-// import { MapTranslate } from '../../utils/mapTranlate';
+import { MapTranslate } from '../../utils/mapTranlate';
+import { LangNumber } from '../../utils/LangNumber';
 
 const CartView = ({product}) => {
 
+  const LangCode = LangNumber()
   
   const item = product?.product;
   return  (
@@ -13,7 +15,7 @@ const CartView = ({product}) => {
         <img className="img-fluid" src={baseURL + item?.product_main_image} />
       </div>
       <div className="col">
-        {/* <div className="row text-muted">{MapTranslate(item?.product_translations ,'name')}</div> */}
+        <div className="row text-muted">{MapTranslate(item?.product_translations ,'name' , LangCode)}</div>
       </div>
       <div className="col">
         <a href="#">-</a>

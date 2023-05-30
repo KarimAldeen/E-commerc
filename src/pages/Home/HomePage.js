@@ -12,7 +12,7 @@ const HomePage = () => {
    
     const {data , isLoading } = useGetHomeStatics()
 
-      if(false ){
+      if(isLoading ){
         return < Loader />
       }
       

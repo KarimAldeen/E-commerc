@@ -10,7 +10,6 @@ import { useGetProducts, useGetSingleProduct } from '../../api/products';
 import { useParams } from 'react-router';
 import Loader from '../../components/Utils/Loader';
 import { baseURL } from '../../api/config';
-// import { MapTranslate } from '../../utils/mapTranlate';
 import CardDetails from './CardDetails';
 
 const CardInfo = () => {
