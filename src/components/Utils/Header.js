@@ -10,6 +10,8 @@ import { useDispatch } from 'react-redux';
 import { logout } from '../../redux/AuthReducer';
 import BtnTranslate from './translate/BtnTranslate';
 import { Email, HeaderText } from '../../config/LOCALSTORAGEKEY';
+import DropDown from './DropDown/DropDown';
+import ReactCountryFlag from "react-country-flag";
 
 const Header = () => {
   const [t] = useTranslation();
@@ -90,7 +92,8 @@ const Header = () => {
         </div>
         <div className='Header__Right_2'>
           {/* <LanguageDropdown /> */}
-          <BtnTranslate/>
+          {/* <BtnTranslate/> */}
+          <DropDown/>
         </div>
         <div className='Header__Right_3' >
           {
