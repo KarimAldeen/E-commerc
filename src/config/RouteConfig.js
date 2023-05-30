@@ -6,7 +6,7 @@ export const RoutesConfigs = {
         url: "/",
         title: "home",
         component: lazy(() => import("../pages/Home/HomePage")),
-      },``
+      },
      cart:{
         url: "/cart",
         title: "cart",
