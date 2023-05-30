@@ -38,7 +38,7 @@ const Product_Fillter = ({setFilterObject}) => {
                 search:input.current.value
 
             }
-
+            input.current.value=""
             setFilterObject(obj);
         }
     return (

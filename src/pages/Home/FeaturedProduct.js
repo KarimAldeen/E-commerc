@@ -23,7 +23,7 @@ const [t] = useTranslation()
         <SubTiltle title={t("Featured Product")}/>
         <SwiperComponent>
         {
-            (data||[]).map(
+            data?.map(
                 (product) =>{
                 
                     return (

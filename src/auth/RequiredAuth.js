@@ -1,14 +1,17 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
+import { useAuth } from "../hooks/useAuth";
+import { toast } from "react-toastify";
 
 const RequireAuth = ({ children, redirectTo, fallback = "Loading ..." }) => {
-    const  isAuthenticated = true ;
-    const loadingInitial = false;
+    const  {isAuthenticated} = useAuth() ;
 
-  if (loadingInitial) {
-    return fallback;
+  if(isAuthenticated){
+    return children
   }
-  return isAuthenticated ? children : <Navigate to={redirectTo} />;
+  toast.error('please_login')
+
+  return <Navigate to={redirectTo} />;
 };
 
 export default RequireAuth;

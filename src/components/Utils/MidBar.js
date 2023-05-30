@@ -22,14 +22,14 @@ const MidBar = () => {
                 <NavLink to="/"> {t("Home")}   </NavLink>
                 <NavLink to="/product">{t("Product")}</NavLink>
               
-                <NavLink to="/contactus">  {t("Contact Us")}  </NavLink>
+                <NavLink to="/contactus">{t("Contact Us")}</NavLink>
               
-                <NavLink to="/order">{t("Cart")}</NavLink>
+                <NavLink to="/allorder">{t("Orders")}</NavLink>
 
 
             </div>
             {
-                isAuthenticated ? (
+               
                       <div className='MidBar__Right'>
                 <NavLink to="/allorder" className='Like Tool'>
                     <i className="fas fa-luggage-cart fa-lg " data-tooltip-id="AllOrder" data-tooltip-content={t("All Order")}></i>
@@ -48,10 +48,7 @@ const MidBar = () => {
                 
 
 
-            </div> ):(<span>
-
-            </span>
-                )
+            </div> 
             }
           
 

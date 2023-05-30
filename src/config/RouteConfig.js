@@ -16,6 +16,7 @@ export const RoutesConfigs = {
         url: "/cart",
         title: "cart",
         component: lazy(() => import("../pages/Cart/CartPage")),
+        isPrivate:true
       },
       product:{
         url: "/product",
@@ -23,15 +24,17 @@ export const RoutesConfigs = {
         component: lazy(() => import("../pages/Product/Product")),
       },
       order:{
-        url: "/order",
+        url: "/order/:id",
         title: "order",
         component: lazy(() => import("../pages/Order/OrderPage")),
+        isPrivate:true
       },
     
       allorder:{
         url: "/allorder",
         title: "allorder",
         component: lazy(() => import("../pages/Order/AllOrder")),
+        isPrivate:true
       },
       CardInfo:{
         url: "/product/:id",

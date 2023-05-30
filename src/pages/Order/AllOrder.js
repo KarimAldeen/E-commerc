@@ -3,10 +3,23 @@ import Header from '../../components/Utils/Header'
 import MidBar from '../../components/Utils/MidBar'
 import Footer from '../../layout/Footer/Footer'
 import { useTranslation } from 'react-i18next'
-
+import { useGetOrder } from '../../api/order'
+import Loader from '../../components/Utils/Loader'
+import OrderStatus from '../../components/OrderStatus.js'
+import PaymentStatus from '../../components/PaymentStatus'
+import { GrView } from "react-icons/gr";
+import {history} from '../../history'
+import { useNavigate } from 'react-router'
 const AllOrder = () => {
   const [t] = useTranslation();
+  const navigate = useNavigate()
+  const {data , isLoading} = useGetOrder()
+    const order =  data?.order
 
+  if(isLoading){
+    return <Loader/>
+  }
+  
   return (
     <div className='AllOrder'>
       <div className='Top_Order'>
@@ -21,32 +34,38 @@ const AllOrder = () => {
                 <div className="table-responsive table-borderless">
                   <table className="table">
                     <thead>
-                      <tr>
+                      <tr  style={{textAlign:"center"}}>
                         <th className="text-center">
 
                         </th>
                         <th>{t("Order")} </th>
-                        <th>{t("place Name")} </th>
+                        <th>{t("Payment Method")} </th>
                         <th>{t("status")}</th>
                         <th>{t("Total")}</th>
                         <th>{t("Created")}</th>
+                        <th> &&</th>
                       </tr>
                     </thead>
 
                     {
-                      [1, 2, 3, 4, 5]?.map((i, index) => (
-                        <tbody className="table-body">
-                          <tr className="cell-1">
+                      order?.map((i, index) => (
+                        <tbody key={index} className="table-body">
+                          <tr className="cell-1" style={{textAlign:"center"}}>
                             <td className="text-center">
                             </td>
-                            <td>13487</td>
-                            <td>Jeser Alheat </td>
+                            <td>{i?.order_code}</td>
+                            <td ><PaymentStatus payment_status='cash' /></td>
                             <td>
-                              <span className="badge rejicted">rejicted</span>
+                            <OrderStatus  order_status={(i?.order_status || 'pending')} />
                             </td>
-                            <td>$200.00</td>
-                            <td>Today</td>
-
+                            <td>{i?.order_total}</td>
+                            <td>{i?.created_at}</td>
+                            <td>   <GrView
+                                  onClick={() => navigate(`/order/${i?.id}`)}
+                                  size={22}
+                                  style={{ cursor: "pointer" }}
+                              />
+                    </td>
                           </tr>
 
                         </tbody>
@@ -56,8 +75,8 @@ const AllOrder = () => {
 
                   </table>
                   <div className='tfoot'>
-                    <div className='tfoot_in'><div>{t("Order Count :")}</div> <div> 6</div></div>
-                    <div className='tfoot_in'><div>{t("Total :")}</div> <div>20000</div></div>
+                    <div className='tfoot_in'><div>{t("Order Count :")}</div> <div>{order?.length}</div></div>
+                    <div className='tfoot_in'><div>{t("Total :")}</div> <div>{data?.order_all_total}</div></div>
                     <div className='tfoot_in'><div></div> <div></div></div>
                   </div>
                 </div>
