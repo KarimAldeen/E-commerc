@@ -16,6 +16,7 @@ const [t] = useTranslation()
   return (
 
     <motion.div className='FeaturedProduct'
+    style={{direction:'rtl'}}
     initial={{ opacity: 0, scale: 0.5 }}
     whileInView={{ opacity: 1, scale: 1 }}
     transition={{ duration: 1 }}
@@ -27,6 +28,7 @@ const [t] = useTranslation()
                 (product) =>{
                 
                     return (
+                    
                         <SwiperSlide key={product.id}><Card  product={product} /></SwiperSlide>
                     )
                 }

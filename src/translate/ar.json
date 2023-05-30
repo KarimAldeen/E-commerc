@@ -81,8 +81,9 @@
     "SubCategory": "الفئة الفرعية",
     "SubSubCategory": "الفئة الفرعية الفرعية ",
     "Fillter It Now": "قم بالتصفية الآن ",
-    
-
+    "Qatar Doha":"قطر الدوحة",
+    "Orders":"الطلبات",
+    "Alnokbah Ecommerce From Qatar Alnokbah Doha , We Born To Make The Life Easy":"متجر النخبة من قطر الدوحة ,  خلقنا ليكي مجعل حياتكم اسهل ",
     "Alnokbah Alarbi  © 2022" : "النخبة عربية  © 2022" ,
     "Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.":"ا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد لأخرى إضافة إلى زيادة عدد الحروف",
     "444 S. Cedros Ave":"444 سوريا عدوي",
@@ -94,9 +95,18 @@
     "See More" : "رؤية المزيد",
     "Categories" : "الأصناف",
     "Select..." : "اختر...",
-
+    "pending":"قيد الانتظار",
     "English" : "انكليزي" ,
     "Arabic" : "العربية" ,
-
+    "Results":"نتيجة",
+    "Showing":"اظهار",
+    "Submit":"تأكيد",
+    "Please Login First":"الرجاء تسجيل دخول اولا",
+    "cash":"كاش",
+    "Order Status" :"حالة الطلب",
+    "Payment Methode":"طريقة الدفع ",
+    "Created At":"انشات في",
+    "Code":"رمز طلب",
+    "Price":"السعر",
     "": ""
 }

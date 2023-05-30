@@ -17,6 +17,7 @@ function CardDetails({product}) {
     const [t] = useTranslation();
   const lanCOde = LangNumber()
 
+  console.log(product);
   return (
     <div className="card_info">
     <nav>
@@ -31,10 +32,10 @@ function CardDetails({product}) {
       
     </nav>
     <div className="photo">
-      <img src={baseURL + product?.product_main_image} />
+      <img src={baseURL + product?.product_main_image} alt='fewf' />
     </div>
     <div className="description description-product-detailes">
-      {/* <h2 className='product_title'>{MapTranslate(product?.product_translations , 'name')}</h2> */}
+      <h2 className='product_title'>{MapTranslate(product?.product_translations , 'name' , lanCOde)}</h2>
       <h3 style={{margin:'10px'}}>{product?.product_price}ريال</h3>
 
       <h4 style={{margin:"10px"}}>purchasing count:{product?.product_purchasing_count}</h4>

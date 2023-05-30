@@ -27,15 +27,7 @@ function Footer() {
         <p className="footer-links">
           <a href="/" className="link-1">{t("Home")}</a>
           
-          <a href="/">{t("Blog")}</a>
-        
-          <a href="/">{t("Pricing")}</a>
-        
-          <a href="/">{t("About")}</a>
           
-          <a href="/">{t("Faq")}</a>
-          
-          <a href="/">{t("Contact")}</a>
         </p>
 
         <p className="footer-company-name">{t(`${CopyRight}`)}</p>
@@ -67,7 +59,7 @@ function Footer() {
           {t(`${About_the_company}`)}
         </p>
 
-        <div className="footer-icons">
+        <div className="footer-icons" style={{display:'flex ', justifyContent:'space-around' , flexWrap:"wrap"}}>
         {
           data?.social_medias?.map((media)=>(
             <div key={media?.id}>

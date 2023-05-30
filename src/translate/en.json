@@ -92,5 +92,8 @@
     "Select..." : "Select...",
     "English" : "English" ,
     "Arabic" : "Arabic" ,
+    "ريال":"QAR",
+    "pending":"Pending",
+    "cash":"Cash",
     "": ""
 }

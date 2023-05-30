@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 const Product_Card = ({data , handlePageChange , page}) => {
   const [t] = useTranslation();
 
+  
   let total_page  =  data?.pagination?.total_pages
   return (
     <div className="col-lg-9 col_Product col_Fillter Right_Side ">
@@ -14,7 +15,7 @@ const Product_Card = ({data , handlePageChange , page}) => {
         <div className='Card_Top'>
           
           <Fillter/>
-          {/* Showing  {data?.pagination?.total} results */}
+          {t('Showing')}  {data?.pagination?.total} {t('Results')}
           </div>
         <div className='button-con'>
 
