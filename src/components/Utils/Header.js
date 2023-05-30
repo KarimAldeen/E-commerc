@@ -10,6 +10,7 @@ import { useDispatch } from 'react-redux';
 import { logout } from '../../redux/AuthReducer';
 import BtnTranslate from './translate/BtnTranslate';
 import { Email, HeaderText } from '../../config/LOCALSTORAGEKEY';
+import { Tooltip } from 'react-tooltip';
 
 const Header = () => {
   const [t] = useTranslation();
@@ -31,17 +32,28 @@ const Header = () => {
         {Open ?
           <div className='in_SideBar'>
             <div className='Mid'>
-              <a href="" className='Like'>
-                <i className="fa fa-heart fa-lg"></i>
-                <span className="badge rounded-pill badge-notification ">1</span>
-              </a>
-              <a href="" className='Cart'>
-                <i className="fa fa-shopping-bag fa-lg "></i>
-                <span className="badge rounded-pill badge-notification ">4</span>
-              </a>
+                    {
+                      
+                      <div className='MidBar__Right'>
+                <NavLink to="/allorder" className='Like Tool'>
+                    <i className="fas fa-luggage-cart fa-lg " data-tooltip-id="AllOrder" data-tooltip-content={t("All Order")}></i>
+                    <Tooltip id="AllOrder" className='ToolTip' />
 
-              <strong> $150.00</strong>
 
+                    {/* <span className="badge rounded-pill badge-notification ">{data?.order_count}</span> */}
+                </NavLink>
+                <NavLink to="/cart" className='Cart Tool'>
+                    <i className="fa fa-shopping-bag fa-lg "  data-tooltip-id="Cart" data-tooltip-content={t("Cart")}></i>
+                    <Tooltip id="Cart" className='ToolTip' />
+
+                    {/* <span className="badge rounded-pill badge-notification ">{data?.cart_items_count}</span> */}
+                </NavLink>
+
+                
+
+
+            </div> 
+            }
 
             </div>
             <div className='Top'>
@@ -50,21 +62,15 @@ const Header = () => {
               <NavLink to="/contactus">{t("Contact Us")}</NavLink>
        
               <NavLink to="/cart">{t("Cart")}</NavLink>
+              <NavLink to="/allorder">{t("Orders")}</NavLink>
+
             </div>
             <div className='Down'>
             <div className="btn-group open">
-                <button className="btn Drop_Btn dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true" >
-                    <i className="fa fa-bars"></i>
-                    <h3> {t("All Departments")}</h3>
-                </button>
-                <ul className="dropdown-menu">
-                    {["Home","Product","Contact","Cart",]?.map((i,index)=>(
-                    <li key={index}><a href="#"  >{i}</a></li>
-                    )
-                    )}
+                 
                   
                     
-                </ul>
+                
               </div>
 
             </div>
@@ -82,12 +88,12 @@ const Header = () => {
       </div>
 
       <div className='Header__Right'>
-        <div className='Header__Right_1'>
+        {/* <div className='Header__Right_1'>
           <Link to="/">  <FaGoogle /></Link>
           <Link to="/"> <FaInstagram /></Link>
           <Link to="/"> <FaFacebookSquare /></Link>
           <Link to="/"> <FaTwitter /></Link>
-        </div>
+        </div> */}
         <div className='Header__Right_2'>
           {/* <LanguageDropdown /> */}
           <BtnTranslate/>

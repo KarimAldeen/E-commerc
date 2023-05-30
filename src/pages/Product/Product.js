@@ -16,6 +16,7 @@ const Product = (props) => {
 
     const { page, per_page, handlePageChange } =
     usePaginationWithURL(location);
+    console.log(location?.search);
     const [filterObject , setFilterObject] = useState({})
     const [isPageLoaded, setIsPageLoaded] = useState(false); // Track if data for the current page has been loaded
 
@@ -24,7 +25,7 @@ const Product = (props) => {
  
 
 
-    const {data , isLoading , isError} = useGetProducts({
+    const {data , isLoading } = useGetProducts({
         page,
         per_page:6,
         ...filterObject
@@ -38,9 +39,8 @@ const Product = (props) => {
     if(isLoading){
         return <Loader />
     }
-    if(isError){
-        return "ERROR "
-    }
+   
+    
     return (
         <div className='Product'>
             <div className='Top_Product'>

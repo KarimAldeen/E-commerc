@@ -17,7 +17,7 @@ const HomePage = () => {
       }
       
   return (
-    <div className='HomePage'>
+    <div className='HomePage' style={{overflow:'hidden'}}>
           <Header/>
           <MidBar />
           <HomeSectin sliders={data?.sliders[0] || []} categories={data?.categories ||[]}/>

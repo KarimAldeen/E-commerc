@@ -7,9 +7,9 @@ function Categories({categories:data}) {
  const [t] = useTranslation()
   return (
     <motion.section className='category-section'
-    initial={{ opacity: 0 }}
-    whileInView={{ opacity: 1}}
-    transition={{ duration: 1.4 }}
+    initial={{ opacity: 0, scale: 0.5 }}
+    whileInView={{ opacity: 1, scale: [1 ,1.2 ,1] }}
+    transition={{ duration: 1.5 }}
     >
         <SubTiltle title={t("Categories")} show_more={false}/>
 
