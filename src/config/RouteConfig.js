@@ -6,12 +6,7 @@ export const RoutesConfigs = {
         url: "/",
         title: "home",
         component: lazy(() => import("../pages/Home/HomePage")),
-      },
-      contac: {
-        url: "/contac",
-        title: "contac",
-        component: lazy(() => import("../pages/ContactUs/ContactUsPage")),
-      },
+      },``
      cart:{
         url: "/cart",
         title: "cart",
