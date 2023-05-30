@@ -60,6 +60,10 @@
         right: 15px;
     }
 }
+.ar .SideBar{
+    right: 0 !important; 
+
+}
 .BlackScreen{
     position: absolute;
     left: 0;
@@ -85,6 +89,8 @@
         margin-bottom: 10px;
         border-bottom: 1px solid #e1e1e1;
         display: block;
+        margin-bottom: 20px;
+
     }
     .Mid{
         display: flex; align-items: center;
@@ -150,10 +156,16 @@
 }
 .btn-lg{
     border-radius:  0 !important;
+  
     &:hover,&:focus, &:focus-visible,&:active{
         background: var(--secondary) !important;
         color: var(--bg) !important;
     }
   
+}
+.btn-group-vertical>.btn, .btn-group>.btn {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 }

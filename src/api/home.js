@@ -13,6 +13,9 @@ import {
   
   const KEY = "HOME";
   export const useGetHomeStatics= (params, options) => useGetQuery(KEY, API.GET , params , options);
+
+
+  
   export const useGetCartCount= (params, options) => useGetQuery("CART", API.GETCartCount , params , options);
 
 

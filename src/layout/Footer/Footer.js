@@ -1,8 +1,12 @@
 import React from 'react'
 import { useGetHomeStatics } from '../../api/home';
 import { baseURL } from '../../api/config';
+import { About_the_company, CopyRight, Email, Location1, Location2, Phone } from '../../config/LOCALSTORAGEKEY';
+import { useTranslation } from 'react-i18next';
 
 function Footer() {
+  const [t] = useTranslation();
+
   const {data , isLoading , isError } = useGetHomeStatics({id:1} ,
     {
       staleTime: Infinity,
@@ -18,40 +22,40 @@ function Footer() {
 
       <div className="footer-left">
 
-        <h3>Alnokbah<span> Alarbi</span></h3>
+        <h3>{t("Alnokbah")}<span> {t("Alarbi")}</span></h3>
 
         <p className="footer-links">
-          <a href="/" className="link-1">Home</a>
+          <a href="/" className="link-1">{t("Home")}</a>
           
-          <a href="/">Blog</a>
+          <a href="/">{t("Blog")}</a>
         
-          <a href="/">Pricing</a>
+          <a href="/">{t("Pricing")}</a>
         
-          <a href="/">About</a>
+          <a href="/">{t("About")}</a>
           
-          <a href="/">Faq</a>
+          <a href="/">{t("Faq")}</a>
           
-          <a href="/">Contact</a>
+          <a href="/">{t("Contact")}</a>
         </p>
 
-        <p className="footer-company-name">Nokbah Alarabi © 2015</p>
+        <p className="footer-company-name">{t(`${CopyRight}`)}</p>
       </div>
 
       <div className="footer-center">
 
         <div>
           <i className="fa fa-map-marker"></i>
-          <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
+          <p><span>{t(`${Location1}`)}</span> {t(`${Location2}`)}</p>
         </div>
 
         <div>
           <i className="fa fa-phone"></i>
-          <p>+1.555.555.5555</p>
+          <p>{Phone}</p>
         </div>
 
         <div>
           <i className="fa fa-envelope"></i>
-          <p><a href="mailto:support@company.com">support@company.com</a></p>
+          <p><a href={Email}>{Email}</a></p>
         </div>
 
       </div>
@@ -59,8 +63,8 @@ function Footer() {
       <div className="footer-right">
 
         <p className="footer-company-about">
-          <span>About the company</span>
-          Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+          <span>{t("About the company")}</span>
+          {t(`${About_the_company}`)}
         </p>
 
         <div className="footer-icons">

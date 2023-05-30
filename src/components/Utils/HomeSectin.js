@@ -2,7 +2,16 @@ import React from 'react'
 import { FaAngleDown,FaPhoneAlt } from "react-icons/fa";
 import HomeSec from '../../Images/HomeSec.jpg'
 import { baseURL } from '../../api/config';
+import { useTranslation } from 'react-i18next';
+import { Phone } from '../../config/LOCALSTORAGEKEY';
+// import { MapTranslate } from '../../utils/mapTranlate';
 const HomeSectin = ({sliders , categories}) => {
+    const [t] = useTranslation();
+
+
+    
+ 
+
   return (
     <div className='HomeSectin'>
         <div class="row">
@@ -10,13 +19,13 @@ const HomeSectin = ({sliders , categories}) => {
                 <div className="btn-group open">
                 <button className="btn Drop_Btn dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true" >
                     <i className="fa fa-bars"></i>
-                    <h3> All Category</h3>
+                    <h3> {t("All Category")}</h3>
                 </button>
                 <ul className="dropdown-menu">
-                    {categories?.map((i,index)=>(
-                    <li key={index}>{i?.id}</li>
+                    {/* {categories?.map((i,index)=>(
+                    <li key={index}>{MapTranslate(i?.category_translations , 'name')}</li>
                     )
-                    )}
+                    )} */}
                   
                     
                 </ul>
@@ -26,13 +35,13 @@ const HomeSectin = ({sliders , categories}) => {
                     <div className='Top_Section'>
                     <form className="example" action="action_page.php">
                         <div className='AllCategories'>
-                        <h3 > All Product    </h3>
+                        <h3 > {t("All Product")}    </h3>
                         {/* <FaAngleDown/> */}
                         </div>
 
-                    <input type="text" placeholder=" What Do You Need?" name="search" />
+                    <input type="text" placeholder={t("What Do You Need?")} name="search" />
                     <button type="submit">
-                        Search
+                        {t("Search")}
                     </button>
                 </form>
                 <div className='Top_Section_Right'>
@@ -40,7 +49,7 @@ const HomeSectin = ({sliders , categories}) => {
                 <FaPhoneAlt/>
                 </div>
                 <div className='Phone2'>
-                <h5>+963-951968994</h5>
+                <h5>{Phone}</h5>
                 
                 </div>
                 </div>

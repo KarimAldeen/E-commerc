@@ -3,7 +3,6 @@ import React, { useEffect } from 'react'
 import AppRouter from './Routes'
 import 'bootstrap/dist/css/bootstrap.css';
 import 'react-tooltip/dist/react-tooltip.css'
-import i18n from '../src/translate/Translate'
 import { useGetCategory } from './api/category';
 import Loader from './components/Utils/Loader';
 import { useDispatch } from 'react-redux';

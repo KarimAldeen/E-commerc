@@ -347,15 +347,16 @@ width:45vw;
     cursor: pointer;
     display: block !important;
   }
+ 
   .col-lg-3 {
-    // position: absolute !important;
+    //position: absolute !important;
     top: -5px !important;
-    transform: translateX(-150%);
+    transform: translateX(-520%);
     min-width: 50% !important;
-    -webkit-transform: translateX(-150%);
-    -moz-transform: translateX(-150%);
-    -ms-transform: translateX(-150%);
-    -o-transform: translateX(-150%);
+    -webkit-transform: translateX(-520%);
+    -moz-transform: translateX(-520%);
+    -ms-transform: translateX(-520%);
+    -o-transform: translateX(-520%);
 }
 .row .col-lg-9  {
   width: 100% !important;

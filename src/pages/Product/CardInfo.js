@@ -5,8 +5,23 @@ import Image from '../../Images/P1.png'
 import { FaAngleLeft, FaHeart } from "react-icons/fa";
 import FeaturedProduct from '../Home/FeaturedProduct';
 import Footer from '../../layout/Footer/Footer';
+import { history } from '../../history';
+import { useGetProducts, useGetSingleProduct } from '../../api/products';
+import { useParams } from 'react-router';
+import Loader from '../../components/Utils/Loader';
+import { baseURL } from '../../api/config';
+// import { MapTranslate } from '../../utils/mapTranlate';
+import CardDetails from './CardDetails';
 
 const CardInfo = () => {
+  const {id} = useParams()
+  const {data , isLoading} = useGetSingleProduct({product_id:id})
+   console.log(data);
+
+   
+   if(isLoading){
+    return <Loader/>
+   }
   return (
     <div className='CardInfo'>
       <div className='Top_Product'>
@@ -14,33 +29,10 @@ const CardInfo = () => {
         <MidBar />
       </div>
       <div className='Info_Section'>
-        <div className="card_info">
-          <nav>
-            <div>
-              <FaAngleLeft />
-              Back to home page
-            </div>
-
-            <FaHeart />
-          </nav>
-          <div className="photo">
-            <img src={Image} />
-          </div>
-          <div className="description">
-            <h2>Classic Peace Lily</h2>
-            <h4>Popular House Plant</h4>
-            <h1>$18</h1>
-            <p>
-              Classic Peace Lily is a spathiphyllum floor plant arranged in a bamboo
-              planter with a blue &amp; red ribbom and butterfly pick.
-            </p>
-            <button>Add to Cart</button>
-            <button>Wishlist</button>
-          </div>
-        </div>
+       <CardDetails product={data} />
       </div>
       <div>
-      <FeaturedProduct  />
+      {/* <FeaturedProduct  /> */}
 
       </div>
       <Footer/>

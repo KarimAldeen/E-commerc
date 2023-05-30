@@ -1,15 +1,48 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { FaWindowClose, FaDollarSign } from "react-icons/fa";
 import { useSelector } from 'react-redux';
-import Select from 'react-select';
 
-const Product_Fillter = () => {
+import SelectCategory from '../../components/SelectCategory';
+import { useTranslation } from 'react-i18next';
+
+const Product_Fillter = ({setFilterObject}) => {
     const {category , subCategory , subSubCategory} = useSelector(state => state.category)
+    const input = useRef(null)
+    const CategoryRef = useRef();
+    const SubCategoryRef = useRef();
+    const SubSubCategoryRef = useRef();
+    const [t] = useTranslation();
 
-    const departments = ["", "FreshMeat", "Vegetables", "Fruit", "Fresh", "Ocean", "Butter", "Fastfood", "Fresh", "Papayaya", "Oatmeal", "Bananas"]
+ 
     function Close(){
         const Left_Side = document.getElementById('Left_Side');
         Left_Side.classList.remove("FillterON");
+        }
+
+        
+        const [Category , setCategory] = useState(null)
+        const [subcategory , setsubCategory] = useState(0)
+        const [subsubcategory , setsubsubCategory] = useState(0)
+
+        useEffect(()=>{
+
+            setsubCategory(null)
+            setsubsubCategory(null)
+        },[Category])
+
+        useEffect(()=>{
+
+            setsubsubCategory(null)
+        },[subcategory])
+        const handelFilter  = ()=>{
+            
+            let obj = {
+                filter_category_id :(subsubcategory?.value  ??  (subcategory?.value ?? Category?.value)),
+                search:input.current.value
+
+            }
+
+            setFilterObject(obj);
         }
     return (
         <div className="col-lg-3 col_Product  fillter-con Left_Side position-st" id='Left_Side'>
@@ -20,66 +53,53 @@ const Product_Fillter = () => {
                            
 
             <div className='col_Product_Top'>
-                <h4>Search in All Prouct</h4>
+                <h4>{t("Search in All Prouct")}</h4>
             </div>
 
             <div>
                 <div className="slidecontainer">
                     <div className='col_Product_Mid'>
-                        <input class="form-control" type="text" placeholder="Search" aria-label="Search"></input>
+                        <input class="form-control" ref={input} type="text" placeholder={t("Search")} aria-label="Search"></input>
 
                     </div>
-                    {/* <div className='slidecontainer_Top'><h4>Price</h4></div>
-                    <input
-                        type="range"
-                        min={1}
-                        max={100}
-                        defaultValue={50}
-                        className="slider"
-                        id="myRange"
-                    /> */}
                 </div>
 
             </div>
 
             <div className='col_Product_Down'>
                 <div className='Category_sel'>
-                    <h4>Category</h4>
-                    <Select
-                        
-                        onChange={()=>{}}
-                        options={category.map(c => ({
-                            value:c.id,
-                            label:c?.category_translations[0]?.name
-                        }))}
+                    <h4>{t("Category")}</h4>
+                    <SelectCategory
+                          Options={category}
+                          parentId={null}
+                          setOb={setCategory}
+                          ref={CategoryRef}
+                          Ob={Category}
                       />
                 </div>
                 <div className='Category_sel'>
-                    <h4>SubCategory</h4>
-                    <Select
-                        onChange={()=>{}}
-                        options={subCategory.map(c => ({
-                            value:c.id,
-                            label:c?.category_translations[0]?.name
-                        }))}
-                        isDisabled={subCategory.length ===0 ? true :false}
-
+                    <h4>{t("SubCategory")}</h4>
+                    <SelectCategory
+                          Options={subCategory}
+                          parentId={Category?.value}
+                          ref={SubCategoryRef}
+                          setOb={setsubCategory}
+                          Ob={subcategory}
                       />
                 </div>
                 <div className='Category_sel'>
-                    <h4>SubSubCategory</h4>
-                    <Select
-                        onChange={()=>{}}
-                        options={subSubCategory.map(c => ({
-                            value:c.id,
-                            label:c?.category_translations[0]?.name
-                        }))}
-                        isDisabled={subSubCategory.length ===0 ? true :false}
+                    <h4>{t("SubSubCategory")}</h4>
+                    <SelectCategory
+                           ref={SubSubCategoryRef}
+                          Options={subSubCategory}
+                          parentId={subcategory?.value}
+                          setOb={setsubsubCategory}
+                          Ob={subsubcategory}
                       />
                 </div>
                 <div className='Button'>
-                    <button className="btn-donate">
-                        Fillter It Now
+                    <button className="btn-donate"  onClick={handelFilter}>
+                        {t("Fillter It Now")}
                     </button>
                 </div>
 
@@ -90,3 +110,6 @@ const Product_Fillter = () => {
 }
 
 export default Product_Fillter
+
+
+

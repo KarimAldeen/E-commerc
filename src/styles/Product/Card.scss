@@ -133,6 +133,7 @@
 .product-links a:hover {
     color: var(--primary);
 }
+
 }
 .Flex{
     display: flex;  align-items: center; gap: 20%;
@@ -164,3 +165,21 @@
     font-size: 11px !important;
 }
   }
+
+  .description-product-detailes{
+    button{
+            background-color: var(--primary) !important;
+            color: white !important;
+            padding: 7px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1.2em;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+}
+}
+.product_title{
+    color: var(--primary) !important;
+}

@@ -1,11 +1,13 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 
 const Title_Button = () => {
+  const [t] = useTranslation()
   return (
     <div className='Title_Button'>
        <button className="cssbuttons-io-button">
   {" "}
-  See More
+  {t("See More")}
   <div className="icon">
     <svg
       xmlns="http://www.w3.org/2000/svg"

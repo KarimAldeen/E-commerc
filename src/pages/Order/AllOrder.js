@@ -2,8 +2,11 @@ import React from 'react'
 import Header from '../../components/Utils/Header'
 import MidBar from '../../components/Utils/MidBar'
 import Footer from '../../layout/Footer/Footer'
+import { useTranslation } from 'react-i18next'
 
 const AllOrder = () => {
+  const [t] = useTranslation();
+
   return (
     <div className='AllOrder'>
       <div className='Top_Order'>
@@ -22,11 +25,11 @@ const AllOrder = () => {
                         <th className="text-center">
 
                         </th>
-                        <th>Order </th>
-                        <th>place Name </th>
-                        <th>status</th>
-                        <th>Total</th>
-                        <th>Created</th>
+                        <th>{t("Order")} </th>
+                        <th>{t("place Name")} </th>
+                        <th>{t("status")}</th>
+                        <th>{t("Total")}</th>
+                        <th>{t("Created")}</th>
                       </tr>
                     </thead>
 
@@ -53,8 +56,8 @@ const AllOrder = () => {
 
                   </table>
                   <div className='tfoot'>
-                    <div className='tfoot_in'><div>Order Count :</div> <div> 6</div></div>
-                    <div className='tfoot_in'><div>Total :</div> <div>20000</div></div>
+                    <div className='tfoot_in'><div>{t("Order Count :")}</div> <div> 6</div></div>
+                    <div className='tfoot_in'><div>{t("Total :")}</div> <div>20000</div></div>
                     <div className='tfoot_in'><div></div> <div></div></div>
                   </div>
                 </div>

@@ -4,7 +4,10 @@ import { FaPhoneAlt } from "react-icons/fa";
 import Header from '../../components/Utils/Header';
 import MidBar from '../../components/Utils/MidBar';
 import Footer from '../../layout/Footer/Footer';
+import { useTranslation } from 'react-i18next';
 const OrderPage = () => {
+  const [t] = useTranslation();
+
   return (
     <div className='OrderPage'>
       <div className='Top_Order'>
@@ -12,16 +15,16 @@ const OrderPage = () => {
         <MidBar />
       </div>
         <div className="card">
-  <div className="title">Purchase Reciept</div>
+  <div className="title">{t("Purchase Reciept")}</div>
   <div className="info">
     <div className="row">
       <div className="col-7">
-        <span id="heading " className='Infos'>Date</span>
+        <span id="heading " className='Infos'>{t("Date")}</span>
         <br />
         <span id="details " className='Infos'>10 October 2018</span>
       </div>
       <div className="col-5 pull-right">
-        <span id="heading " className='Infos'>Order No.</span>
+        <span id="heading " className='Infos'>{t("Order Number")}</span>
         <br />
         <span id="details " className='Infos'>012j1gvs356c</span>
       </div>
@@ -30,15 +33,15 @@ const OrderPage = () => {
   <div className="pricing">
     <div className="row">
       <div className="col-9">
-        <span id="name"className='infos'>BEATS Solo 3 Wireless Headphones</span>
+        <span id="name"className='infos'>{t("Order Cost")}</span>
       </div>
       <div className="col-3">
-        <span id="price"className='infos'>£299.99</span>
+        <span id="price"className='infos'>299.99 {t("Ryal")} </span>
       </div>
     </div>
     <div className="row">
       <div className="col-9">
-        <span id="name"className='infos'>Shipping</span>
+        <span id="name"className='infos'>{t("Shipping")}</span>
       </div>
       <div className="col-3">
         <span id="price"className='infos'>£33.00</span>
@@ -54,22 +57,22 @@ const OrderPage = () => {
     </div>
   </div>
   <div className="tracking">
-    <div className="title">Tracking Order</div>
+    <div className="title">{t("Tracking Order")}</div>
   </div>
   <div className="progress-track">
     <ul id="progressbar">
       <li className="step0 active " id="step1">
 
-        Ordered
+        {t("Ordered")}
       </li>
       <li className="step0 active text-center" id="step2">
-        Shipped
+        {t("Shipped")}
       </li>
       <li className="step0 active text-right" id="step3">
-        On the way
+        {t("On the way")}
       </li>
       <li className="step0  text-right" id="step4">
-        Delivered
+        {t("Delivered")}
       </li>
     </ul>
   </div>
@@ -79,7 +82,7 @@ const OrderPage = () => {
         <img className="img-fluid" src={Arabic} />
       </div>
       <div className="col-10">
-        Want any help?
+        {t("Want any help?")}
         <FaPhoneAlt/>
       </div>
     </div>

@@ -1,8 +1,11 @@
-import { useAddMutation  } from "./helpers";
- const API = { Add: `/cart/add_product`,};
+import { useAddMutation, useGetQuery  } from "./helpers";
+ const API = {
+     Add: `/api/cart/add_product`,
+    GET:`/api/cart/details`
+    };
   
-  const KEY = "cart";
-  export const useAddCart= (params, options) => useAddMutation(KEY, API.Add , params , options);
-
+  const KEY = "CART";
+  export const useAddCart= () => useAddMutation(KEY, API.Add );
+export const useGetCart = () => useGetQuery(KEY,API.GET )
 
 

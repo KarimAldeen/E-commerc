@@ -9,7 +9,7 @@ const SubTiltle = ({title , show_more =true}) => {
 
     return (
         <div className="SubTiltle">
-            {/* {!isNaN(id) ? */}
+        
                 <>
                    {
                     show_more ?<Title_Button/> :<span></span>
@@ -19,20 +19,7 @@ const SubTiltle = ({title , show_more =true}) => {
                     </div>
                 </>
 
-                {/* :
-
-                <>
-                    <h3 className="subtitle__Right">{lenght}  {t(`${type}`)} </h3>
-                    <div>
-                        <h1 className="subtitle__Mid">{t(`${title}`)} </h1>
-                    </div>
-                    <Link to={t(`${path}`)} className="subtitle__Left" >
-                        <button>{t(`${btntitle}`)} </button>
-                    </Link>
-                </>
-            } */}
-
-
+    
         </div>
     )
 }

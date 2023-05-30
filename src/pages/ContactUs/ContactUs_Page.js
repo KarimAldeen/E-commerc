@@ -1,8 +1,12 @@
 import React from 'react'
 import contact from '../../Images/Contact.svg'
 import Page from '../../layout/Page'
+import { useTranslation } from 'react-i18next';
 const ContactUs_Page = () => {
+  const [t] = useTranslation();
+
   return (
+
     <Page>
    <div className='ContactUs_Page'>
 <div className="container">
@@ -10,7 +14,7 @@ const ContactUs_Page = () => {
     <div className="col-md-10">
       <div className="row justify-content-center">
         <div className="col-md-6">
-          <h3 className="heading mb-4">Let's talk about everything!</h3>
+          <h3 className="heading mb-4">{t("Let's talk about everything!")}</h3>
       
           <p>
             <img
@@ -34,7 +38,7 @@ const ContactUs_Page = () => {
                   className="form-control"
                   name="name"
                   id="name"
-                  placeholder="Your name"
+                  placeholder={t("Your name")}
                 />
               </div>
             </div>
@@ -45,7 +49,7 @@ const ContactUs_Page = () => {
                   className="form-control"
                   name="email"
                   id="email"
-                  placeholder="Email"
+                  placeholder={t("Email")}
                 />
               </div>
             </div>
@@ -56,7 +60,7 @@ const ContactUs_Page = () => {
                   className="form-control"
                   name="subject"
                   id="subject"
-                  placeholder="Subject"
+                  placeholder={t("Subject")}
                 />
               </div>
             </div>
@@ -68,7 +72,7 @@ const ContactUs_Page = () => {
                   id="message"
                   cols={30}
                   rows={7}
-                  placeholder="Write your message"
+                  placeholder={t("Write your message")}
                   defaultValue={""}
                 />
               </div>
@@ -85,7 +89,7 @@ const ContactUs_Page = () => {
             </div>
           </form>
           <div id="form-message-warning mt-4" />
-          <div id="form-message-success">Your message was sent, thank you!</div>
+          <div id="form-message-success">{t("Your message was sent, thank you!")}</div>
         </div>
       </div>
     </div>

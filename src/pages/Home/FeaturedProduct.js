@@ -7,15 +7,16 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import Card from '../../pages/Product/Card';
 import SwiperComponent from '../../components/SwiperComponents';
 import SubTiltle from '../../components/SubTiltle';
+import { useTranslation } from 'react-i18next';
 
 function FeaturedProduct({product:data}) {
-
+const [t] = useTranslation()
  
         
   return (
 
     <div className='FeaturedProduct'>
-        <SubTiltle title="Featured Product"/>
+        <SubTiltle title={t("Featured Product")}/>
         <SwiperComponent>
         {
             (data||[]).map(

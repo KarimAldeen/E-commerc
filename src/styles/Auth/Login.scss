@@ -1,10 +1,14 @@
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
-
+.ar .LoginPage{
+   form{
+    direction: rtl;
+   }
+}
 .LoginPage{
   display: flex; justify-content: center; align-items: center; 
-
+direction: ltr;
   
   color: var(--secondary);
   background-color: var(--bg);
@@ -73,7 +77,7 @@
     border-color: #FFFFFF;
   }
   
-  form {
+  form{
     background-color: #FFFFFF;
     display: flex;
     align-items: center;
@@ -88,6 +92,7 @@
       align-self: start !important;
     }
   }
+  
   
   input {
     border-radius: 10px;
@@ -130,6 +135,7 @@
     left: 0;
     width: 50%;
     z-index: 2;
+    
   }
   
   .container.right-panel-active .sign-in-container {
@@ -256,4 +262,12 @@
     width: 70vw;
   }
  }
+}
+.sign-in-container {
+  form{
+
+.M_Top{
+  margin-bottom: 120px;
+}
+  }
 }

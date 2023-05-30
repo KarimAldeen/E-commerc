@@ -93,9 +93,9 @@ const LoginPage = () => {
             >
               {({ handleSubmit }) => (
                 <form className="register-form" onSubmit={handleSubmit}>
-                  <h1>Create Account</h1>
+                  <h1>{t("Create Account")}</h1>
 
-                  <span className="Sign_in">or use your email for registration</span>
+                  <span className="Sign_in">{t("or use your email for registration")}</span>
 
                   <label htmlFor="full_name">{t('full_name')}</label>
                   <Field type="text" id="full_name" name="full_name" />
@@ -113,7 +113,7 @@ const LoginPage = () => {
                   <Field type="password" id="password_confirmation" name="password_confirmation" />
                   <ErrorMessage name="password_confirmation" component="div" className="error" />
 
-                  <h3 onClick={signIn} className="Pointer">Have Account?</h3>
+                  <h3 onClick={signIn} className="Pointer">{t("Have Account")}?</h3>
 
                   <LoadingButton
                             type="submit"
@@ -156,12 +156,12 @@ const LoginPage = () => {
           <ErrorMessage name="password" component="div" className="error" />
 
 
-      <h3 onClick={signUp} className="Pointer">Create New Account?</h3>
+      <h3 onClick={signUp} className="Pointer">{t("Create New Account?")}</h3>
            <LoadingButton
                             type="submit"
                             color="primary"
                             isLoading={LoadingLogin}
-                            className="M_Top"
+                            className="M_Top M2_Top"
                         >
                             {t("Sign in")}
                  </LoadingButton>
@@ -172,18 +172,18 @@ const LoginPage = () => {
           <div className="overlay-container">
             <div className="overlay">
               <div className="overlay-panel overlay-left">
-                <h1>Welcome Back!</h1>
-                <p>To keep connected with us, please login with your personal info</p>
+                <h1>{t("Welcome Back!")}</h1>
+                <p>{t("To keep connected with us, please login with your personal info")}</p>
                 <button className="ghost" id="signIn" onClick={signIn}>
-                  Sign In
+                  {t("Sign In")}
                 </button>
               </div>
               <div className="overlay-panel overlay-right">
-                <h1>Hello, Friend!</h1>
-                <p>Enter your personal details and start your journey with us</p>
+                <h1>{t("Hello, Friend!")}</h1>
+                <p>{t("Enter your personal details and start your journey with us")}</p>
                 
                 <button className="ghost" id="signUp" onClick={signUp}>
-                  Sign Up
+                  {t("Sign Up")}
                 </button>
               </div>
             </div>

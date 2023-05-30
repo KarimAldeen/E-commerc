@@ -21,10 +21,20 @@ export const useAddMutation = (key, url) => {
      
       },
       onError: (err) => {
-        const message = err?.response?.data?.message || t("failed_to_add_data");
+        let message ='';
+        if(err.response.status ===401){
+          message =  t("please_login_first");
+
+        }
+       else{
+        message = err?.response?.data?.message || t("failed_to_add_data");
+
+       }
         toast.error(message);
         validateSession(err.response);
       },
-    }
+      
+    },
+    
   );
 };
