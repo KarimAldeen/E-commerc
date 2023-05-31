@@ -27,23 +27,23 @@ const CartForm = ({cart}) => {
       <div className="col over-total" style={{ paddingLeft: 0 }}>
         {t("item")} {cart?.cart_items_count}
       </div>
-      <div className="col text-right over-total">{t("over-total")}:{cart?.overall_total}</div>
+      <div className="col text-right over-total white">{t("over-total")}:{cart?.overall_total}</div>
     </div>
      
      <Formik onSubmit={handelSubmut}
      initialValues={initialValues}>
       <Form className='checkout-form'>
-        <label>{t("search for place")}</label>
+        <label className='white'>{t("search for place")}</label>
       <Autocomplete
-  apiKey={'AIzaSyAIO-8bXHu3gUxOXDpxCr6cz91i20Ex8IA'}
-  onPlaceSelected={(place) => {
-    console.log(place?.geometry?.location?.lat());
-  }}
-/>
-        <label>{t("zone number")}</label>
+      apiKey={'AIzaSyAIO-8bXHu3gUxOXDpxCr6cz91i20Ex8IA'}
+      onPlaceSelected={(place) => {
+        console.log(place?.geometry?.location?.lat());
+      }}
+    />
+        <label className='white'>{t("zone number")}</label>
         <Field name="zone_number" type="text" />
-        <label>{t("additional Info")}</label>
-        <Field name="additional_info"      as="textarea" />
+        <label className='white'>{t("additional Info")}</label>
+        <Field name="additional_info"      as="input" />
        
           <ErrorMessage name="address4" component="div" className="error" />
 

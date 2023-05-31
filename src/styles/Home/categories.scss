@@ -1,5 +1,11 @@
 .category-section{
 margin-block: 80px;
+h1{
+margin-bottom:80px;
+font-weight: bold;
+text-align: center;
+
+}
     .category-header{
         text-align: center;
         font-size: 2em;
@@ -96,4 +102,7 @@ and (max-width : 414px)
         }
     }
     
+}
+.white{
+    color: var(--bg) !important;
 }

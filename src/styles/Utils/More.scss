@@ -1,0 +1,207 @@
+.More{
+    .btn-conteiner {
+        display: flex;
+        justify-content: center;
+      }
+      svg{
+        height: 3vw;
+        width: 5vw;
+      }
+      .btn-content {
+        display: flex;
+        align-items: center;
+        padding: .5vw 1.4vw;
+        text-decoration: none;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-size: 2vw;
+        color: var(--bg);
+        background: var(--primary);
+        transition: 1s;
+        border-radius: 5px;
+        box-shadow: 0 0 0.2em 0 var(--primary);
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        -webkit-transition: 1s;
+        -moz-transition: 1s;
+        -ms-transition: 1s;
+        -o-transition: 1s;
+}
+      
+      .btn-content:hover, .btn-content:focus {
+        transition: 0.5s;
+        -webkit-animation: btn-content 1s;
+        animation: btn-content 1s;
+        outline: 0.1em solid transparent;
+        outline-offset: 0.2em;
+        box-shadow: 0 0 0.4em 0 var(--primary);
+        -webkit-transition: 0.5s;
+        -moz-transition: 0.5s;
+        -ms-transition: 0.5s;
+        -o-transition: 0.5s;
+}
+      .btn-content, .btn-content {
+        transition: 0.5s;
+        -webkit-animation: btn-content 1s;
+        animation: btn-content 1s;
+        outline: 0.1em solid transparent;
+        outline-offset: 0.2em;
+        box-shadow: 0 0 0.4em 0 var(--primary);
+        -webkit-transition: 0.5s;
+        -moz-transition: 0.5s;
+        -ms-transition: 0.5s;
+        -o-transition: 0.5s;
+}
+      
+      .btn-content .icon-arrow {
+        transition: 0.5s;
+        margin-right: 0px;
+        transform: scale(0.6);
+        -webkit-transform: scale(0.6);
+        -moz-transform: scale(0.6);
+        -ms-transform: scale(0.6);
+        -o-transform: scale(0.6);
+        -webkit-transition: 0.5s;
+        -moz-transition: 0.5s;
+        -ms-transition: 0.5s;
+        -o-transition: 0.5s;
+}
+      
+      .btn-content:hover .icon-arrow {
+        transition: 0.5s;
+        margin-right: 35px;
+        -webkit-transition: 0.5s;
+        -moz-transition: 0.5s;
+        -ms-transition: 0.5s;
+        -o-transition: 0.5s;
+}
+      .btn-content .icon-arrow {
+        transition: 0.5s;
+        margin-right: 15px;
+        -webkit-transition: 0.5s;
+        -moz-transition: 0.5s;
+        -ms-transition: 0.5s;
+        -o-transition: 0.5s;
+}
+      
+      .icon-arrow {
+        width: 1.7vw;
+        margin-left: 1vw;
+        position: relative;
+        top: 6%;
+      }
+        
+      /* SVG */
+      #arrow-icon-one {
+        transition: 0.4s;
+        transform: translateX(-60%);
+        -webkit-transform: translateX(-60%);
+        -moz-transform: translateX(-60%);
+        -ms-transform: translateX(-60%);
+        -o-transform: translateX(-60%);
+        -webkit-transition: 0.4s;
+        -moz-transition: 0.4s;
+        -ms-transition: 0.4s;
+        -o-transition: 0.4s;
+}
+      
+      #arrow-icon-two {
+        transition: 0.5s;
+        transform: translateX(-30%);
+        -webkit-transform: translateX(-30%);
+        -moz-transform: translateX(-30%);
+        -ms-transform: translateX(-30%);
+        -o-transform: translateX(-30%);
+}
+      
+      .btn-content:hover #arrow-icon-three {
+        animation: color_anim 1s infinite 0.2s;
+        -webkit-animation: color_anim 1s infinite 0.2s;
+}
+      
+      .btn-content:hover #arrow-icon-one {
+        transform: translateX(0%);
+        animation: color_anim 1s infinite 0.6s;
+        -webkit-transform: translateX(0%);
+        -moz-transform: translateX(0%);
+        -ms-transform: translateX(0%);
+        -o-transform: translateX(0%);
+        -webkit-animation: color_anim 1s infinite 0.6s;
+}
+      
+      .btn-content:hover #arrow-icon-two {
+        transform: translateX(0%);
+        animation: color_anim 1s infinite 0.4s;
+        -webkit-transform: translateX(0%);
+        -moz-transform: translateX(0%);
+        -ms-transform: translateX(0%);
+        -o-transform: translateX(0%);
+        -webkit-animation: color_anim 1s infinite 0.4s;
+}
+.btn-content #arrow-icon-three {
+    animation: color_anim 1s infinite 0.2s;
+    -webkit-animation: color_anim 1s infinite 0.2s;
+}
+  
+  .btn-content #arrow-icon-one {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.6s;
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    -webkit-animation: color_anim 1s infinite 0.6s;
+}
+  
+  .btn-content #arrow-icon-two {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.4s;
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    -webkit-animation: color_anim 1s infinite 0.4s;
+}
+      /* SVG animations */
+      @keyframes color_anim {
+        0% {
+          fill: white;
+        }
+      
+        50% {
+          fill: var(--primary);
+        }
+      
+        100% {
+          fill: white;
+        }
+      }
+      
+      /* Button animations */
+      @-webkit-keyframes btn-content {
+        0% {
+          outline: 0.2em solid var(--primary);
+          outline-offset: 0;
+        }
+      }
+      
+      @keyframes btn-content {
+        0% {
+          outline: 0.2em solid var(--primary);
+          outline-offset: 0;
+        }
+      }
+      @include devices(tablet){
+        svg{
+          height: 5vw;
+          width: 7vw;
+        }
+        .btn-content {
+          padding: 1vw 4vw;
+          font-size: 2vw;
+        
+  }
+      }
+}

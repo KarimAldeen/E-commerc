@@ -2,6 +2,7 @@ import React from 'react'
 import { baseURL } from '../../api/config';
 import { MapTranslate } from '../../utils/mapTranlate';
 import { LangNumber } from '../../utils/LangNumber';
+import Delete from '../../components/Button/Delete';
 
 const CartView = ({product}) => {
 
@@ -18,11 +19,12 @@ const CartView = ({product}) => {
         <div className="row text-muted">{MapTranslate(item?.product_translations ,'name' , LangCode)}</div>
       </div>
       <div className="col">
-        <a href="#">-</a>
+        <Delete/>
+        {/* <a href="#">-</a>
         <a href="#" className="border">
           {product?.quantity}
         </a>
-        <a href="#">+</a>
+        <a href="#">+</a> */}
       </div>
       <div className="col">
         {item?.product_price} <span className="close">✕</span>

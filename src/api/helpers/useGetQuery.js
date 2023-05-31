@@ -23,8 +23,6 @@ const {t} = useTranslation()
           message =  t("please_login_first");
           toast.error(message)
          
-          
-
 
         }
      

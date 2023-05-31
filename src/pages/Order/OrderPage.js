@@ -69,7 +69,7 @@ const OrderPage = () => {
               <span id="name" className='infos'>{t("Order Cost")}</span>
             </div>
             <div className="col-3">
-              <span id="price" className='infos'>{data?.order_total} {t("ryal")}</span>
+              <span id="price" className='infos'>{data?.order_total} {t("ريال")}</span>
             </div>
           </div>
           <div className="row">

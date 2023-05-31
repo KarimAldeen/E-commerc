@@ -2,6 +2,7 @@ import React from 'react'
 import contact from '../../Images/Contact.svg'
 import Page from '../../layout/Page'
 import { useTranslation } from 'react-i18next';
+import Contact_Svg from './Contact_Svg';
 const ContactUs_Page = () => {
   const [t] = useTranslation();
 
@@ -17,20 +18,21 @@ const ContactUs_Page = () => {
           <h3 className="heading mb-4">{t("Let's talk about everything!")}</h3>
       
           <p>
-            <img
+            {/* <img
               src={contact}
               alt="Immage"
               className="img-fluid image-contact-us"
-            />
+            /> */}
+            <Contact_Svg/>
           </p>
         </div>
         <div className="col-md-6">
           <form
             className="mb-5"
-            method="post"
+            
             id="contactForm"
-            name="contactForm"
-          >
+
+            >
             <div className="row">
               <div className="col-md-12 form-group">
                 <input
@@ -82,7 +84,9 @@ const ContactUs_Page = () => {
                 <input
                   type="submit"
                   defaultValue="Send Message"
-                  className="btn btn-primary rounded-0 py-2 px-4 button-submit"
+                  value={t('Submit')}
+                    style={{margin:'10px'}}
+                  className="btn btn-primary rounded-0 py-2 px-2 button-submit"
                 />
                 <span className="submitting" />
               </div>

@@ -16,18 +16,25 @@ const Product = (props) => {
 
     const { page, per_page, handlePageChange } =
     usePaginationWithURL(location);
-    console.log(location?.search);
+    
+
+    const searchParams = new URLSearchParams(location.search);
+    const searchValue = searchParams.get('search');
+   
+    // Get the value of the 'search' parameter
+
     const [filterObject , setFilterObject] = useState({})
     const [isPageLoaded, setIsPageLoaded] = useState(false); // Track if data for the current page has been loaded
 
     
-    
+  
  
 
 
     const {data , isLoading } = useGetProducts({
         page,
         per_page:6,
+        search:searchValue,
         ...filterObject
       },
       {
