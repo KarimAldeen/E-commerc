@@ -44,6 +44,8 @@
 }
 .Like,.Cart{
     margin-inline: 5px;
+    font-size: 10px;
+  
 
     span{
             background-color: var(--primary);
@@ -52,5 +54,17 @@
 }
 .MidBar__Right{
     display: flex;
-    font-size: 1vw;
+    font-size: 4vw !important
+}
+
+.small-size{
+    font-size: 17px !important;
+}
+.item-count{
+    font-size: 16px !important;
+   font-weight: 300;
+    margin-inline:4px ;
+    b{
+        font-weight: bold;
+    }
 }

@@ -20,6 +20,9 @@ const Product = (props) => {
 
     const searchParams = new URLSearchParams(location.search);
     const searchValue = searchParams.get('search');
+
+    const category_id = searchParams.get('category_id');
+
    
     // Get the value of the 'search' parameter
 
@@ -35,6 +38,8 @@ const Product = (props) => {
         page,
         per_page:6,
         search:searchValue,
+
+        filter_category_id:category_id,
         ...filterObject
       },
       {
@@ -60,7 +65,7 @@ const Product = (props) => {
 
                 <div className="row">
     
-                   <Product_Fillter setFilterObject={setFilterObject}/>
+                   <Product_Fillter setFilterObject={setFilterObject} category_id={category_id}/>
                    <Product_Card data={data} page={page} handlePageChange={handlePageChange}/>
                 </div>
             </div>

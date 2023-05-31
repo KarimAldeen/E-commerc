@@ -6,9 +6,10 @@ import { useTranslation } from 'react-i18next';
 import { Phone } from '../../config/LOCALSTORAGEKEY';
 import { MapTranslate } from '../../utils/mapTranlate';
 import { LangNumber } from '../../utils/LangNumber';
+import { useNavigate } from 'react-router';
 const HomeSectin = ({sliders , categories}) => {
     const [t] = useTranslation();
-
+    const navigate = useNavigate()
 
     const LangCode = LangNumber()
  
@@ -22,9 +23,9 @@ const HomeSectin = ({sliders , categories}) => {
                     {/* <i className="fa fa-bars"></i> */}
                     <h3> {t("All Category")}</h3>
                 </button>
-                <ul className="dropdown-menu" style={{display:'block'}}>
+                <ul className="dropdown-menu">
                     {categories?.map((i,index)=>(
-                    <li key={index}>{MapTranslate(i?.category_translations , 'name' ,LangCode)}</li>
+                    <li key={index}  onClick={()=>navigate('/product?category_id=' + i?.id)}>{MapTranslate(i?.category_translations , 'name' ,LangCode)}</li>
                     )
                     )}
                   

@@ -14,7 +14,7 @@ import {
   };
   
   const KEY = "AUTH";
-  export const useRegister= (params, options) => useAddMutation(KEY, API.REGISTER );
+  export const useRegister= (params, options) => useAddMutation("REGISTER", API.REGISTER );
 
   export const useLogin= (params, options) => useAddMutation(KEY, API.LOGIN );
 

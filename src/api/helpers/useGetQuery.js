@@ -19,18 +19,7 @@ const {t} = useTranslation()
     },
     {
       retry:false,
-      onError: (err) => {
-        let message ='';
-        console.log(err);
-        if(err.response.status === 401){
-          message =  t("please_login_first");
-          toast.error(message)
-
-          dispatch(logout())
-
-        }
-     
-      },     
+      refetchOnWindowFocus:false ,     
       ...options
     }
   );

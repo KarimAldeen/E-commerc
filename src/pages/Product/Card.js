@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import {MdOutlineSell} from 'react-icons/md'
 import { baseURL } from '../../api/config'
 import { useAddCart } from '../../api/cart'
@@ -13,7 +13,7 @@ const Card = ({product}) => {
   const [t] = useTranslation();
 
   const LangCode =LangNumber()
-
+const navigate = useNavigate()
   const {mutate} = useAddCart()
   const {mutate:addWishList} = useAddProductToWishList()
   const {mutate:removeWithList } = useRemoveProductToWishList()
@@ -28,7 +28,7 @@ const Card = ({product}) => {
   <div className='Cards'>
       <div className="product-card">
     <div className="badge">{product?.product_purchasing_count}<MdOutlineSell/></div>
-    <div className="product-tumb">
+    <div className="product-tumb"  onClick={()=>navigate('/product/' + product?.id)} >
       <img src={baseURL+ product?.product_main_image} alt="" />
     </div>
     <div className="product-details">

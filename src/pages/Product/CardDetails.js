@@ -36,7 +36,7 @@ function CardDetails({product}) {
     </div>
     <div className="description description-product-detailes">
       <h2 className='product_title'>{MapTranslate(product?.product_translations , 'name' , lanCOde)}</h2>
-      <h3 style={{margin:'10px'}}>{product?.product_price}ريال</h3>
+      <h3 style={{margin:'10px'}}>{product?.product_price} {t('ريال')}</h3>
 
       <h4 style={{margin:"10px"}}>purchasing count:{product?.product_purchasing_count}</h4>
       <p style={{fontSize:'1.3em' , margin:"10px"}}>

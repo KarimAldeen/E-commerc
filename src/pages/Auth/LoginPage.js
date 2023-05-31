@@ -20,6 +20,8 @@ const LoginPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch()
   const {mutate:mutateLogin  , isLoading:LoadingLogin ,isSuccess:SuccessLogin , data:dataLogin } = useLogin()
+
+
   const {mutate  , isLoading ,isSuccess , data} = useRegister()
   const signUp = () => {
     const container = document.getElementById('container');
@@ -51,7 +53,8 @@ const LoginPage = () => {
   useEffect(()=>{
    
     if(isSuccess){
-      dispatch(register(data))
+        console.log(data?.data);
+      dispatch(register(data?.data))
       navigate('/verification');
     }
   },[isSuccess ,navigate , data , dispatch])
@@ -155,6 +158,7 @@ const LoginPage = () => {
           <Field type="password" name="password" />
           <ErrorMessage name="password" component="div" className="error" />
 
+          <h3 onClick={()=>navigate('/verification')} style={{marginBottom:"10px" , marginTop:'10px'}} className="Pointer">{t("Verify Your Account")}</h3>
 
       <h3 onClick={signUp} className="Pointer">{t("Create New Account?")}</h3>
            <LoadingButton

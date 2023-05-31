@@ -19,8 +19,9 @@ const AuthSlice = createSlice({
         state.isAuthenticated = false
     },
     register :(state , action) =>{
-      state.user = action.payload?.data
-      authStorage.storeUser(action.payload?.data)
+      state.user = action.payload
+      
+      authStorage.storeUser(action.payload)
       state.isAuthenticated = true
     },
 

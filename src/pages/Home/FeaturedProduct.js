@@ -29,7 +29,7 @@ const [t] = useTranslation()
                 
                     return (
                     
-                        <SwiperSlide key={product.id}><Card  product={product} /></SwiperSlide>
+                        <SwiperSlide key={product.id}><Card  product={product}   /></SwiperSlide>
                     )
                 }
             )

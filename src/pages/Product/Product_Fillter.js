@@ -4,8 +4,9 @@ import { useSelector } from 'react-redux';
 
 import SelectCategory from '../../components/SelectCategory';
 import { useTranslation } from 'react-i18next';
+import { SelectOptionCategory } from '../../utils/SelectOption';
 
-const Product_Fillter = ({setFilterObject}) => {
+const Product_Fillter = ({setFilterObject ,category_id}) => {
     const {category , subCategory , subSubCategory} = useSelector(state => state.category)
     const input = useRef(null)
     const [t] = useTranslation();
@@ -16,8 +17,8 @@ const Product_Fillter = ({setFilterObject}) => {
         Left_Side.classList.remove("FillterON");
         }
 
-        
-        const [Category , setCategory] = useState(null)
+        console.log(category.filter(f => f.id ==category_id));
+        const [Category , setCategory] = useState(SelectOptionCategory(category.filter(f => f.id ==category_id)))
         const [subcategory , setsubCategory] = useState(0)
         const [subsubcategory , setsubsubCategory] = useState(0)
 
@@ -67,6 +68,7 @@ const Product_Fillter = ({setFilterObject}) => {
                 <div className='Category_sel'>
                     <h4>{t("Category")}</h4>
                     <SelectCategory
+                          
                           Options={category}
                           parentId={null}
                           setOb={setCategory}

@@ -33,6 +33,9 @@ const Verification  = () => {
   const {user} = useSelector((state) => state.auth)
   const navigate = useNavigate()
   const {mutate , isLoading  , isSuccess , data} = useVirfayCode()
+
+  // const {mutate:SendCode} = useSendCode()
+
   const {t} = useTranslation()
 
 
@@ -150,7 +153,7 @@ useEffect(()=>{
               />
               </div>
   
-               
+              <p  >{t('Send Another Code')} ?</p>
                 <LoadingButton
                             type="submit"
                             color="primary"

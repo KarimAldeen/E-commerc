@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2vh 8vw;
+    padding: 1.2vh 8vw;
     background: var(--bg2);
 
 }
@@ -37,6 +37,10 @@
     }
     .Header__Right_3{
         display: flex; align-items: center; gap: 4px;
+        border-right: 1px solid rgb(201, 201, 201);
+        border-left: 1px solid rgb(201, 201, 201);
+        padding:  0 10px ;
+
         svg{
             font-size: 1.5vw;
             

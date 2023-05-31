@@ -18,7 +18,8 @@ const DropDown = () => {
      
     
   return (
-    <div class="dropdown">
+    <div class="dropdown" style={{borderLeft: "1px solid rgb(201, 201, 201)"
+    }}>
     <button class="btn btn-lg dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
     <span class={`${Language[0]?.Flag}`}></span> <span>{t(`${Language[0]?.Name}`)}</span></button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
