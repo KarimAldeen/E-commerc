@@ -2,6 +2,7 @@ import { ErrorMessage, Field, Form, Formik } from 'formik'
 import React from 'react'
 import Autocomplete from "react-google-autocomplete";
 import { useTranslation } from 'react-i18next';
+import { toast } from 'react-toastify';
 
 const initialValues ={
   address:'',
@@ -47,7 +48,7 @@ const CartForm = ({cart}) => {
        
           <ErrorMessage name="address4" component="div" className="error" />
 
-        <button className="">{t("CHECKOUT")}</button>
+        <button className="" onClick={()=>toast.error("Error Happen")}>{t("CHECKOUT")}</button>
 
       </Form>
      </Formik>
