@@ -56,7 +56,7 @@ const HomeSectin = ({sliders , categories}) => {
                 </div>
                     </div>
                     <div className='Button_Section'>
-                            <img className='HomeSec' alt='' src={baseURL + sliders?.slider_link} onError={HomeSec} />
+                            <img className='HomeSec' alt='' src={baseURL + sliders?.slider_link}  />
                         </div>
                 </div>
                 </div> 

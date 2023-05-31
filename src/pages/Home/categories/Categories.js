@@ -11,8 +11,7 @@ function Categories({categories:data}) {
     whileInView={{ opacity: 1, scale: [1 ,1.2 ,1] }}
     transition={{ duration: 1.5 }}
     >
-        <SubTiltle title={t("Categories")} show_more={false}/>
-
+        <h1>{t("Categories")}</h1>
       <div className='category-con' >
         
         {
