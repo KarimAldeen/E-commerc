@@ -37,7 +37,7 @@
         margin-inline: 10px;
         }
     h3{
-        font-size: 18px;
+        font-size: 1.7vw;
         font-weight: 800;
     }
     border-radius:0 !important ;
@@ -47,7 +47,7 @@
     -o-border-radius:0 !important ;
 }
     .fa-bars{
-        font-size: 20px;
+        font-size: 1.5vw;
     }
     .DownBar{
             display: flex;
@@ -69,6 +69,7 @@
             font-size: 17px;
             padding: 4px 10px;
             text-align: center;
+            cursor: pointer;
           
     }
     }}
@@ -277,9 +278,10 @@
         }
         .dropdown,.open>.dropdown-menu{
             display: flex;
-            flex-wrap: wrap;
-
-            justify-content: flex-end;
+            flex-direction: column;
+           width: 100%;
+           justify-content: center; align-items: center;
+           cursor: pointer;
         
         }
         .col-lg-9 {
