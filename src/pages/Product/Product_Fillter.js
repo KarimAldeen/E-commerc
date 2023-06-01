@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { SelectOptionCategory } from '../../utils/SelectOption';
 import { memo } from "react";
 import { useMemo } from 'react';
+import SearchFilter from './SearchFilter';
 
 const Product_Fillter = ({setFilterObject ,category_id}) => {
     const {category , subCategory , subSubCategory} = useSelector(state => state.category)
@@ -24,6 +25,8 @@ const Product_Fillter = ({setFilterObject ,category_id}) => {
         const [Category , setCategory] = useState(SelectOptionCategory(category.filter(f => f.id ==category_id)))
         const [subcategory , setsubCategory] = useState(0)
         const [subsubcategory , setsubsubCategory] = useState(0)
+        const [search , setSearch] = useState('')
+
 
         useEffect(()=>{
 
@@ -43,10 +46,10 @@ const Product_Fillter = ({setFilterObject ,category_id}) => {
             
             let obj = {
                 filter_category_id :(subsubcategory?.value  ??  (subcategory?.value ?? Category?.value)),
-                search:input?.current?.value
+                search:search
 
             }
-            input.current.value=""
+            // input.current.value
             setFilterObject(obj);
         }
     return (
@@ -64,8 +67,7 @@ const Product_Fillter = ({setFilterObject ,category_id}) => {
             <div>
                 <div className="slidecontainer">
                     <div className='col_Product_Mid'>
-                        <input className="form-control" ref={input} type="text" placeholder={t("Search")} aria-label="Search"></input>
-
+                            <SearchFilter  setSearch={setSearch} search={search}/>
                     </div>
                 </div>
 
@@ -104,7 +106,11 @@ const Product_Fillter = ({setFilterObject ,category_id}) => {
                     <button className="btn-donate"  onClick={handelFilter}>
                         {t("Fillter")}
                     </button>
-                    <button className="btn-donate"  onClick={()=>  setFilterObject({})}>
+                    <button className="btn-donate"  onClick={()=>  {
+                        setCategory(null)
+                        setFilterObject({})
+                        setSearch('')
+                    }}>
                         {t("Reset")}
                     </button>
                 </div>

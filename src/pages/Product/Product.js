@@ -11,6 +11,9 @@ import Loader from '../../components/Utils/Loader';
 import { usePaginationWithURL } from '../../hooks/usePaginationWithURL';
 import { useLocation } from 'react-router';
 import ProductPaginations from './ProductPaginations';
+import HomeSectin from '../../components/Utils/HomeSectin';
+import DownSec from '../../components/Utils/DownSec';
+import CartImage from '../Cart/CartImage';
 
 const Product = (props) => {
 
@@ -51,6 +54,8 @@ const Product = (props) => {
             <div className='Top_Product'>
                 <Header />
                 <MidBar />
+                <DownSec />
+                <CartImage/>
             </div>
 
  
