@@ -1,0 +1,42 @@
+.Tablet{
+    padding: 7vh 8vw;
+     th{
+font-size: 1.4vw !important;
+margin-inline: 2vw !important;
+
+    }
+    .Product{
+        width: 60% !important;
+        text-align: left !important;
+        padding: 3vh 0 !important;
+
+    }  
+    .Product_App{
+        text-align: left;
+        padding: 3vh 0 !important;
+
+    }  
+    td{
+        padding: 2vh 4vw !important;
+        text-align: center;
+
+    }
+    thead{
+        th{
+            border-bottom: 1px solid rgba(128, 128, 128, 0.473) !important;
+            text-align: center;
+            padding: 3vh 4vw !important;
+
+
+        }
+    }
+    td{
+        img{
+            width: 10vw;
+        }
+    }
+    .Product_App{
+        display: flex; align-items: center; gap: 3vw;
+        font-size: 1.5vw;
+    }
+}

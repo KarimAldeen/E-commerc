@@ -4,9 +4,10 @@
     display: none;
 }
 .HomeSectin{
-    padding: 1vh 6vw;
-   
-    
+    padding: 1vh 8vw;
+   .col-lg-9{
+    padding-inline: 2vw;
+   }
     .btn-lg{
         border-radius:  0 !important;
         &:hover,&:focus, &:focus-visible,&:active{
@@ -18,27 +19,35 @@
     
     .Drop_Btn{
         width: 20vw;
-        height: 50px;
+        height: 45px;
         background-color: var(--primary);
         text-align: start;
         color: var(--bg);
-        font-weight: bold;
+        font-weight: 900;
         display: flex;
         align-items: center;
-        justify-content: space-around;
+        justify-content: center;
         text-align: center;
+        gap: 1vw;
         &:hover,&:active,&:focus-visible{
             background: var(--secondary);
+            color: var(--bg);
         }
         i{
         margin-inline: 10px;
         }
     h3{
-        font-size: 21px;
-    }   
+        font-size: 18px;
+        font-weight: 800;
     }
+    border-radius:0 !important ;
+    -webkit-border-radius:0 !important ;
+    -moz-border-radius:0 !important ;
+    -ms-border-radius:0 !important ;
+    -o-border-radius:0 !important ;
+}
     .fa-bars{
-        font-size: 22px;
+        font-size: 20px;
     }
     .DownBar{
             display: flex;
@@ -63,6 +72,19 @@
           
     }
     }}
+   .Drop_Btn{
+    &:hover,&:active,&:focus-visible{
+        background: var(--primary) !important;
+        color: var(--bg) !important;
+    }
+   }
+   .btn-group{
+    button{
+        background: var(--primary) !important;
+        color: var(--bg) !important;
+        
+}
+   }
     .NavBar{
         font-size: 1.6vw;
         display: flex; align-items: center;
@@ -92,7 +114,7 @@
         // @include Shadow;
         outline: black;
         border:1px solid #ebebeb;
-        width: 50vw;
+        width: 47vw;
     
     }
     .Top_Section{
@@ -200,6 +222,12 @@
         svg{
             font-size: 1.2vw;
            
+        }
+        .Phone2{
+            h3{
+                font-weight: 900;
+                font-size: 1.2vw;
+            }
         }
     }
     

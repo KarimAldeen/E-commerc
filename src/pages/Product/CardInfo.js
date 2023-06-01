@@ -15,8 +15,6 @@ import CardDetails from './CardDetails';
 const CardInfo = () => {
   const {id} = useParams()
   const {data , isLoading} = useGetSingleProduct({product_id:id})
-   console.log(data);
-
    
    if(isLoading){
     return <Loader/>

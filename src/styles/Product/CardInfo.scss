@@ -2,7 +2,7 @@
 .CardInfo{
 
     .card_info {
-    width: 650px;
+    width: 50vw;
     height: 375px;
     background: var(--bg);
     margin-top: 5vh;
@@ -47,13 +47,14 @@
     
     .photo {
       
-      padding: 30px;
+      padding: 20px;
       width: 45%;
       text-align: center;
       float: left;
       
       img { 
-        max-height: 200px; 
+        width: 100%;
+        min-height: 100%;
       }
       
     }
@@ -107,11 +108,12 @@
          margin-bottom: 30px;
          color: #515151;
          text-transform: uppercase;
-         width: 125px;
+         width: 40%;
          font-family: inherit;
          margin-right: 5px;
          transition: all 0.3s ease;
          font-weight: 500;
+         font-size: 1vw;
          
          &:hover {
            
@@ -127,6 +129,43 @@
     }
     
   }
-  
 
+@include devices(Minlaptop){
+  .Info_Section{
+    margin-bottom: 400px;
+  }
+    .Card_Details{
+ 
+      display: flex; 
+    }
+    
+    .card_info {
+      width: 50vw;
+      height: 360px;
+     
+      }
+      .photo {
+      
+        padding: 15px !important;
+        width: 45%;
+        text-align: center;
+        float: left;
+        
+        img { 
+          width: 100%;
+          min-height: 100%;
+        }
+        
+      }
+}
+@include devices(mobile){
+  .card_info {
+    width: 80vw;
+    height: 360px;
+    button{
+      font-size: 1.4vw !important;
+    }
+   
+    }
+}
 }

@@ -17,7 +17,8 @@ function CardDetails({product}) {
     const [t] = useTranslation();
   const lanCOde = LangNumber()
 
-  console.log(product);
+
+  console.log(product?.wishlist);
   return (
     <div className="card_info">
     <nav>
@@ -31,7 +32,8 @@ function CardDetails({product}) {
 
       
     </nav>
-    <div className="photo">
+   <div className='Card_Details row'>
+   <div className="photo ">
       <img src={baseURL + product?.product_main_image} alt='fewf' />
     </div>
     <div className="description description-product-detailes">
@@ -57,6 +59,8 @@ function CardDetails({product}) {
       }
 
     </div>
+   </div>
+   
   </div>  )
 }
 

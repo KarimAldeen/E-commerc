@@ -6,6 +6,12 @@
     background: var(--bg2);
 
 }
+.Sha5da{
+    padding:  0 10px ;
+
+    border-right: 1px solid rgb(201, 201, 201);
+
+}
 .Header__Left{
     display: flex;
     align-items: center;
@@ -36,13 +42,14 @@
         }
     }
     .Header__Right_3{
-        display: flex; align-items: center; gap: 4px;
-        border-right: 1px solid rgb(201, 201, 201);
+        display: flex; align-items: center; gap: 14px;
+        // border-right: 1px solid rgb(201, 201, 201);
         border-left: 1px solid rgb(201, 201, 201);
         padding:  0 10px ;
 
+
         svg{
-            font-size: 1.5vw;
+            margin-inline: 10px;
             
         }
     }

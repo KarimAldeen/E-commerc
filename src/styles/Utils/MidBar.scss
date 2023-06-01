@@ -1,14 +1,18 @@
 .MidBar{
    
-    padding: 2vh 6vw;
+    padding: 1.2vh 8vw;
     display: flex; justify-content: space-between; align-items: center;
     .active {
         color: var(--primary);
     }
     .MidBar__Center{
         display: flex; align-items: center; gap: 4vw;
+        margin-right: 4vw;
         a{
-            font-size: 1.3vw;
+            font-size: 1vw;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
     }
     .MidBar__Left{
@@ -28,7 +32,15 @@
     }
    
 }
+.ar .MidBar{
+    .MidBar__Center{
+        margin-left: 15vw;
+       a{
+        letter-spacing: 0px;
 
+       }
+    }
+}
 .fa-lg{
     font-size: 2vw;
     color: var(--text);
@@ -54,7 +66,8 @@
 }
 .MidBar__Right{
     display: flex;
-    font-size: 4vw !important
+    font-size: 4vw !important;
+    align-items: baseline;
 }
 
 .small-size{
@@ -66,5 +79,19 @@
     margin-inline:4px ;
     b{
         font-weight: bold;
+    }
+}
+@include devices(Minlaptop){
+    .MidBar__Center{
+            margin-right: 0 !important;
+    }
+    .ar .MidBar__Center{
+
+        margin-left: 0 !important;
+    }
+}
+@include devices(tablet){
+    .item-count{
+        display: none;
     }
 }

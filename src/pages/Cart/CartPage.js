@@ -8,6 +8,7 @@ import Loader from '../../components/Utils/Loader'
 import { useTranslation } from 'react-i18next'
 import Footer from '../../layout/Footer/Footer'
 import Page from '../../layout/Page'
+import Cart from './Cart'
 
 const CartPage = () => {
   const [t] = useTranslation();
@@ -28,48 +29,48 @@ const CartPage = () => {
     </Page>
    }
   return (
-    <>
-       <Header />
-        <MidBar />
-        <div className='CartPage'>
-      <div className='Top_Product'>
+    // <>
+    //    <Header />
+    //     <MidBar />
+    //     <div className='CartPage'>
+    //   <div className='Top_Product'>
      
 
-      </div>
-      <div className="card">
-        <div className="row">
-          <div className="col-md-8 cart">
-            <div className="title">
-              <div className="row">
-                <div className="col">
-                  <h4>
-                    <b>{t("Shopping Cart")}</b>
-                  </h4>
-                </div>
-                <div className="col align-self-center text-right text-muted">
-                  {cart?.cart_items_count} {t("items")}
-                </div>
-              </div>
-            </div>
-           <div className='cart-product-container'>
-           {
-              cart?.cart_items?.map(product =>(
-            <CartView product={product}  key={product?.id}/>
-              ))
-            }
+    //   </div>
+    //   <div className="card">
+    //     <div className="row">
+    //       <div className="col-md-8 cart">
+    //         <div className="title">
+    //           <div className="row">
+    //             <div className="col">
+    //               <h4>
+    //                 <b>{t("Shopping Cart")}</b>
+    //               </h4>
+    //             </div>
+    //             <div className="col align-self-center text-right text-muted">
+    //               {cart?.cart_items_count} {t("items")}
+    //             </div>
+    //           </div>
+    //         </div>
+    //        <div className='cart-product-container'>
+    //        {
+    //           cart?.cart_items?.map(product =>(
+    //         <CartView product={product}  key={product?.id}/>
+    //           ))
+    //         }
 
-           </div>
+    //        </div>
             
 
-          </div>
-          <CartForm  cart={cart} />
-        </div>
-      </div>
+    //       </div>
+    //       <CartForm  cart={cart} />
+    //     </div>
+    //   </div>
 
-    </div>
-    <Footer/>
-    </>
-    
+    // </div>
+    // <Footer/>
+    // </>
+    <Cart/>
   )
 }
 

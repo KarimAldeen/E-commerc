@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next';
-import { FaEnvelope, FaGoogle, FaInstagram, FaFacebookSquare, FaTwitter, FaUserAlt, FaBars } from "react-icons/fa";
+import { FaEnvelope, FaGoogle, FaInstagram, FaFacebookSquare, FaTwitter, FaUser, FaBars } from "react-icons/fa";
 import English from '../../Images/English.svg'
 import Word from '../../Images/Word.svg'
 import LanguageDropdown from './LangDropDown';
@@ -61,7 +61,7 @@ const Header = () => {
             <div className='Top'>
               <NavLink to="/"> {t("Home")} </NavLink>
               <NavLink to="/product"> {t("Product")}</NavLink>
-              <NavLink to="/contactus">{t("Contact Us")}</NavLink>
+              <NavLink to="/contactus">{t("Contact")}</NavLink>
        
               <NavLink to="/cart">{t("Cart")}</NavLink>
               <NavLink to="/allorder">{t("Orders")}</NavLink>
@@ -85,7 +85,7 @@ const Header = () => {
       <div className='Header__Left'>
 
 
-        <div><FaEnvelope /> {Email}</div>||
+        <div className='Sha5da'><FaEnvelope /> {Email}</div>
         <div> {t(`${HeaderText}`)} </div>
       </div>
 
@@ -108,12 +108,12 @@ const Header = () => {
                   dispatch(logout())
                   setRefreash(v => !v)
                 }}>
-                    <FaUserAlt size={15}/>
+                    <FaUser size={13}/>
                 {t("Logout")}
                 </div>
             ) : (
               <NavLink to={'/login'}>
-               <FaUserAlt size={15}/>
+               <FaUser size={13}/>
                 {t("Login")}
               </NavLink>
              

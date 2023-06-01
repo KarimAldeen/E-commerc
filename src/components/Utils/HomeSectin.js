@@ -4,9 +4,9 @@ import HomeSec from '../../Images/HomeSec.jpg'
 import { baseURL } from '../../api/config';
 import { useTranslation } from 'react-i18next';
 import { Phone } from '../../config/LOCALSTORAGEKEY';
-import { MapTranslate } from '../../utils/mapTranlate';
 import { LangNumber } from '../../utils/LangNumber';
 import { useNavigate } from 'react-router';
+import HomeDrop from './DropDown/HomeDrop';
 const HomeSectin = ({sliders , categories}) => {
     const [t] = useTranslation();
     const navigate = useNavigate()
@@ -18,20 +18,7 @@ const HomeSectin = ({sliders , categories}) => {
     <div className='HomeSectin'>
         <div className="row">
                 <div className="col-lg-3">
-                <div className="btn-group open">
-                <button className="btn Drop_Btn dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true" >
-                    {/* <i className="fa fa-bars"></i> */}
-                    <h3> {t("All Category")}</h3>
-                </button>
-                <ul className="dropdown-menu">
-                    {categories?.map((i,index)=>(
-                    <li key={index}  onClick={()=>navigate('/product?category_id=' + i?.id)}>{MapTranslate(i?.category_translations , 'name' ,LangCode)}</li>
-                    )
-                    )}
-                  
-                    
-                </ul>
-            </div>
+               <HomeDrop Categories={categories}/>
                 </div>
                 <div className="col-lg-9">
                     <div className='Top_Section'>
@@ -51,7 +38,8 @@ const HomeSectin = ({sliders , categories}) => {
                 <FaPhoneAlt/>
                 </div>
                 <div className='Phone2'>
-                <h5>{Phone}</h5>
+                <h3>{Phone}</h3>
+                <h5>{t("support 24/7 time")}</h5>
                 
                 </div>
                 </div>

@@ -22,7 +22,7 @@ const MidBar = () => {
                 <NavLink to="/"> {t("Home")}   </NavLink>
                 <NavLink to="/product">{t("Product")}</NavLink>
               
-                <NavLink to="/contactus">{t("Contact Us")}</NavLink>
+                <NavLink to="/contactus">{t("Contact")}</NavLink>
               
                 <NavLink to="/allorder">{t("Orders")}</NavLink>
 

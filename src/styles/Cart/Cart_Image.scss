@@ -1,0 +1,28 @@
+.CartImage{
+    min-height: 165px;        position: relative;
+    .breadcrumb-section{
+        background-image: url('../../Images/Tomato.jpg');
+        min-height: 165px;
+        display: flex; 
+
+
+    }
+    .Black_Sec{
+        background-color: black;
+        min-height: 165px;
+        width: 100vw;
+        position: absolute;
+        top: 0;
+        z-index: 9;
+        opacity: .4;
+    }
+    .container{
+        color: var(--bg);
+        display: flex; justify-content: center; align-items: center;
+        z-index: 99;
+        h1{
+            font-size: 3vw;
+            font-weight: 800;
+        }
+    }
+}
