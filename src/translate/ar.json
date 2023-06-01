@@ -71,7 +71,7 @@
     "On the way": " على الطريق",
     "Want any help?": "هل تريد أي مساعدة؟",
     "Back": "رجوع",
-    "Add to Cart": "إضافة إلى عربة التسوق",
+    "Add to Cart": "إضافة لعربة التسوق",
     "Remove Wishlist": "إزالة قائمة الرغبات",
     "Wishlist": "قائمة الرغبات",
     "Next Page": "الصفحة التالية",
@@ -109,6 +109,19 @@
     "Code":"رمز طلب",
     "Price":"السعر",
     "SEE MORE" : "رؤية المزيد",
-
+    "Pedigree" : "المنتجات الأكثر شراءًا" ,
+    "Latest Products" : "المنتجات الأكثر شراءًا" ,
+    "Most Purchasing Products" : "المنتجات الأكثر شراءًا" ,
+    "Cheapest Products" : "أرخص المنتجات " ,
+    "Orders info" : "معلومات الطلبات " ,
+    "Total Price :":  "السعر الإجمالي:" ,
+    "Count :" : "العدد" ,
+    "Let's check your privacy !" : "دعونا نتحقق من خصوصيتك!" ,
+    "Validate" : "التحقق من الصحة" ,
+    "A code has been sent to" : "تم إرسال رمز إلى" ,
+    "Please enter the code " : "الرجاء إدخال الرمز " ,
+    "item:" : "العنصر:" ,
+    "purchasing count:" : "عدد المشتريات:" ,
+    
     "": ""
 }

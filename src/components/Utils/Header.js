@@ -16,7 +16,7 @@ import { Tooltip } from 'react-tooltip';
 
 const Header = () => {
   const [t] = useTranslation();
-  const { user } = useAuth();
+  const { isAuthenticated } = useAuth();
   
   const [refreash , setRefreash] = useState(false)
   const dispatch = useDispatch()
@@ -103,7 +103,7 @@ const Header = () => {
         </div>
         <div className='Header__Right_3' >
           {
-           user?.phone? (
+          isAuthenticated? (
                 <div onClick={()=>{
                   dispatch(logout())
                   setRefreash(v => !v)

@@ -10,6 +10,8 @@ import PaymentStatus from '../../components/PaymentStatus'
 import { GrView } from "react-icons/gr";
 import {history} from '../../history'
 import DataTable from 'react-data-table-component';
+import DownSec from '../../components/Utils/DownSec';
+import CartImage from '../Cart/CartImage';
 
 import { useNavigate } from 'react-router'
 import Orders from './Orders'
@@ -51,6 +53,7 @@ const columns = [
       <div className='Top_Order'>
         <Header />
         <MidBar />
+        <DownSec />
       </div>
       <div className='AllOrder_Sectiom'>
         <div className="container mt-5">

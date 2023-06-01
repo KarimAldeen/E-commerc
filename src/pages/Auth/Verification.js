@@ -69,7 +69,7 @@ useEffect(()=>{
         <div className="col-md-10">
           <div className="row justify-content-center">
             <div className="col-md-6 none-phone" >
-              <h3 className="heading mb-4">Let's check your privacy !</h3>
+              <h3 className="heading mb-4">{t("Let's check your privacy !")}</h3>
           
               <p>
                 <img
@@ -87,11 +87,11 @@ useEffect(()=>{
     <div className="card p-2 text-center">
       
       <h6>
-        Please enter the code <br /> 
+        {t("Please enter the code ")}<br /> 
       </h6>
       <div>
         
-        <span>A code has been sent to</span>
+        <span>{t("A code has been sent to")}</span>
       </div>
       <div
         id="otp"
@@ -160,7 +160,7 @@ useEffect(()=>{
                             isLoading={isLoading}
                             className="M_Top"
                         >
-                           Validate
+                           {t("Validate")}
                   </LoadingButton>
                 </form>
                 

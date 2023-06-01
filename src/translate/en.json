@@ -98,5 +98,22 @@
     "pending":"Pending",
     "cash":"Cash",
     "SEE MORE" : "SEE MORE",
+    "Pedigree" : "Pedigree" ,
+    "Latest Products" : "Latest Products" ,
+    "Most Purchasing Products" : "Most Purchasing Products" ,
+    "Cheapest Products" : "Cheapest Products" ,
+    "Orders info" : "Orders info" ,
+    "Total Price :" : "Total Price :" ,
+    "Count :" : "Count :" ,
+    "Let's check your privacy !" : "Let's check your privacy !" ,
+    "Validate" : "Validate" ,
+    "A code has been sent to" : "A code has been sent to" ,
+    "Please enter the code " : "Please enter the code " ,
+    "item:" : "item:" ,
+    "purchasing count:" : "purchasing count:" ,
+    "" : "" ,
+    "" : "" ,
+    "" : "" ,
+
     "": ""
 }

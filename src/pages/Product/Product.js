@@ -59,12 +59,12 @@ const Product = (props) => {
             </div>
 
  
-            <div className='Down_Product'>
+            <div className='Down_Product' style={{marginTop:"20px"}}>
 
-                <div className="row">
+                <div className="row" >
     
-                   <Product_Fillter setFilterObject={setFilterObject} category_id={category_id}/>
-                   <Product_Card data={data} page={page} handlePageChange={handlePageChange}  isLoading={isLoading}/>
+                   <Product_Fillter setFilterObject={setFilterObject} category_id={category_id} />
+                   <Product_Card data={data} page={page} handlePageChange={handlePageChange}  isLoading={isLoading} />
                    
                 
                 </div>

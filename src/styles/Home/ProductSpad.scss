@@ -24,7 +24,9 @@ $border-1: #e1e1e1;
 
 $fm-unna: 'Unna', serif;
 $fm-nunito: 'Nunito Sans', sans-serif;
-
+.spad-products{
+    
+    direction: ltr;
 .categories__item {
     height: 270px;
     position: relative;
@@ -51,6 +53,7 @@ $fm-nunito: 'Nunito Sans', sans-serif;
 }
 
 .categories__slider {
+    direction: ltr;
 
     .col-lg-3 {
         max-width: 100%;
@@ -87,6 +90,7 @@ $fm-nunito: 'Nunito Sans', sans-serif;
   Featured
 -----------------------*/
 .featured {
+    
     padding-top: 80px;
     padding-bottom: 40px;
 }
@@ -330,4 +334,5 @@ $fm-nunito: 'Nunito Sans', sans-serif;
 .title-spad{
     font-weight: bolder;
     font-size: 22px !important;
+}
 }

@@ -27,7 +27,7 @@ const HomeSectin = ({sliders , categories}) => {
     <div className='HomeSectin'>
         <div className="row">
                 <div className="col-lg-3">
-               <HomeDrop Categories={categories}/>
+               <HomeDrop Categories={categories} style='open'/>
                 </div>
                 <div className="col-lg-9">
                     <div className='Top_Section'>

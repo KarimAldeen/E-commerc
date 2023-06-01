@@ -46,7 +46,7 @@ const MidBar = () => {
                     <span className="badge rounded-pill badge-notification ">{data?.cart_items_count}</span>
                     
                 </NavLink>
-                <p className='item-count'> item: <b>$150.00</b></p>
+                <p className='item-count'> {t("item:")} <b>$150.00</b></p>
                 
 
 

@@ -22,7 +22,7 @@ const AuthSlice = createSlice({
       state.user = action.payload
       
       authStorage.storeUser(action.payload)
-      state.isAuthenticated = true
+      
     },
 
     login :(state , action) =>{

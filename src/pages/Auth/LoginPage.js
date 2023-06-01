@@ -178,7 +178,6 @@ const LoginPage = () => {
           <Field type="password" name="password" />
           <ErrorMessage name="password" component="div" className="error" />
 
-          <h3 onClick={()=>navigate('/verification')} style={{marginBottom:"10px" , marginTop:'10px'}} className="Pointer">{t("Verify Your Account")}</h3>
 
       <h3 onClick={signUp} className="Pointer">{t("Create New Account?")}</h3>
            <LoadingButton
