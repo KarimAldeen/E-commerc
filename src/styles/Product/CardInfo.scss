@@ -3,9 +3,10 @@
 
     .card_info {
     width: 50vw;
-    height: 375px;
+    height: 450px !important;
     background: var(--bg);
     margin-top: 5vh;
+    overflow: hidden;
     margin-inline: auto;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
     transition: all 0.3s;
@@ -55,7 +56,9 @@
       img { 
         width: 100%;
         min-height: 100%;
+        max-height: 100px;
       }
+   
       
     }
     
@@ -154,6 +157,7 @@
         img { 
           width: 100%;
           min-height: 100%;
+          max-height: 100px !important;
         }
         
       }
@@ -168,4 +172,13 @@
    
     }
 }
+}
+
+@include devices (mobile){
+  .photo  { 
+    img{
+      max-height: 20px !important;
+
+    }
+  }
 }
