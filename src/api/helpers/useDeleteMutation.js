@@ -1,13 +1,13 @@
 import { useQueryClient, useMutation } from "react-query";
 import { toast } from "react-toastify";
-import { useTranslation } from "utility/language";
 import { useAxios } from "./useAxios";
 import { validateSession } from "./validateSession";
+import { useTranslation } from "react-i18next";
 
 export const useDeleteMutation = (key, url, object_id) => {
   const axios = useAxios();
   const queryClient = useQueryClient();
-  const t = useTranslation();
+  const [t]= useTranslation();
   return useMutation(
     async ({ id }) => {
       const { data } = await axios.post(url, {

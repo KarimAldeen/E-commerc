@@ -9,6 +9,8 @@
         margin-bottom: 5vh;
     }
     .card{
+        background: #f5f5f5;
+
         margin: auto;
         max-width: 1250px;
         height: 75vh;
@@ -41,12 +43,12 @@
         }
     }
     .summary{
-        background-color: var(--primary);
         border-top-right-radius: 1rem;
         border-bottom-right-radius: 1rem;
         height: 100%;
         padding: 5px 4vh;
-        color: rgb(255, 255, 255);
+        color:var(--text);
+
     }
     @media(max-width:767px){
         .summary{
@@ -175,7 +177,7 @@
 
     label{
         align-self: flex-start !important;
-        color: var(--secondary);
+        color: var(--primary);
         font-size: 1.3em;
         font-weight: 500;
     }
@@ -183,17 +185,12 @@
         outline: none;
         background-color: rgb(228, 228, 228);
         border: none;
-        border-radius: 10px;
-        -webkit-border-radius: 10px;
-        -moz-border-radius: 10px;
-        -ms-border-radius: 10px;
-        -o-border-radius: 10px;
         padding: 8px;
-        color: var(--secondary);
-        border: 1px solid var(--secondary);
+        color: var(--primary);
         width: 100%;
         font-size: 1.4em;
         height: 40px;
+        margin-block: 10px;
 }
 textarea{
     height: 80px;
@@ -202,13 +199,16 @@ button{
     border-radius: 5px;
     width: 100%;
     padding: 10px;
-    border:1px solid var(--secondary);
-    background: var(--secondary);
+    border:1px solid var(--primary);
+    background: var(--primary);
     -webkit-border-radius: 5px;
     margin-top: 20px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
+    font-weight: bolder;
+    font-size: 1vw;
+    color: var(--bg) !important;
 }
 }
 
@@ -216,6 +216,7 @@ button{
 @include devices (mobile) {
     .summary{
         height: 55% !important;
+        
     }
 }
 .over-total{
@@ -235,5 +236,73 @@ button{
         width: 60vw;
         height: 250px;
         max-width: 400px;
+    }
+  
+}
+.Cart_Forms{
+    display: flex;
+    margin-top: 50px;
+    justify-content: space-between;
+    .summary{
+        color:var(--text);
+        background: var(--bg2);
+        padding: 20px;
+        h1{
+            text-align: center;
+            margin-bottom: 28px;
+
+        }
+         ul {
+            margin-bottom: 28px;
+        }
+        
+        ul li {
+            font-size: 16px;
+            color: #1c1c1c;
+            font-weight: 700;
+            list-style: none;
+            overflow: hidden;
+            border-bottom: 1px solid #ebebeb;
+            padding-bottom: 13px;
+            margin-bottom: 18px;
+        }
+        
+        ul li:last-child {
+            padding-bottom: 0;
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        ul li span {
+            font-size: 18px;
+            color: var(--secondary);
+            float: right;
+        }
+        
+        .primary-btn {
+            display: block;
+            text-align: center;
+        }
+        
+     
+
+    }
+    .row{
+        color:var(--text) !important;
+  
+    }
+
+    @include devices (tablet) {
+        .col-md-4{
+            width: 70% !important; 
+        }
+    }
+    @include devices (mobile) {
+        .col-md-4{
+            width: 100% !important; 
+        }
+    }
+    .col-md-4{
+        width: 40% ; 
     }
 }

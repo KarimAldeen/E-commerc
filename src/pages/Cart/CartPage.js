@@ -70,7 +70,7 @@ const CartPage = () => {
     // </div>
     // <Footer/>
     // </>
-    <Cart/>
+    <Cart data={cart}/>
   )
 }
 

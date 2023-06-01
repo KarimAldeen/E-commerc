@@ -12,6 +12,7 @@ import {history} from '../../history'
 import DataTable from 'react-data-table-component';
 
 import { useNavigate } from 'react-router'
+import Orders from './Orders'
 const AllOrder = () => {
   const [t] = useTranslation();
   const navigate = useNavigate()
@@ -38,24 +39,12 @@ const columns = [
         name: t('Order Status'),
         selector: row =>   <OrderStatus  order_status={(row?.order_status || 'pending')} />,
     },
-    {
-      name: t('Payment Methode'),
-      selector: row => <PaymentStatus payment_status='cash' />,
-    },
+   
     {
       name: t('Created At'),
       cell: row => row?.created_at,
     },
-    {
-      name: ' ',
-      cell:(row)=> <>
-    <GrView
-        onClick={() => navigate(`/order/${row?.id}`)}
-        size={22}
-        style={{ cursor: "pointer" }}
-    />
-      </>
-    }
+    
 ];
   return (
     <div className='AllOrder'>
@@ -69,48 +58,7 @@ const columns = [
             <div className="col-md-10">
               <div className="rounded">
                 <div className="table-responsive table-borderless">
-                  {/* <table className="table">
-                    <thead>
-                      <tr  style={{textAlign:"center"}}>
-                        <th className="text-center">
-
-                        </th>
-                        <th>{t("Order")} </th>
-                        <th>{t("Payment Method")} </th>
-                        <th>{t("status")}</th>
-                        <th>{t("Total")}</th>
-                        <th>{t("Created")}</th>
-                        <th> &&</th>
-                      </tr>
-                    </thead> */}
-
-                    {/* {
-                      order?.map((i, index) => (
-                        <tbody key={index} className="table-body">
-                          <tr className="cell-1" style={{textAlign:"center"}}>
-                            <td className="text-center">
-                            </td>
-                            <td>{i?.order_code}</td>
-                            <td ><PaymentStatus payment_status='cash' /></td>
-                            <td>
-                            <OrderStatus  order_status={(i?.order_status || 'pending')} />
-                            </td>
-                            <td>{i?.order_total}</td>
-                            <td>{i?.created_at}</td>
-                            <td>   <GrView
-                                  onClick={() => navigate(`/order/${i?.id}`)}
-                                  size={22}
-                                  style={{ cursor: "pointer" }}
-                              />
-                    </td>
-                          </tr>
-
-                        </tbody>
-
-                      ))
-                    } */}
-
-                  {/* </table> */}
+        
                   <div className='all-order-table'>
                     
                   <DataTable
@@ -119,11 +67,7 @@ const columns = [
                     data={order}
                 />
                   </div>
-                  <div className='tfoot'>
-                    <div className='tfoot_in'><div>{t("Order Count :")}</div> <div>{order?.length}</div></div>
-                    <div className='tfoot_in'><div>{t("Total :")}</div> <div>{data?.order_all_total}</div></div>
-                    <div className='tfoot_in'><div></div> <div></div></div>
-                  </div>
+                 <Orders/>
                 </div>
               </div>
             </div>
