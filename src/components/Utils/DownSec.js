@@ -22,7 +22,7 @@ const DownSec = () => {
                 <div className='Top_Section'>
                 <form className="example" action="product">
                     <div className='AllCategories'>
-                    <h3 > {t("All Product")}    </h3>
+                    <h3 > {t("Search Product")}    </h3>
                     {/* <FaAngleDown/> */}
                     </div>
 

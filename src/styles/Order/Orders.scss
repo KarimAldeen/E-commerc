@@ -12,6 +12,8 @@
   }
 }
 .Orders{
+  position: relative;
+  right: 50px;
   .card,
 .card__chip {
   overflow: hidden;

@@ -1,7 +1,9 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-const Orders = () => {
+const Orders = ({order}) => {
+
+  console.log(order);
   const [t] = useTranslation()
   return (
     <div className='Orders'>
@@ -11,10 +13,10 @@ const Orders = () => {
     
     </div>
     <h3>
-      {t("Total Price :")} 211$
+      {t("Total Price :")} {order?.order_all_total} {t('ريال')}
     </h3>
     <h4>
-      {t("Count :")} 2
+      {t("Count :")}  {order?.order?.length}
     </h4>
  
 </div>

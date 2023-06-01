@@ -10,3 +10,9 @@ html{background-color: var(--bg);}
 .Tool .ToolTip{
     background: var(--primary);
 }   
+
+.error{
+    align-self: flex-start !important;
+    color: red !important;
+    
+  }

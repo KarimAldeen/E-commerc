@@ -1,4 +1,6 @@
 .Tablet{
+
+   
     padding: 7vh 8vw;
      th{
 font-size: 1.4vw !important;
@@ -53,6 +55,10 @@ margin-inline: 2vw !important;
     }
     .qtybtn{
         cursor: pointer;
+        border:  none;
+        font-size: 1.2em;
+        color: #1c1c1c;
+        background-color: inherit !important;
     }
 
     .shoping__checkout {
@@ -117,4 +123,7 @@ margin-inline: 2vw !important;
     }
     
  
+}
+.not-allowed{
+    cursor: not-allowed !important;
 }

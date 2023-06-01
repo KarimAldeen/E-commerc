@@ -8,7 +8,7 @@ import { useDeleteMutation } from "./helpers/useDeleteMutation";
     };
   
   const KEY = "CART";
-  export const useAddCart= () => useAddMutation(KEY, API.Add );
+  export const useAddCart= () => useAddMutation(KEY, API.Add , false );
 export const useGetCart = () => useGetQuery(KEY,API.GET )
 export const useDeletCart = () => useAddMutation(KEY,API.DEL )
 

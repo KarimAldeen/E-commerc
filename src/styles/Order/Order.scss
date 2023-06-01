@@ -1,7 +1,7 @@
 .OrderPage{
 height: 100vh; display: flex; flex-direction: column;
 .Infos,.col-9 span,.infos{
-font-size: 1.3vw !important;
+font-size: 1.4em !important;
 }
     .card{
         margin: auto;
@@ -21,10 +21,10 @@ font-size: 1.3vw !important;
     }
     .title{
         color: var(--primary);
-        font-weight: 600;
+        font-weight: 700;
         padding: 0 8%;
         font-size: initial;
-        font-size: 2vw;
+        font-size: 1.6em;
     }
     #details{
         font-weight: 700;
@@ -58,7 +58,8 @@ font-size: 1.3vw !important;
     }
     .footer{
         padding: 0 5%;
-        font-size: 1.2vw;
+        font-size: 1em;
+        margin-left: 10px;
         color: black;
     }
     .footer img{
@@ -86,7 +87,7 @@ font-size: 1.3vw !important;
     
     #progressbar li {
         list-style-type: none;
-        font-size: 1.2vw;
+        font-size: 1.4em;
     
         width: 25%;
         float: left;

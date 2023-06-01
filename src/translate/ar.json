@@ -109,8 +109,8 @@
     "Code":"رمز طلب",
     "Price":"السعر",
     "SEE MORE" : "رؤية المزيد",
-    "Pedigree" : "المنتجات الأكثر شراءًا" ,
-    "Latest Products" : "المنتجات الأكثر شراءًا" ,
+    "Pedigree" : "حالات المنتج" ,
+    "Latest Products" : "احدث المنتجات" ,
     "Most Purchasing Products" : "المنتجات الأكثر شراءًا" ,
     "Cheapest Products" : "أرخص المنتجات " ,
     "Orders info" : "معلومات الطلبات " ,
@@ -122,6 +122,12 @@
     "Please enter the code " : "الرجاء إدخال الرمز " ,
     "item:" : "العنصر:" ,
     "purchasing count:" : "عدد المشتريات:" ,
-    
+    "Search Product": "البحث على منتج",
+    "Delivering":"يتم التوصيل",
+    "Quantity":"الكمية",
+    "Order Details":"معلومات الطلب",
+    "building_number":"رقم البناء",
+    "street":"الشارع",
+
     "": ""
 }

@@ -10,7 +10,7 @@ import { useMemo } from 'react';
 import SearchFilter from './SearchFilter';
 import { useLocation } from 'react-router';
 
-const Product_Fillter = ({setFilterObject ,category_id}) => {
+const Product_Fillter = ({setFilterObject ,category_id , handlePageChange}) => {
     const {category , subCategory , subSubCategory} = useSelector(state => state.category)
     const input = useRef(null)
     const [t] = useTranslation();
@@ -53,7 +53,10 @@ const Product_Fillter = ({setFilterObject ,category_id}) => {
 
             }
             // input.current.value
+            
             setFilterObject(obj);
+            handlePageChange({selected: 0})
+
         }
     return (
         <div className="col-lg-3 col_Product  fillter-con Left_Side position-st"   id='Left_Side'>
@@ -111,8 +114,10 @@ const Product_Fillter = ({setFilterObject ,category_id}) => {
                     </button>
                     <button className="btn-donate"  onClick={()=>  {
                         setCategory(null)
-                        setFilterObject({search:null})
+                        setFilterObject({search:null,
+                            filter_category_id:null})
                         setSearch('')
+                        handlePageChange({selected: 0})
                     }}>
                         {t("Reset")}
                     </button>

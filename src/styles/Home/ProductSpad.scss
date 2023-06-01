@@ -327,7 +327,8 @@ $fm-nunito: 'Nunito Sans', sans-serif;
 .small-spad-product{
     @include devices(mobile){
         display: flex !important;
-        justify-content: center !important;
+        flex-direction: column;
+        align-items: center !important;
     }
 }
 

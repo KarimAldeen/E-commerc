@@ -4,7 +4,7 @@ import { useAxios } from "./useAxios";
 import { validateSession } from "./validateSession";
 import { useTranslation } from "react-i18next";
 
-export const useAddMutation = (key, url) => {
+export const useAddMutation = (key, url , toast_notification =true) => {
   const axios = useAxios();
   const queryClient = useQueryClient();
   const {t} = useTranslation();
@@ -16,7 +16,10 @@ export const useAddMutation = (key, url) => {
     },
     {
       onSuccess: ({ message }) => {
-        toast.success(message || t("added_successfully"));
+        if(toast_notification){
+          toast.success(message || t("added_successfully"));
+
+        }
         queryClient.invalidateQueries([key]);
      
       },

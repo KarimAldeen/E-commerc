@@ -18,7 +18,6 @@ function CardDetails({product}) {
   const lanCOde = LangNumber()
 
 
-  console.log(product?.wishlist);
   return (
     <div className="card_info">
     <nav>
@@ -44,21 +43,25 @@ function CardDetails({product}) {
       <p style={{fontSize:'1.3em' , margin:"10px"}}>
         {MapTranslate(product?.product_translations , 'description' ,lanCOde)}
       </p>
+    
       <LoadingButton
       isLoading={isLoading}
+      className="buutton-product-detials"
       onClick={()=>addToCart({product_id:product?.id , quantity:1})}
       >{t("Add to Cart")}</LoadingButton>
       {
         product?.wishlist ?<LoadingButton 
+        className="buutton-product-detials"
         onClick={()=>mutate2({product_id:product?.id})}
         isLoading={RemoveLoading}>{t("Remove Wishlist")}</LoadingButton>
         :<LoadingButton 
+        className="buutton-product-detials"
         isLoading={AddLoading}
         onClick={()=>mutate({product_id:product?.id})}>{t("Wishlist")}</LoadingButton>
 
       }
-
     </div>
+    
    </div>
    
   </div>  )

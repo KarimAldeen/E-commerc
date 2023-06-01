@@ -4,12 +4,12 @@ import { useNavigate } from 'react-router';
 import { LangNumber } from '../../../utils/LangNumber';
 import { useTranslation } from 'react-i18next';
 
-const HomeDrop = ({Categories , style=""}) => {
+const HomeDrop = ({Categories , styles=""}) => {
       const [t] = useTranslation();
   const navigate = useNavigate()
   const LangCode = LangNumber()
   return (
-    <div className={"btn-group " +style}>
+    <div className={"btn-group " +styles}>
                 <button className="btn Drop_Btn dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true" >
                     <i className="fa fa-bars"></i>
                     <h3> {t("All Category")}</h3>

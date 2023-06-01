@@ -77,6 +77,7 @@ const LoginPage = () => {
       navigate('/verification');
     }
   },[isSuccess ,navigate , data , dispatch])
+  
   const validationSchema = Yup.object().shape({
     full_name: Yup.string().required('required'),
     phone: Yup.string().required('required'),

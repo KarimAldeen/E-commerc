@@ -17,7 +17,6 @@ function ProductPaginations({page  , handlePageChange , filterIsApplied , totalR
                   filterIsApplied ? 1 : page - 1
                 }
                 onPageChange={(v) => {
-              
                     handlePageChange(v);
                   
                 }}

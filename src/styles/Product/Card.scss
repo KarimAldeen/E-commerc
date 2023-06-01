@@ -187,3 +187,13 @@
 .product_title{
     color: var(--primary) !important;
 }
+
+
+
+    @include devices(mobile){
+        .buutton-product-detials{
+            width: 90% !important;
+
+        }
+    }
+ 

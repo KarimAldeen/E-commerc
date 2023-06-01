@@ -48,6 +48,16 @@ const columns = [
     },
     
 ];
+
+const style = [
+  {
+    when: ()=> true ,
+    style: {
+      cursor:"pointer"
+      
+    },
+  }
+]
   return (
     <div className='AllOrder'>
       <div className='Top_Order'>
@@ -65,12 +75,15 @@ const columns = [
                   <div className='all-order-table'>
                     
                   <DataTable
-
+                    onRowClicked={(row)=> navigate('/order/'+row?.id)}
                     columns={columns}
                     data={order}
+                    conditionalRowStyles={
+                 style
+                    }
                 />
                   </div>
-                 <Orders/>
+                 <Orders order={data}/>
                 </div>
               </div>
             </div>

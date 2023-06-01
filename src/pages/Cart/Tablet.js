@@ -5,25 +5,41 @@ import { MapTranslate } from '../../utils/mapTranlate';
 import { LangNumber } from '../../utils/LangNumber';
 import { useAddCart, useDeletCart } from '../../api/cart';
 import CartForm from './CartForm';
+import { t } from 'i18next';
+import { LoadingButton } from '../../components/LoadingButton';
 const Tablet = ({ data }) => {
-    const { mutate } = useAddCart()
+    const { mutate , isLoading} = useAddCart()
     const { mutate: Del } = useDeletCart()
     const LangCode = LangNumber()
+
+
     function increment(item) {
 
-        mutate({
-            product_id: item?.product?.id,
-            quantity: item?.product?.product_quantity + 1,
-        })
-        console.log(item?.product);
+        if(item?.product?.product_quantity <=item?.quantity){
+
+        }else{
+            mutate({
+                product_id: item?.product?.id,
+                quantity: item?.quantity + 1,
+            })
+        }
+       
 
     }
 
     function decriment(item) {
-        mutate({
+        if(item?.quantity - 1 ===0){
+            Del({
+                product_id: item?.product?.id,
+            })
+
+        }else{
+               mutate({
             product_id: item?.product?.id,
-            quantity: item?.product?.product_quantity - 1,
+            quantity: item?.quantity - 1,
         })
+        }
+     
     }
 
     function Delet(item) {
@@ -39,10 +55,10 @@ const Tablet = ({ data }) => {
                 <thead>
                     <tr >
 
-                        <th className='Product' scope="col">Product</th>
-                        <th className='Price' scope="col">Price</th>
-                        <th className='Quantity' scope="col">Quantity</th>
-                        <th className='Total' scope="col">Total</th>
+                        <th className='Product' scope="col">{t('Product')}</th>
+                        <th className='Price' scope="col">{t('Price')}</th>
+                        <th className='Quantity' scope="col">{t('Quantity')}</th>
+                        <th className='Total' scope="col">{t('Total')}</th>
                         <th className='x' scope="col"></th>
 
                     </tr>
@@ -52,7 +68,7 @@ const Tablet = ({ data }) => {
                         data?.cart_items?.map((item, index) => (
                             <tr key={index}>
                                 <td className='Product_App'>
-                                    <img className='Prodeuct_Image' src={baseURL + item?.product_main_image} onError={(e) => e.target.src = Tomato} alt='' />
+                                    <img className='Prodeuct_Image' src={baseURL + item?.product?.product_main_image} onError={(e) => e.target.src = Tomato} alt='' />
                                     <div className=''>
                                         {MapTranslate(item?.product?.product_translations, 'name', LangCode)}
                                     </div>
@@ -64,17 +80,25 @@ const Tablet = ({ data }) => {
                                 </td>
                                 <td>
                                     <div className="pro-qty">
-                                        <span className="dec qtybtn" onClick={(e) => decriment(item)}>-</span>
+                                        <LoadingButton className="dec qtybtn"
+                                        isLoading={isLoading}
+                                        onClick={(e) => decriment(item)}>-</LoadingButton>
                                         <div className='Counter'>
-                                            {item?.product?.product_quantity}
+                                            {item?.quantity}
 
                                         </div>
-                                        <span className="inc qtybtn" onClick={(e) => increment(item)}>+</span>
+                                        <LoadingButton className={"inc qtybtn " +(item?.product?.product_quantity <=item?.quantity ? "not-allowed" :"pointer")}
+                                       
+                                        isLoading={isLoading}
+                                        
+
+                                         onClick={(e) => increment(item)}>+</LoadingButton>
+                                         
                                     </div>
 
                                 </td>
                                 <td>
-                                    <strong> {`${item?.product?.product_price}` * `${item?.product?.product_quantity}`} </strong>
+                                    <strong> {`${item?.product?.product_price}` * `${item?.quantity}`}{t('ريال')} </strong>
 
                                 </td>
                                 <td>
@@ -89,7 +113,7 @@ const Tablet = ({ data }) => {
             <div className='Cart_Forms'>
               
 
-            <CartForm/>  
+            <CartForm data={data}/>  
             </div>
           
         </div>

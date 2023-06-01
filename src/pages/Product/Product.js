@@ -63,7 +63,7 @@ const Product = (props) => {
 
                 <div className="row" >
     
-                   <Product_Fillter setFilterObject={setFilterObject} category_id={category_id} />
+                   <Product_Fillter setFilterObject={setFilterObject} category_id={category_id} handlePageChange={handlePageChange} />
                    <Product_Card data={data} page={page} handlePageChange={handlePageChange}  isLoading={isLoading} />
                    
                 
