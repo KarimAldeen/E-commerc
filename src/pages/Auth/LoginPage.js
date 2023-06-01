@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Formik, Field, ErrorMessage, Form } from 'formik';
+import { Formik, Field, ErrorMessage, Form, useFormikContext } from 'formik';
 
 import Footer from '../../layout/Footer/Footer';
 import Header from '../../components/Utils/Header';
 import MidBar from '../../components/Utils/MidBar';
 import * as Yup from 'yup';
-import { useLogin, useRegister } from '../../api/auth';
+import { useLogin, useRegister, useSendCode } from '../../api/auth';
 import { LoadingButton } from '../../components/LoadingButton';
 import {history} from '../../history'
 import { useNavigate } from 'react-router';
@@ -15,13 +15,16 @@ import { login, register } from '../../redux/AuthReducer';
 
 
 const LoginPage = () => {
+  const formik = useFormikContext()
 
   const { t } = useTranslation();
   const navigate = useNavigate();
   const dispatch = useDispatch()
-  const {mutate:mutateLogin  , isLoading:LoadingLogin ,isSuccess:SuccessLogin , data:dataLogin } = useLogin()
 
+  const [ phone , setPhone] = useState()
+  const {mutate:mutateLogin  , isLoading:LoadingLogin ,isSuccess:SuccessLogin , data:dataLogin ,status ,isError ,error } = useLogin()
 
+  const {mutate:SendCode} =useSendCode()
   const {mutate  , isLoading ,isSuccess , data} = useRegister()
   const signUp = () => {
     const container = document.getElementById('container');
@@ -41,6 +44,22 @@ const LoginPage = () => {
 
   };
 
+  
+  useEffect(()=>{
+   
+    if(isError && error?.response?.status ===402){
+      dispatch(register({
+        phone
+      }))
+
+      SendCode({
+        phone
+      })
+      navigate('/verification');
+    }
+  },[isError ,navigate  , dispatch , error , SendCode])
+
+
   useEffect(()=>{
    
     if(SuccessLogin){
@@ -53,7 +72,7 @@ const LoginPage = () => {
   useEffect(()=>{
    
     if(isSuccess){
-        console.log(data?.data);
+       
       dispatch(register(data?.data))
       navigate('/verification');
     }
@@ -73,6 +92,7 @@ const LoginPage = () => {
     
   });
   const handleSubmit2 = (values) =>{
+    setPhone(values?.phone)
     mutateLogin(values)
   }
   return (
@@ -150,7 +170,7 @@ const LoginPage = () => {
       <span>or use your account</span>
 
         <label htmlFor="phone">{t('phone')}</label>
-          <Field type="text"  name="phone" />
+          <Field type="text"  name="phone"  />
           <ErrorMessage name="phone" component="div" className="error" />
 
           

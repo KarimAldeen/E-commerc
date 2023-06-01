@@ -11,17 +11,7 @@
         }
     }
 }
-.SubTiltle{
-    display: flex;
-    justify-content: space-between;
-     align-items: center;
-     margin : 7vh 5vw 7vh 5vw;
-     direction:rtl;
-     h1{
-      font-weight: bold;  
-     }
-     
-}
+
 .ar .SubTiltle{
     direction:ltr !important;
 
@@ -29,3 +19,23 @@
 // .swiper-slide {
 // // width: 350px !important;
 // }
+
+.SubTiltle{
+    display: flex;
+    justify-content: center;
+     align-items: center;
+     margin : 7vh 5vw 7vh 5vw;
+     direction:rtl;
+     h1{
+      font-weight: bold;  
+      padding-bottom: 10px;
+
+     }
+     .border-title{
+        height: 5px;
+        width: 60%;
+        margin: 0px auto 20px ;
+        background: var(--primary);
+     }
+     
+}

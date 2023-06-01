@@ -7,6 +7,7 @@ import Categories from './categories/Categories'
 import Footer from '../../layout/Footer/Footer'
 import Loader from '../../components/Utils/Loader'
 import { useGetHomeStatics } from '../../api/home'
+import ProductSpad from './ProductSpad'
 
 const HomePage = () => {
    
@@ -15,17 +16,18 @@ const HomePage = () => {
       if(isLoading ){
         return < Loader />
       }
-      
+      console.log(data);
   return (
     <div className='HomePage' style={{overflow:'hidden'}}>
           <Header/>
           <MidBar />
           <HomeSectin sliders={data?.sliders[0] || []} categories={data?.categories ||[]}/>
 
-          
-          <FeaturedProduct  product={data?.featured_products||[]} />
           <Categories categories={data?.categories ||[]} />
 
+          <FeaturedProduct  product={data?.featured_products||[]} />
+
+          <ProductSpad  latest_products={data?.latest_products}  cheapest_products={data?.cheapest_products}  most_purchasing_count_product={data?.most_purchasing_count_product}/>
           <Footer/>
 
           

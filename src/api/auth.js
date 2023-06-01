@@ -10,6 +10,7 @@ import {
     REGISTER: `/api/register`,
     LOGIN: `/api/login`,
     VERIFY_CODE: `/api/verify_code`,
+    SEND_CODE:`/api/resend_code`
 
   };
   
@@ -21,5 +22,6 @@ import {
   export const useVirfayCode= (params, options) => useAddMutation("VERIFAY", API.VERIFY_CODE );
 
 
+  export const useSendCode= () => useAddMutation("CODE", API.SEND_CODE );
 
 

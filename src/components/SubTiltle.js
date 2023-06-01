@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom'
 import Title_Button from './Button/Title_Button'
 import More from './Button/More'
 
-const SubTiltle = ({title , show_more =true}) => {
+const SubTiltle = ({title , show_more =false}) => {
     const [t, il8n] = useTranslation()
     const { id } = useParams()
 
@@ -12,15 +12,10 @@ const SubTiltle = ({title , show_more =true}) => {
         <div className="SubTiltle">
         
                 <>
-                   {
-                    show_more ?
-
-                    // <Title_Button/> 
-                    <More/>
-                    :<span></span>
-                   } 
+                
                     <div>
                         <h1 className="subtitle__Mid"> {title} </h1>
+                        <div className='border-title'>.</div>
                     </div>
                 </>
 

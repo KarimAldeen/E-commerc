@@ -7,13 +7,22 @@ import { Phone } from '../../config/LOCALSTORAGEKEY';
 import { LangNumber } from '../../utils/LangNumber';
 import { useNavigate } from 'react-router';
 import HomeDrop from './DropDown/HomeDrop';
+import { useRef } from 'react';
 const HomeSectin = ({sliders , categories}) => {
     const [t] = useTranslation();
     const navigate = useNavigate()
 
     const LangCode = LangNumber()
- 
+    const input = useRef()
+    const handelSubmit = (e)=>{
+        e.preventDefault()
+        const value = input.current.value
+        if(value ===''){
 
+        }else{
+            navigate('/product?search=' + value)
+        }
+    }
   return (
     <div className='HomeSectin'>
         <div className="row">
@@ -22,14 +31,14 @@ const HomeSectin = ({sliders , categories}) => {
                 </div>
                 <div className="col-lg-9">
                     <div className='Top_Section'>
-                    <form className="example" action="product">
+                    <form className="example" onSubmit={handelSubmit}>
                         <div className='AllCategories'>
                         <h3 > {t("All Product")}    </h3>
                         {/* <FaAngleDown/> */}
                         </div>
 
-                    <input type="text" placeholder={t("What Do You Need?")} name="search" />
-                    <button type="submit">
+                    <input type="text" placeholder={t("What Do You Need?")} name="search" ref={input} />
+                    <button type="submit" >
                         {t("Search")}
                     </button>
                 </form>

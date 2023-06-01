@@ -164,7 +164,8 @@
     --btn-bg-color: #976a47;
     --radii: 0.5em;
     cursor: pointer;
-    min-width:17vw;
+    min-width:6vw;
+    margin-inline: 6px;
     min-height: 44px;
     font-size: 16px;
     font-family: "Segoe UI", system-ui, sans-serif;
@@ -376,4 +377,12 @@ width:45vw;
 
 }
 }
+}
+
+
+.loader-product{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

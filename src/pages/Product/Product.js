@@ -4,11 +4,13 @@ import MidBar from '../../components/Utils/MidBar'
 import { FaShoppingBasket, FaDollarSign } from "react-icons/fa";
 import Product_Fillter from './Product_Fillter';
 import Product_Card from './Product_Card';
+import "./Pagination.scss"
 import Footer from '../../layout/Footer/Footer';
 import { useGetProducts } from '../../api/products';
 import Loader from '../../components/Utils/Loader';
 import { usePaginationWithURL } from '../../hooks/usePaginationWithURL';
 import { useLocation } from 'react-router';
+import ProductPaginations from './ProductPaginations';
 
 const Product = (props) => {
 
@@ -24,14 +26,7 @@ const Product = (props) => {
     const category_id = searchParams.get('category_id');
 
    
-    // Get the value of the 'search' parameter
-
     const [filterObject , setFilterObject] = useState({})
-    const [isPageLoaded, setIsPageLoaded] = useState(false); // Track if data for the current page has been loaded
-
-    
-  
- 
 
 
     const {data , isLoading } = useGetProducts({
@@ -48,9 +43,7 @@ const Product = (props) => {
       })
 
 
-    if(isLoading){
-        return <Loader />
-    }
+    
    
     
     return (
@@ -66,7 +59,9 @@ const Product = (props) => {
                 <div className="row">
     
                    <Product_Fillter setFilterObject={setFilterObject} category_id={category_id}/>
-                   <Product_Card data={data} page={page} handlePageChange={handlePageChange}/>
+                   <Product_Card data={data} page={page} handlePageChange={handlePageChange}  isLoading={isLoading}/>
+                   
+                
                 </div>
             </div>
             <Footer />
