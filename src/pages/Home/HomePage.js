@@ -8,20 +8,37 @@ import Footer from '../../layout/Footer/Footer'
 import Loader from '../../components/Utils/Loader'
 import { useGetHomeStatics } from '../../api/home'
 import ProductSpad from './ProductSpad'
+import { useDispatch } from 'react-redux'
+import { SetAboutthecompany, setEmail, setLocation1, setPhone } from '../../redux/AuthReducer'
+import { LangNumber } from '../../utils/LangNumber'
 
 const HomePage = () => {
    
-    const {data , isLoading } = useGetHomeStatics()
+    const {data , isLoading , isSuccess} = useGetHomeStatics()
+  const dispatch = useDispatch()
+  const Lang = LangNumber()
+    useEffect(()=>{
 
+      if(isSuccess){
+
+        console.log();
+
+        dispatch(setPhone(data?.statics?.filter(d => d.key ==='phone')[0]?.value));
+        dispatch(setEmail(data?.statics?.filter(d => d.key ==='email')[0]?.value));
+        dispatch(setLocation1(data?.statics?.filter(d => d.key ==='location')[0]?.value));
+        dispatch(SetAboutthecompany(data?.statics?.filter(d => d.key ==='about_the_company')[0]?.translate));
+      }
+    },[isSuccess, data])
       if(isLoading ){
         return < Loader />
       }
-      console.log(data);
+
+   
   return (
     <div className='HomePage' style={{overflow:'hidden'}}>
           <Header/>
           <MidBar />
-          <HomeSectin sliders={data?.sliders[0] || []} categories={data?.categories ||[]}/>
+          <HomeSectin sliders={data?.sliders?.filter(s=> s?.is_ads !=true && s?.is_active ==true)|| []} categories={data?.categories ||[]}/>
 
           <Categories categories={data?.categories ||[]} />
 

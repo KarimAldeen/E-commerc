@@ -6,7 +6,7 @@ import English from '../../Images/English.svg'
 import Word from '../../Images/Word.svg'
 import LanguageDropdown from './LangDropDown';
 import { useAuth } from '../../hooks/useAuth';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../redux/AuthReducer';
 import BtnTranslate from './translate/BtnTranslate';
 import { Email, HeaderText } from '../../config/LOCALSTORAGEKEY';
@@ -17,11 +17,15 @@ import { Tooltip } from 'react-tooltip';
 const Header = () => {
   const [t] = useTranslation();
   const { isAuthenticated } = useAuth();
-  
+  const state = useSelector(state => state.auth)
+
+  console.log(state);
   const [refreash , setRefreash] = useState(false)
   const dispatch = useDispatch()
   
   const [Open, setOpen] = useState(false)
+
+
 
   return (
     <div className='Header d-flex'>
@@ -85,7 +89,7 @@ const Header = () => {
       <div className='Header__Left'>
 
 
-        <div className='Sha5da'><FaEnvelope /> {Email}</div>
+        <div className='Sha5da'><FaEnvelope /> {state?.email}</div>
         <div> {t(`${HeaderText}`)} </div>
       </div>
 

@@ -1,9 +1,16 @@
 .CartImage{
     min-height: 165px;        position: relative; margin-top: 35px;
     .breadcrumb-section{
+        background-position: center;
         // background-image: url('../../Images/Tomato.jpg');
         min-height: 165px;
+        max-height: 170px;
         display: flex; 
+        background-size: 100% 100%;
+        background-color: red;
+        min-width: 100vw;
+        background-clip: content-box;
+        background-repeat: no-repeat;
 
 
     }

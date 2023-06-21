@@ -5,16 +5,15 @@ import { useSelector } from 'react-redux';
 import SelectCategory from '../../components/SelectCategory';
 import { useTranslation } from 'react-i18next';
 import { SelectOptionCategory } from '../../utils/SelectOption';
-import { memo } from "react";
-import { useMemo } from 'react';
 import SearchFilter from './SearchFilter';
 import { useLocation } from 'react-router';
+import { Checkbox } from 'pretty-checkbox-react';
+import { useAuth } from '../../hooks/useAuth';
 
 const Product_Fillter = ({setFilterObject ,category_id , handlePageChange}) => {
     const {category , subCategory , subSubCategory} = useSelector(state => state.category)
-    const input = useRef(null)
     const [t] = useTranslation();
-
+    const {isAuthenticated} = useAuth()
     const location = useLocation()
     const searchParams = new URLSearchParams(location.search);
     const searchValue = searchParams.get('search');
@@ -29,6 +28,7 @@ const Product_Fillter = ({setFilterObject ,category_id , handlePageChange}) => {
         const [subcategory , setsubCategory] = useState(0)
         const [subsubcategory , setsubsubCategory] = useState(0)
         const [search , setSearch] = useState(searchValue || "")
+        const [wishlist , setwishlist] = useState(false)
 
 
         useEffect(()=>{
@@ -49,7 +49,8 @@ const Product_Fillter = ({setFilterObject ,category_id , handlePageChange}) => {
             
             let obj = {
                 filter_category_id :(subsubcategory?.value  ??  (subcategory?.value ?? Category?.value)),
-                search:search
+                search:search,
+                wishlist:wishlist ==false ? null : true 
 
             }
             // input.current.value
@@ -67,9 +68,11 @@ const Product_Fillter = ({setFilterObject ,category_id , handlePageChange}) => {
                            
 
             <div className='col_Product_Top'>
+               
+                
                 <h4>{t("Search in All Prouct")}</h4>
             </div>
-
+           
             <div>
                 <div className="slidecontainer">
                     <div className='col_Product_Mid'>
@@ -78,6 +81,21 @@ const Product_Fillter = ({setFilterObject ,category_id , handlePageChange}) => {
                 </div>
 
             </div>
+            {
+                isAuthenticated &&
+                <Checkbox
+                checked={wishlist}
+                onChange={() =>{
+                    setwishlist(v => !v)
+
+                }
+                
+                }
+            >
+                {t('wishlist')}
+            </Checkbox>
+            }
+          
 
             <div className='col_Product_Down'>
                 <div className='Category_sel'>
@@ -115,9 +133,11 @@ const Product_Fillter = ({setFilterObject ,category_id , handlePageChange}) => {
                     <button className="btn-donate"  onClick={()=>  {
                         setCategory(null)
                         setFilterObject({search:null,
-                            filter_category_id:null})
+                            filter_category_id:null ,
+                            wishlist:null})
                         setSearch('')
                         handlePageChange({selected: 0})
+                        setwishlist(false)
                     }}>
                         {t("Reset")}
                     </button>

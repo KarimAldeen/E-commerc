@@ -10,13 +10,16 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay]);
 
-const SwiperComponent = ({ children, slidesPerView =3 }) => {
+const SwiperComponent = ({ children, slidesPerView =null }) => {
     const {width} = useWindowSize()
+
+
+    const statment  =slidesPerView ? slidesPerView : (width  < PHONE ?  1 : width > LARGLAPTOP ?3: 2)
   return (
     <Swiper
     modules={[Navigation, Pagination, Scrollbar, A11y , Autoplay]}
     spaceBetween={0}
-    slidesPerView={width  < PHONE ?  1 : width > LARGLAPTOP ?3: 2}
+    slidesPerView={statment}
     pagination={{ clickable: true }}
     // onSwiper={(swiper) => }
     // onSlideChange={() => console.log('slide change')}

@@ -111,9 +111,5 @@
     "Please enter the code " : "Please enter the code " ,
     "item:" : "item:" ,
     "purchasing count:" : "purchasing count:" ,
-    "" : "" ,
-    "" : "" ,
-    "" : "" ,
-
-    "": ""
+    "wishlist":"Wishlist"
 }

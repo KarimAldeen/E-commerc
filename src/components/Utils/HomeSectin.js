@@ -3,12 +3,19 @@ import { FaAngleDown,FaPhoneAlt } from "react-icons/fa";
 import HomeSec from '../../Images/HomeSec.jpg'
 import { baseURL } from '../../api/config';
 import { useTranslation } from 'react-i18next';
-import { Phone } from '../../config/LOCALSTORAGEKEY';
 import { LangNumber } from '../../utils/LangNumber';
 import { useNavigate } from 'react-router';
 import HomeDrop from './DropDown/HomeDrop';
 import { useRef } from 'react';
+import { useSelector } from 'react-redux';
+import SwiperComponent from '../SwiperComponents';
+import { SwiperSlide } from 'swiper/react';
 const HomeSectin = ({sliders , categories}) => {
+
+
+
+    const state = useSelector(state => state.auth)
+
     const [t] = useTranslation();
     const navigate = useNavigate()
 
@@ -47,16 +54,34 @@ const HomeSectin = ({sliders , categories}) => {
                 <FaPhoneAlt/>
                 </div>
                 <div className='Phone2'>
-                <h3>{Phone}</h3>
+                <h3>{state?.Phone}</h3>
                 <h5>{t("support 24/7 time")}</h5>
                 
                 </div>
                 </div>
                     </div>
-                    <div className='Button_Section'>
-                            <img className='HomeSec' alt='' src={baseURL + sliders?.slider_link}  />
-                        </div>
+                  
                 </div>
+                <SwiperComponent
+                    slidesPerView={1}
+                >
+                {
+                    sliders?.map(
+                        (slider) =>{
+                        
+                            return (
+                            
+                                <SwiperSlide key={slider.id}>
+                                <div className='Button_Section'>
+                                    <img className='HomeSec' alt='' src={baseURL + slider?.slider_link}  />
+                                </div>
+                            </SwiperSlide>
+                            )
+                        }
+                    )
+                }
+                </SwiperComponent>
+               
                 </div> 
                    </div>
   )

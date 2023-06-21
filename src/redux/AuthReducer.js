@@ -7,10 +7,26 @@ const AuthSlice = createSlice({
   initialState: {
     isAuthenticated:authStorage.getToken() ? true :false ,
     token: authStorage.getToken(),
-    user:authStorage.getUser()
+    user:authStorage.getUser(),
+    Phone: '',
+    About_the_company: '',
+    Location1: "",
+    email:""
+
   },
   reducers: {
-    
+    setEmail :(state , action)=>{
+      state.email = action.payload
+    },
+    setPhone :(state , action)=>{
+      state.Phone = action.payload
+    },
+    SetAboutthecompany :(state , action)=>{
+      state.About_the_company = action.payload
+    },
+    setLocation1 :(state , action)=>{
+      state.Location1 = action.payload
+    },
     logout :(state) =>{
         
         authStorage.remove();
@@ -41,7 +57,8 @@ const AuthSlice = createSlice({
     }
   },
   
+
 });
 
-export const {logout , login  ,register , verify} = AuthSlice.actions;
+export const {logout , login  ,register , verify, setPhone ,setLocation1 , SetAboutthecompany,setEmail} = AuthSlice.actions;
 export default AuthSlice.reducer;

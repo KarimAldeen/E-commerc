@@ -19,7 +19,6 @@ const CartPage = () => {
   if(isLoading){
     return <Loader/>
    }
-   console.log(cart);
 
    if(!(cart?.cart_items)){
     return <Page>

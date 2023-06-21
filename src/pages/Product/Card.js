@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import {MdOutlineSell} from 'react-icons/md'
 import { baseURL } from '../../api/config'
@@ -8,15 +8,24 @@ import { AiFillHeart } from 'react-icons/ai'
 import { useAddProductToWishList, useRemoveProductToWishList } from '../../api/products'
 import { useTranslation } from 'react-i18next'
 import { LangNumber } from '../../utils/LangNumber'
+import { toast } from 'react-toastify'
 
 const Card = ({product}) => {
   const [t] = useTranslation();
 
   const LangCode =LangNumber()
 const navigate = useNavigate()
-  const {mutate} = useAddCart()
-  const {mutate:addWishList} = useAddProductToWishList()
+  const {mutate , isSuccess} = useAddCart()
+  const {mutate:addWishList } = useAddProductToWishList()
   const {mutate:removeWithList } = useRemoveProductToWishList()
+
+  useEffect(()=>{
+  if(isSuccess){
+    // console.log('ADD ');
+    toast.success(t('Add Successful'))
+  }
+  },[isSuccess , t])
+
 
   function addToCart (){
     mutate({

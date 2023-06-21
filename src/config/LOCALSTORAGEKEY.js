@@ -7,7 +7,9 @@ export const TOKEN_KEY = 'nokbah_alarabi_token'
 
 
 
-export const Email = "Info@alnokhbaalarabi.com"
+// export const Email = "Info@alnokhbaalarabi.com"
+export const Email =  JSON.parse(localStorage.getItem('statics'))?.filter(s => s?.key ==='email')[0]?.value
+
 export const Phone = "0097455721999"
 export const CopyRight = "Alnokbah Alarbi  © 2022"
 export const About_the_company = "Alnokbah Ecommerce From Qatar Alnokbah Doha , We Born To Make The Life Easy"

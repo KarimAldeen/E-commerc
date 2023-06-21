@@ -7,7 +7,6 @@ const DropDown = () => {
   const [Language, setLanguage] = useState([{Flag : "flag-icon flag-icon-us me-1" , Name : "English"}])
     function Ar(){
         setLanguage([{Flag : "flag-icon flag-icon-sa me-1" , Name : "Arabic" }])
-        console.log(Language[0]);
         i18n.changeLanguage('ar');
         document.body.setAttribute('dir', 'rtl'); document.body.classList.add('ar');localStorage.setItem("Lung", "ar");
     } 
@@ -27,7 +26,7 @@ const DropDown = () => {
             <a class="dropdown-item active" href="#"><span class="flag-icon flag-icon-us me-1"></span> <span>{t("English")}</span></a>
         </li>
         <li onClick={()=>Ar()}>
-            <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-sa me-1"></span> <span>{t("Arabic")}</span></a>
+            <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-qa me-1"></span> <span>{t("Arabic")}</span></a>
         </li>
     </ul>
 </div>

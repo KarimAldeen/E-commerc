@@ -9,13 +9,15 @@ import { useGetSingleOrder } from '../../api/order';
 import { useParams } from 'react-router';
 import Loader from '../../components/Utils/Loader';
 import { Phone } from '../../config/LOCALSTORAGEKEY';
+import OrderStatus from '../../components/OrderStatus';
+import { useSelector } from 'react-redux';
 
 const OrderPage = () => {
   const [t] = useTranslation();
   const { id } = useParams();
   const { data, isLoading } = useGetSingleOrder({ order_id: id });
+  const state = useSelector(state => state.auth)
 
-  console.log(data);
 
   if (isLoading)
     return <Loader />;
@@ -26,11 +28,13 @@ const OrderPage = () => {
     const orderStatuses = {
       ordered: 0,
       pending: 1,
+      accept:1,
       delivering: 2,
       delivered: 3
     };
 
     const currentStep = orderStatuses[orderStatus] || 0;
+
 
     if (step  <= currentStep) {
       return 'active';
@@ -40,6 +44,8 @@ const OrderPage = () => {
 
     return '';
   };
+
+
 
   return (
     <div className='OrderPage'>
@@ -51,6 +57,13 @@ const OrderPage = () => {
         <div className="title">{t("Purchase Reciept")}</div>
         <div className="info">
           <div className="row">
+            <div>
+              <span style={{fontSize:"1.3em" , fontWeight:"bold" , marginInline:"10px"}}>{t('status')}:</span>
+              
+            <OrderStatus  order_status={(data?.order_status || 'pending')} />
+
+            </div>
+
             <div className="col-7">
               <span id="heading" className='Infos'>{t("Date")}</span>
               <br />
@@ -69,15 +82,15 @@ const OrderPage = () => {
               <span id="name" className='infos'>{t("Order Cost")}</span>
             </div>
             <div className="col-3">
-              <span id="price" className='infos'>{data?.order_total} {t("ريال")}</span>
+              <span id="price" className='infos'>{data?.totals?.sub_total} {t("ريال")}</span>
             </div>
           </div>
           <div className="row">
             <div className="col-9">
-              <span id="name" className='infos'>{t("Shipping")}</span>
+              <span id="name" className='infos'>{t("Delivery Fees")}</span>
             </div>
             <div className="col-3">
-              <span id="price" className='infos'>0</span>
+              <span id="price" className='infos'>{data?.totals.delivery_fees}</span>
             </div>
           </div>
         </div>
@@ -85,7 +98,7 @@ const OrderPage = () => {
           <div className="row">
             <div className="col-9" />
             <div className="col-3">
-              <big className='infos'>{data?.order_total}</big>
+              <big className='infos'>{data?.totals?.overall_total}</big>
             </div>
           </div>
         </div>
@@ -116,7 +129,7 @@ const OrderPage = () => {
             <div className="col-10">
               {t("Want any help?")}
               <FaPhoneAlt />
-              {Phone}
+              {state?.Phone}
             </div>
           </div>
         </div>

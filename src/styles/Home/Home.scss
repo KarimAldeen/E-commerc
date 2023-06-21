@@ -240,6 +240,7 @@
         align-items: center;
         width: 100%;
         object-fit: cover;
+        background-position: center;
     }
     @include devices(Minlaptop){
        .Top_Section_Right{

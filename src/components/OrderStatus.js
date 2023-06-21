@@ -5,10 +5,9 @@ import { useTranslation } from "react-i18next";
 
 const OrderStatus = ({ order_status }) => {
     const {t} = useTranslation();
-    console.log(order_status);
     const all={
         pending:{color:"secondary"},
-        accepted:{color:"success"},
+        accept:{color:"success"},
         delivering:{color:"primary"},
         delivered:{color:"success"},
         canceled:{color:"danger"}
@@ -17,9 +16,12 @@ const OrderStatus = ({ order_status }) => {
 
     
   return (
-        <Badge color={all[order_status].color}>
+    <h3 style={{display:"inline"}}>
+      <Badge color={all[order_status].color} >
                 {t(order_status)}
         </Badge>
+    </h3>
+        
   );
 };
 

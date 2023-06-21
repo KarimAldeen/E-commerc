@@ -25,6 +25,8 @@ const CartForm = ({ data }) => {
   const {mutate} = useAddCheckout()
   const handelSubmut = (values) => {
     values['payment_method'] = 'cash_on_delivery'
+    values['building_number'] =   values['building_number'] + ''
+
       mutate(values)
   }
   return (
@@ -48,20 +50,20 @@ const CartForm = ({ data }) => {
               <Form className='checkout-form'>
               <label className='white'>{t("search for place")}</label>
               <Autocomplete
-                apiKey={'AIzaSyAIO-8bXHu3gUxOXDpxCr6cz91i20Ex8IA'}
+                apiKey={'AIzaSyAOcvqeLKcp-lhse3S-S9SAOgDuP2D_mB4'}
                 onPlaceSelected={(place) => {
-                  formik.setFieldValue('lat' ,place?.geometry?.location?.lat())
-                  formik.setFieldValue('long' ,place?.geometry?.location?.lng())
+                  formik.setFieldValue('lat' ,place?.geometry?.location?.lat()+"")
+                  formik.setFieldValue('long' ,place?.geometry?.location?.lng()+"")
 
                 }}
               />
               <ErrorMessage name="lat" component="div" className="error" />
               <label className='white'>{t("zone number")}</label>
-              <Field name="zone_number" type="text" />
+              <Field name="zone_number" type="number" />
               <ErrorMessage name="zone_number" component="div" className="error" />
     
               <label className='white'>{t("building_number")}</label>
-              <Field name="building_number" as="input" />
+              <Field name="building_number" as="input"type="number"  />
               <ErrorMessage name="building_number" component="div" className="error" />
     
               <label className='white'>{t("street")}</label>
@@ -69,8 +71,9 @@ const CartForm = ({ data }) => {
               <ErrorMessage name="street" component="div" className="error" />
               <div>
                 <ul>
-                  <li>Sub Total <span>{data?.overall_total}</span></li>
-                  <li>Total <span>{data?.overall_total}</span></li>
+                  <li>{t('Sub Total')}<span>{data?.sub_total}</span></li>
+                  <li>{t("Delivery Fees")} <span>{data?.delivery_fees}</span></li>
+                  <li>{t("Total")} <span>{data?.overall_total}</span></li>
                 </ul>
               </div>
               <button className="" type='submit'>{t("CHECKOUT")}</button>

@@ -8,6 +8,7 @@ export const useEmailJS = () => {
   const [error, setError] = useState(null);
 
   const sendEmail = useCallback((values) => {
+
     setIsLoading(true);
     setIsSuccess(false);
     setIsFailed(false);
@@ -15,10 +16,10 @@ export const useEmailJS = () => {
 
     emailjs
       .send(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        "service_02d36q8",
+        'template_n4u2n2u',
         values,
-        process.env.REACT_APP_EMAILJS_USER_ID
+        "user_WGC4hfgBj70bj6stGFRp3"
       )
       .then(
         (result) => {

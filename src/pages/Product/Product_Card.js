@@ -10,7 +10,6 @@ const Product_Card = ({data , handlePageChange , isLoading}) => {
   const [t] = useTranslation();
 
 
-  console.log(data);
     if(isLoading){
     return (
       <div className='col-lg-9  loader-product'>

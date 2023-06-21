@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next'
 
 const Orders = ({order}) => {
 
-  console.log(order);
   const [t] = useTranslation()
   return (
     <div className='Orders'>

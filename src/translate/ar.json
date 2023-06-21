@@ -128,6 +128,9 @@
     "Order Details":"معلومات الطلب",
     "building_number":"رقم البناء",
     "street":"الشارع",
-
+    "wishlist":"المفضلة",
+    "Add Successful":"تمت الإضافة بنجاح",
+    "Order Cost":"تكلفة الطلب",
+    "Delivery Fees":"رسوم التوصيل",
     "": ""
 }

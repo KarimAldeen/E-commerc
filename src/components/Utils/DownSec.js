@@ -5,12 +5,14 @@ import { Phone } from '../../config/LOCALSTORAGEKEY';
 import HomeDrop from './DropDown/HomeDrop';
 import { useTranslation } from 'react-i18next';
 import { useGetHomeStatics } from '../../api/home';
+import { useSelector } from 'react-redux';
 const DownSec = () => {
 
 
     const [t] = useTranslation();
     const {data , isLoading } = useGetHomeStatics()
        const categories = data?.categories ||[]
+       const state = useSelector(state => state.auth)
 
   return (
     <div className='HomeSectin'>
@@ -36,7 +38,7 @@ const DownSec = () => {
             <FaPhoneAlt/>
             </div>
             <div className='Phone2'>
-            <h3>{Phone}</h3>
+            <h3>{state?.Phone}</h3>
             <h5>{t("support 24/7 time")}</h5>
             
             </div>
